@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R语言模型部署实战</title>
+  <meta name="description" content="R语言模型部署实战">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R语言模型部署实战" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="R语言模型部署实战" />
+  <meta name="github-repo" content="DataXujing/R-deployment" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R语言模型部署实战" />
+  
+  <meta name="twitter:description" content="R语言模型部署实战" />
+  
+
+<meta name="author" content="徐静">
+
+
+<meta name="date" content="2018-08-06">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="htmlwidgets-Sizing.html">
+<link rel="next" href="htmlwidgets-pkgintro.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css\style.css" type="text/css" />
+<link rel="stylesheet" href="css\toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://github.com/DataXujing/htmlwidgets_CN" target='blank'>项目地址</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>声明</a></li>
+<li class="chapter" data-level="" data-path="e5ba8fe8a880.html"><a href="e5ba8fe8a880.html"><i class="fa fa-check"></i>序言</a></li>
+<li class="chapter" data-level="" data-path="e585b3e4ba8ee4bd9ce88085.html"><a href="e585b3e4ba8ee4bd9ce88085.html"><i class="fa fa-check"></i>关于作者</a></li>
+<li class="chapter" data-level="1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html"><i class="fa fa-check"></i><b>1</b> 简介</a><ul>
+<li class="chapter" data-level="1.1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 概况</a></li>
+<li class="chapter" data-level="1.2" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 简单的开始</a></li>
+<li class="chapter" data-level="1.3" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#sigma.js"><i class="fa fa-check"></i><b>1.3</b> 例子(sigma.js)</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.3.1"><i class="fa fa-check"></i><b>1.3.1</b> 文件布局</a></li>
+<li class="chapter" data-level="1.3.2" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.3.2"><i class="fa fa-check"></i><b>1.3.2</b> 依赖关系</a></li>
+<li class="chapter" data-level="1.3.3" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#rr-binding"><i class="fa fa-check"></i><b>1.3.3</b> R绑定(R binding)</a></li>
+<li class="chapter" data-level="1.3.4" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#javascriptjavascript-binding"><i class="fa fa-check"></i><b>1.3.4</b> JavaScript绑定(JavaScript binding)</a></li>
+<li class="chapter" data-level="1.3.5" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.3.5"><i class="fa fa-check"></i><b>1.3.5</b> 演示</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#widgets"><i class="fa fa-check"></i><b>1.4</b> 创建你自己的widgets</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#requirements"><i class="fa fa-check"></i><b>1.4.1</b> 需求（Requirements）</a></li>
+<li class="chapter" data-level="1.4.2" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#scaffolding"><i class="fa fa-check"></i><b>1.4.2</b> 脚手架（Scaffolding）</a></li>
+<li class="chapter" data-level="1.4.3" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.4.3"><i class="fa fa-check"></i><b>1.4.3</b> 更多</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html"><i class="fa fa-check"></i><b>2</b> HTML空间尺寸调整</a><ul>
+<li class="chapter" data-level="2.1" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 概述</a></li>
+<li class="chapter" data-level="2.2" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#section-2.2"><i class="fa fa-check"></i><b>2.2</b> 指定大小调整策略</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#-1"><i class="fa fa-check"></i><b>2.2.1</b> 例子</a></li>
+<li class="chapter" data-level="2.2.2" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#section-2.2.2"><i class="fa fa-check"></i><b>2.2.2</b> 可用选项</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#javascript"><i class="fa fa-check"></i><b>2.3</b> JavaScript调整大小方法</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#-2"><i class="fa fa-check"></i><b>2.3.1</b> 例子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html"><i class="fa fa-check"></i><b>3</b> HTML控件：高级主题</a><ul>
+<li class="chapter" data-level="3.1" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#section-3.1"><i class="fa fa-check"></i><b>3.1</b> 本节概述</a></li>
+<li class="chapter" data-level="3.2" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 数据变换</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#htmlwidgets.dataframetod3"><i class="fa fa-check"></i><b>3.2.1</b> HTMLWidgets.dataframeToD3()</a></li>
+<li class="chapter" data-level="3.2.2" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#htmlwidgets.transposearray2d"><i class="fa fa-check"></i><b>3.2.2</b> HTMLWidgets.transposeArray2D()</a></li>
+<li class="chapter" data-level="3.2.3" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#json"><i class="fa fa-check"></i><b>3.2.3</b> 自定义JSON串行化器</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#javascript"><i class="fa fa-check"></i><b>3.3</b> 传递JavaScript函数</a></li>
+<li class="chapter" data-level="3.4" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#html"><i class="fa fa-check"></i><b>3.4</b> 自定义控件HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html"><i class="fa fa-check"></i><b>4</b> htmlwidgets包中函数的总结</a><ul>
+<li class="chapter" data-level="4.1" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#htmlwidgets"><i class="fa fa-check"></i><b>4.1</b> htmlwidgets包函数</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#htmlwidgets-package"><i class="fa fa-check"></i><b>4.1.1</b> htmlwidgets-package</a></li>
+<li class="chapter" data-level="4.1.2" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#createwidget"><i class="fa fa-check"></i><b>4.1.2</b> createWidget</a></li>
+<li class="chapter" data-level="4.1.3" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#getdependency"><i class="fa fa-check"></i><b>4.1.3</b> getDependency</a></li>
+<li class="chapter" data-level="4.1.4" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#htmlwidgets-shiny"><i class="fa fa-check"></i><b>4.1.4</b> htmlwidgets-shiny</a></li>
+<li class="chapter" data-level="4.1.5" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#js"><i class="fa fa-check"></i><b>4.1.5</b> JS</a></li>
+<li class="chapter" data-level="4.1.6" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#onrender"><i class="fa fa-check"></i><b>4.1.6</b> onRender</a></li>
+<li class="chapter" data-level="4.1.7" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#onstaticrendercomplete"><i class="fa fa-check"></i><b>4.1.7</b> onStaticRenderComplete</a></li>
+<li class="chapter" data-level="4.1.8" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#prependcontent"><i class="fa fa-check"></i><b>4.1.8</b> prependContent</a></li>
+<li class="chapter" data-level="4.1.9" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#savewidget"><i class="fa fa-check"></i><b>4.1.9</b> saveWidget</a></li>
+<li class="chapter" data-level="4.1.10" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#scaffoldwidget"><i class="fa fa-check"></i><b>4.1.10</b> scaffoldWidget</a></li>
+<li class="chapter" data-level="4.1.11" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#setwidgetidseed"><i class="fa fa-check"></i><b>4.1.11</b> setWidgetIdSeed</a></li>
+<li class="chapter" data-level="4.1.12" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#sizingpolicy"><i class="fa fa-check"></i><b>4.1.12</b> sizingPolicy</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>5</b> 总结</a></li>
+<li class="chapter" data-level="6" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>6</b> 参考文献</a></li>
+<li class="divider"></li>
+<li><a href="https://dataxujing.github.io/" target="blank">个人主页</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R语言模型部署实战</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="htmlwidgets-advanced" class="section level1">
+<h1><span class="header-section-number">第 3 章</span> HTML控件：高级主题</h1>
+<div id="section-3.1" class="section level2">
+<h2><span class="header-section-number">3.1</span> 本节概述</h2>
+<p>本部分将介绍创建控件的几个主要方面，这些控件并不是所有控件都需要的，但他是获得绑定到某些类型的JavaScript库才能正常工作的重要部分。涵盖的主题包括：</p>
+<ul>
+<li><p>将R对象的JSON表示转换为JavaScript库所需的表示（例如，R数据帧到D3数据集）。</p></li>
+<li><p>在JavaScript绑定中跟踪特定于实例的控件数据。</p></li>
+<li><p>将JavaScript函数从R传递到JavaScript（例如用户提供的格式化或绘图功能）。</p></li>
+<li><p>生成自定义HTML以封装控件（默认为<code>&lt;div &gt;</code>但一些库需要不同的元素，例如<code>&lt;SPAN &gt;</code>）</p></li>
+</ul>
+</div>
+<div id="section-3.2" class="section level2">
+<h2><span class="header-section-number">3.2</span> 数据变换</h2>
+<p>R对象传递一个参数x给createWidget()函数，并使用内部函数htmlwidgets:::toJSON()转换成JSON字符串，默认情况下，它基本上是jsonlite::toJSON()的包装函数。但是，有时这种表示并不是您所连接的JavaScript库所要求的。有两个JavaScript函数可以用来转换JSON数据。</p>
+<div id="htmlwidgets.dataframetod3" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> HTMLWidgets.dataframeToD3()</h3>
+<p>R数据框是’long form’(长型数据:数组名加一个向量)然而d3需要一个’wide form’(宽型数据:每一行都有以键值对形式表示)，在R中使用dataframeToD3()函数就可以把数据变化成JavaScript对用格式的数据</p>
+<p>用一个例子来说明R的long-form数据</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="op">{</span>
+  <span class="st">&quot;Sepal.Length&quot;</span><span class="op">:</span> [<span class="fl">5.1</span><span class="op">,</span> <span class="fl">4.9</span><span class="op">,</span> <span class="fl">4.7</span>]<span class="op">,</span>
+  <span class="st">&quot;Sepal.Width&quot;</span><span class="op">:</span> [<span class="fl">3.5</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="fl">3.2</span>]<span class="op">,</span>
+  <span class="st">&quot;Petal.Length&quot;</span><span class="op">:</span> [<span class="fl">1.4</span><span class="op">,</span> <span class="fl">1.4</span><span class="op">,</span> <span class="fl">1.3</span>]<span class="op">,</span>
+  <span class="st">&quot;Petal.Width&quot;</span><span class="op">:</span> [<span class="fl">0.2</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="fl">0.2</span>]<span class="op">,</span>
+  <span class="st">&quot;Species&quot;</span><span class="op">:</span> [<span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]
+<span class="op">}</span> </code></pre></div>
+<p>使用HTMLWidgets.dataframeToD3()，将会变成：</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">[
+  <span class="op">{</span>
+    <span class="st">&quot;Sepal.Length&quot;</span><span class="op">:</span> <span class="fl">5.1</span><span class="op">,</span>
+    <span class="st">&quot;Sepal.Width&quot;</span><span class="op">:</span> <span class="fl">3.5</span><span class="op">,</span>
+    <span class="st">&quot;Petal.Length&quot;</span><span class="op">:</span> <span class="fl">1.4</span><span class="op">,</span>
+    <span class="st">&quot;Petal.Width&quot;</span><span class="op">:</span> <span class="fl">0.2</span><span class="op">,</span>
+    <span class="st">&quot;Species&quot;</span><span class="op">:</span> <span class="st">&quot;setosa&quot;</span>
+  <span class="op">},</span>
+  <span class="op">{</span>
+    <span class="st">&quot;Sepal.Length&quot;</span><span class="op">:</span> <span class="fl">4.9</span><span class="op">,</span>
+    <span class="st">&quot;Sepal.Width&quot;</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span>
+    <span class="st">&quot;Petal.Length&quot;</span><span class="op">:</span> <span class="fl">1.4</span><span class="op">,</span>
+    <span class="st">&quot;Petal.Width&quot;</span><span class="op">:</span> <span class="fl">0.2</span><span class="op">,</span>
+    <span class="st">&quot;Species&quot;</span><span class="op">:</span> <span class="st">&quot;setosa&quot;</span>
+  <span class="op">},</span>
+  <span class="op">{</span>
+    <span class="st">&quot;Sepal.Length&quot;</span><span class="op">:</span> <span class="fl">4.7</span><span class="op">,</span>
+    <span class="st">&quot;Sepal.Width&quot;</span><span class="op">:</span> <span class="fl">3.2</span><span class="op">,</span>
+    <span class="st">&quot;Petal.Length&quot;</span><span class="op">:</span> <span class="fl">1.3</span><span class="op">,</span>
+    <span class="st">&quot;Petal.Width&quot;</span><span class="op">:</span> <span class="fl">0.2</span><span class="op">,</span>
+    <span class="st">&quot;Species&quot;</span><span class="op">:</span> <span class="st">&quot;setosa&quot;</span>
+  <span class="op">}</span>
+] </code></pre></div>
+<p>作为一个实际例子，simpleNetwork接受包含R侧的网络链接的数据框，然后将其转换为JavaScript renderValue函数内的D3表示：</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">renderValue<span class="op">:</span> <span class="kw">function</span>(x) <span class="op">{</span>
+
+  <span class="co">// convert links data frame to d3 friendly format</span>
+  <span class="kw">var</span> links <span class="op">=</span> <span class="va">HTMLWidgets</span>.<span class="at">dataframeToD3</span>(<span class="va">x</span>.<span class="at">links</span>)<span class="op">;</span>
+  
+  <span class="co">// ... use the links, etc ...</span>
+
+<span class="op">}</span></code></pre></div>
+</div>
+<div id="htmlwidgets.transposearray2d" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> HTMLWidgets.transposeArray2D()</h3>
+<p>有时二维数组需要类似的换位。为此，提供了transposeArray2D()函数。下面是一个示例数组：</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">[
+  [<span class="fl">5.1</span><span class="op">,</span> <span class="fl">4.9</span><span class="op">,</span> <span class="fl">4.7</span><span class="op">,</span> <span class="fl">4.6</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="fl">5.4</span><span class="op">,</span> <span class="fl">4.6</span><span class="op">,</span> <span class="dv">5</span>]<span class="op">,</span>
+  [<span class="fl">3.5</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="fl">3.2</span><span class="op">,</span> <span class="fl">3.1</span><span class="op">,</span> <span class="fl">3.6</span><span class="op">,</span> <span class="fl">3.9</span><span class="op">,</span> <span class="fl">3.4</span><span class="op">,</span> <span class="fl">3.4</span>]<span class="op">,</span>
+  [<span class="fl">1.4</span><span class="op">,</span> <span class="fl">1.4</span><span class="op">,</span> <span class="fl">1.3</span><span class="op">,</span> <span class="fl">1.5</span><span class="op">,</span> <span class="fl">1.4</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">,</span> <span class="fl">1.4</span><span class="op">,</span> <span class="fl">1.5</span>]<span class="op">,</span>
+  [<span class="fl">0.2</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="fl">0.4</span><span class="op">,</span> <span class="fl">0.3</span><span class="op">,</span> <span class="fl">0.2</span>]<span class="op">,</span>
+  [<span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]
+] </code></pre></div>
+<p>HTMLWidgets.transposeArray2D()把其变换成：</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">[
+  [<span class="fl">5.1</span><span class="op">,</span> <span class="fl">3.5</span><span class="op">,</span> <span class="fl">1.4</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]<span class="op">,</span>
+  [<span class="fl">4.9</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="fl">1.4</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]<span class="op">,</span>
+  [<span class="fl">4.7</span><span class="op">,</span> <span class="fl">3.2</span><span class="op">,</span> <span class="fl">1.3</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]<span class="op">,</span>
+  [<span class="fl">4.6</span><span class="op">,</span> <span class="fl">3.1</span><span class="op">,</span> <span class="fl">1.5</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]<span class="op">,</span>
+  [<span class="dv">5</span><span class="op">,</span> <span class="fl">3.6</span><span class="op">,</span> <span class="fl">1.4</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]<span class="op">,</span>
+  [<span class="fl">5.4</span><span class="op">,</span> <span class="fl">3.9</span><span class="op">,</span> <span class="fl">1.7</span><span class="op">,</span> <span class="fl">0.4</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]<span class="op">,</span>
+  [<span class="fl">4.6</span><span class="op">,</span> <span class="fl">3.4</span><span class="op">,</span> <span class="fl">1.4</span><span class="op">,</span> <span class="fl">0.3</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]<span class="op">,</span>
+  [<span class="dv">5</span><span class="op">,</span> <span class="fl">3.4</span><span class="op">,</span> <span class="fl">1.5</span><span class="op">,</span> <span class="fl">0.2</span><span class="op">,</span> <span class="st">&quot;setosa&quot;</span>]
+] </code></pre></div>
+<p>dygraphs控件就使用了这种变换：</p>
+<div class="sourceCode"><pre class="sourceCode javascript"><code class="sourceCode javascript">renderValue<span class="op">:</span> <span class="kw">function</span>(x) <span class="op">{</span>
+   
+    <span class="co">// ... code excluded ...</span>
+    
+    <span class="co">// transpose array</span>
+    <span class="va">x</span>.<span class="va">attrs</span>.<span class="at">file</span> <span class="op">=</span> <span class="va">HTMLWidgets</span>.<span class="at">transposeArray2D</span>(<span class="va">x</span>.<span class="va">attrs</span>.<span class="at">file</span>)<span class="op">;</span>
+    
+    <span class="co">// ... more code excluded ...</span>
+<span class="op">}</span></code></pre></div>
+</div>
+<div id="json" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> 自定义JSON串行化器</h3>
+<p>当htmlwidgets中的默认JSON序列化器无法按您预期的方式工作时，您可能会发现需要自定义控件数据的JSON序列化。对于实现控件的包的作者，JSON序列化有两个定制级别：您可以自定义jsonlite::toJSON()的参数的默认值，或者只需定制整个函数。</p>
+<ol style="list-style-type: decimal">
+<li>jsonlite::toJSON()有很多参数，并且我们已经改变了它的很多默认值。下面是我们在htmlwidgets中使用的JSON序列化器：</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">function</span> (x, ..., <span class="dt">dataframe =</span> <span class="st">&quot;columns&quot;</span>, <span class="dt">null =</span> <span class="st">&quot;null&quot;</span>, <span class="dt">na =</span> <span class="st">&quot;null&quot;</span>, 
+    <span class="dt">auto_unbox =</span> <span class="ot">TRUE</span>, <span class="dt">digits =</span> <span class="kw">getOption</span>(<span class="st">&quot;shiny.json.digits&quot;</span>, 
+        <span class="dv">16</span>), <span class="dt">use_signif =</span> <span class="ot">TRUE</span>, <span class="dt">force =</span> <span class="ot">TRUE</span>, <span class="dt">POSIXt =</span> <span class="st">&quot;ISO8601&quot;</span>, 
+    <span class="dt">UTC =</span> <span class="ot">TRUE</span>, <span class="dt">rownames =</span> <span class="ot">FALSE</span>, <span class="dt">keep_vec_names =</span> <span class="ot">TRUE</span>, <span class="dt">strict_atomic =</span> <span class="ot">TRUE</span>) 
+{
+    <span class="cf">if</span> (strict_atomic) 
+        x &lt;-<span class="st"> </span><span class="kw">I</span>(x)
+    jsonlite<span class="op">::</span><span class="kw">toJSON</span>(x, <span class="dt">dataframe =</span> dataframe, <span class="dt">null =</span> null, <span class="dt">na =</span> na, 
+        <span class="dt">auto_unbox =</span> auto_unbox, <span class="dt">digits =</span> digits, <span class="dt">use_signif =</span> use_signif, 
+        <span class="dt">force =</span> force, <span class="dt">POSIXt =</span> POSIXt, <span class="dt">UTC =</span> UTC, <span class="dt">rownames =</span> rownames, 
+        <span class="dt">keep_vec_names =</span> keep_vec_names, <span class="dt">json_verbatim =</span> <span class="ot">TRUE</span>, 
+        ...)
+}</code></pre></div>
+<p>例如，我们通过列而非行将数据框转化为JSON(后者是jsonlite::toJSON的默认设置)，如果要更改任何参数的默认值，可以将属性TOJSON ARGS附加到将被传递给createWidgets()的widgets数据。例如：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fooWidget &lt;-<span class="st"> </span><span class="cf">function</span>(data, name, ...) {
+  <span class="co"># ... process the data ...</span>
+  params &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">foo =</span> data, <span class="dt">bar =</span> <span class="ot">TRUE</span>)
+  <span class="co"># customize toJSON() argument values</span>
+  <span class="kw">attr</span>(params, <span class="st">&#39;TOJSON_ARGS&#39;</span>) &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">digits =</span> <span class="dv">7</span>, <span class="dt">na =</span> <span class="st">&#39;string&#39;</span>)
+  htmlwidgets<span class="op">::</span><span class="kw">createWidget</span>(name, <span class="dt">x =</span> params, ...)
+}</code></pre></div>
+<p>在上面的例子中，我们将数字的默认值从16改为7，NA从NULL改为String.您是否需要向用户公开这样的定制，这取决于包的作者。例如，您可以在控件中附加一个参数，这样用户就可以自定义JSON序列化程序的行为：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fooWidget &lt;-<span class="st"> </span><span class="cf">function</span>(data, name, ..., <span class="dt">JSONArgs =</span> <span class="kw">list</span>(<span class="dt">digits =</span> <span class="dv">7</span>)) {
+  <span class="co"># ... process the data ...</span>
+  params &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">foo =</span> data, <span class="dt">bar =</span> <span class="ot">TRUE</span>)
+  <span class="co"># customize toJSON() argument values</span>
+  <span class="kw">attr</span>(params, <span class="st">&#39;TOJSON_ARGS&#39;</span>) &lt;-<span class="st"> </span>JSONArgs
+  htmlwidgets<span class="op">::</span><span class="kw">createWidget</span>(name, <span class="dt">x =</span> params, ...)
+}</code></pre></div>
+<p>还可以使用全局选项htmlwidgets.TOJSON_ARGS为当前会话中的所有控件自定义JSON序列化参数，例如：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">htmlwidgets.TOJSON_ARGS =</span> <span class="kw">list</span>(<span class="dt">digits =</span> <span class="dv">7</span>, <span class="dt">pretty =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>如果不想使用jsonlite,可以通过将属性TOJSON_FUNC附加到widget数据，完全重写序列化函数，例如：</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fooWidget &lt;-<span class="st"> </span><span class="cf">function</span>(data, name, ...) {
+  <span class="co"># ... process the data ...</span>
+  params &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">foo =</span> data, <span class="dt">bar =</span> <span class="ot">TRUE</span>)
+  <span class="co"># customize the JSON serializer</span>
+  <span class="kw">attr</span>(params, <span class="st">&#39;TOJSON_FUNC&#39;</span>) &lt;-<span class="st"> </span>MY_OWN_JSON_FUNCTION
+  htmlwidgets<span class="op">::</span><span class="kw">createWidget</span>(name, <span class="dt">x =</span> params, ...)
+}</code></pre></div>
+<p>这里MY_OWN_JSON_FUNCTION函数可以是一个将R对象转换为JSON的任意R函数。如果您还指定了TOJSON_ARGS属性，它也将传递给您的自定义JSON函数。注意这些自定义JSON序列化程序的特性要求在Shiny的应用程序中呈现控件时，Shiny的版本大于0.111。</p>
+</div>
+</div>
+<div id="javascript" class="section level2">
+<h2><span class="header-section-number">3.3</span> 传递JavaScript函数</h2>
+<p>正如您所期望的，从R传递到JavaScript的字符向量被转换成JavaScript字符串。但是，如果您希望允许用户提供自定义的JavaScript函数用于格式化、绘图或事件处理，该怎么办？对于这种情况，htmlwidgets包包含一个JS()函数，它允许您在客户端接收到一个字符值时将其作为JavaScript进行评估。</p>
+<p>例如，dygraphs控件包括允许用户为各种上下文提供回调函数的dyCallbacks函数。这些回调被标记为包含JavaScript，以便它们可以在客户端上转换成实际的JavaScript函数：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">callbacks &lt;-<span class="st"> </span><span class="kw">list</span>(
+  <span class="dt">clickCallback =</span> <span class="kw">JS</span>(clickCallback)
+  <span class="dt">drawCallback =</span> <span class="kw">JS</span>(drawCallback)
+  <span class="dt">highlightCallback =</span> <span class="kw">JS</span>(highlightCallback)
+  <span class="dt">pointClickCallback =</span> <span class="kw">JS</span>(pointClickCallback)
+  <span class="dt">underlayCallback =</span> <span class="kw">JS</span>(underlayCallback)
+)</code></pre></div>
+<p>另一个例子是DT包控件，用户可以在加载和初始化表之后制定一个带有JavaScript的intCallback来执行。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">datatable</span>(<span class="kw">head</span>(iris, <span class="dv">20</span>), <span class="dt">options =</span> <span class="kw">list</span>(
+  <span class="dt">initComplete =</span> <span class="kw">JS</span>(
+    <span class="st">&quot;function(settings, json) {&quot;</span>,
+    <span class="st">&quot;$(this.api().table().header()).css({&#39;background-color&#39;: &#39;#000&#39;, &#39;color&#39;: &#39;#fff&#39;});&quot;</span>,
+    <span class="st">&quot;}&quot;</span>)
+))</code></pre></div>
+<p>如果将多个参数传递给JS(),（例如上面的示例中），它们将被级联成由<code>\n</code>分隔的单个字符串。</p>
+</div>
+<div id="html" class="section level2">
+<h2><span class="header-section-number">3.4</span> 自定义控件HTML</h2>
+<p>通常，控件的HTML“外壳”只是一个<code>&lt;div&gt;</code>元素，而这是对应于新的控件的默认行为，而这些控件不是以其他方式指定的。然而有时你需要不同的标签类型，例如sparkline控件中需要<code>&lt;span&gt;</code>，因此实现以下自定义HTML生成函数：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sparkline_html &lt;-<span class="st"> </span><span class="cf">function</span>(id, style, class, ...){
+  tags<span class="op">$</span><span class="kw">span</span>(<span class="dt">id =</span> id, <span class="dt">class =</span> class)
+}</code></pre></div>
+<p>请注意，这个函数是在由widgetname_html实现的小程序包中查找的，因此它不必从包中正式导出或以其他方式注册到htmlwidgets。</p>
+<p>大多数的控件都不需要自定义HTML函数，但是如果需要为你的控件生成自定义的HTML（例如你需要一个<code>&lt;input&gt;</code>或<code>&lt;span&gt;</code>而不是一个<code>&lt;div&gt;</code>),那么你应该是用htmltools包。</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="htmlwidgets-Sizing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="htmlwidgets-pkgintro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["R-deployment.pdf", "R-deployment.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

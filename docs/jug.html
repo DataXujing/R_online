@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R语言模型部署实战</title>
+  <meta name="description" content="R语言模型部署实战">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R语言模型部署实战" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="R语言模型部署实战" />
+  <meta name="github-repo" content="DataXujing/R-deployment" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R语言模型部署实战" />
+  
+  <meta name="twitter:description" content="R语言模型部署实战" />
+  
+
+<meta name="author" content="徐静">
+
+
+<meta name="date" content="2018-08-06">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="plumber.html">
+<link rel="next" href="fiery.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css\style.css" type="text/css" />
+<link rel="stylesheet" href="css\toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://github.com/DataXujing/R_online" target='blank'>项目地址</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>序言</a></li>
+<li class="chapter" data-level="" data-path="e585b3e4ba8ee68891.html"><a href="e585b3e4ba8ee68891.html"><i class="fa fa-check"></i>关于我</a></li>
+<li class="chapter" data-level="1" data-path="httpuv.html"><a href="httpuv.html"><i class="fa fa-check"></i><b>1</b> httpuv</a></li>
+<li class="chapter" data-level="2" data-path="opencpu.html"><a href="opencpu.html"><i class="fa fa-check"></i><b>2</b> opencpu</a></li>
+<li class="chapter" data-level="3" data-path="plumber.html"><a href="plumber.html"><i class="fa fa-check"></i><b>3</b> plumber</a></li>
+<li class="chapter" data-level="4" data-path="jug.html"><a href="jug.html"><i class="fa fa-check"></i><b>4</b> jug</a></li>
+<li class="chapter" data-level="5" data-path="fiery.html"><a href="fiery.html"><i class="fa fa-check"></i><b>5</b> fiery</a></li>
+<li class="chapter" data-level="6" data-path="rserve.html"><a href="rserve.html"><i class="fa fa-check"></i><b>6</b> Rserve</a></li>
+<li class="chapter" data-level="7" data-path="restrserve.html"><a href="restrserve.html"><i class="fa fa-check"></i><b>7</b> RestRserve</a></li>
+<li class="chapter" data-level="8" data-path="mailr.html"><a href="mailr.html"><i class="fa fa-check"></i><b>8</b> mailR</a></li>
+<li class="chapter" data-level="9" data-path="rweixin.html"><a href="rweixin.html"><i class="fa fa-check"></i><b>9</b> Rweixin</a></li>
+<li class="chapter" data-level="10" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>10</b> 参考文献</a></li>
+<li class="divider"></li>
+<li><a href="https://dataxujing.github.io/" target="blank">个人主页</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R语言模型部署实战</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="jug" class="section level1">
+<h1><span class="header-section-number">第 4 章</span> jug</h1>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="plumber.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="fiery.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["R-deployment.pdf", "R-deployment.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

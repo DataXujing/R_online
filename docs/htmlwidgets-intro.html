@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R语言模型部署实战</title>
+  <meta name="description" content="R语言模型部署实战">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R语言模型部署实战" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="R语言模型部署实战" />
+  <meta name="github-repo" content="DataXujing/R-deployment" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R语言模型部署实战" />
+  
+  <meta name="twitter:description" content="R语言模型部署实战" />
+  
+
+<meta name="author" content="徐静">
+
+
+<meta name="date" content="2018-08-06">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="e585b3e4ba8ee4bd9ce88085.html">
+<link rel="next" href="htmlwidgets-Sizing.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css\style.css" type="text/css" />
+<link rel="stylesheet" href="css\toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://github.com/DataXujing/htmlwidgets_CN" target='blank'>项目地址</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>声明</a></li>
+<li class="chapter" data-level="" data-path="e5ba8fe8a880.html"><a href="e5ba8fe8a880.html"><i class="fa fa-check"></i>序言</a></li>
+<li class="chapter" data-level="" data-path="e585b3e4ba8ee4bd9ce88085.html"><a href="e585b3e4ba8ee4bd9ce88085.html"><i class="fa fa-check"></i>关于作者</a></li>
+<li class="chapter" data-level="1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html"><i class="fa fa-check"></i><b>1</b> 简介</a><ul>
+<li class="chapter" data-level="1.1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 概况</a></li>
+<li class="chapter" data-level="1.2" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 简单的开始</a></li>
+<li class="chapter" data-level="1.3" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#sigma.js"><i class="fa fa-check"></i><b>1.3</b> 例子(sigma.js)</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.3.1"><i class="fa fa-check"></i><b>1.3.1</b> 文件布局</a></li>
+<li class="chapter" data-level="1.3.2" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.3.2"><i class="fa fa-check"></i><b>1.3.2</b> 依赖关系</a></li>
+<li class="chapter" data-level="1.3.3" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#rr-binding"><i class="fa fa-check"></i><b>1.3.3</b> R绑定(R binding)</a></li>
+<li class="chapter" data-level="1.3.4" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#javascriptjavascript-binding"><i class="fa fa-check"></i><b>1.3.4</b> JavaScript绑定(JavaScript binding)</a></li>
+<li class="chapter" data-level="1.3.5" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.3.5"><i class="fa fa-check"></i><b>1.3.5</b> 演示</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#widgets"><i class="fa fa-check"></i><b>1.4</b> 创建你自己的widgets</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#requirements"><i class="fa fa-check"></i><b>1.4.1</b> 需求（Requirements）</a></li>
+<li class="chapter" data-level="1.4.2" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#scaffolding"><i class="fa fa-check"></i><b>1.4.2</b> 脚手架（Scaffolding）</a></li>
+<li class="chapter" data-level="1.4.3" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.4.3"><i class="fa fa-check"></i><b>1.4.3</b> 更多</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html"><i class="fa fa-check"></i><b>2</b> HTML空间尺寸调整</a><ul>
+<li class="chapter" data-level="2.1" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 概述</a></li>
+<li class="chapter" data-level="2.2" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#section-2.2"><i class="fa fa-check"></i><b>2.2</b> 指定大小调整策略</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#-1"><i class="fa fa-check"></i><b>2.2.1</b> 例子</a></li>
+<li class="chapter" data-level="2.2.2" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#section-2.2.2"><i class="fa fa-check"></i><b>2.2.2</b> 可用选项</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#javascript"><i class="fa fa-check"></i><b>2.3</b> JavaScript调整大小方法</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#-2"><i class="fa fa-check"></i><b>2.3.1</b> 例子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html"><i class="fa fa-check"></i><b>3</b> HTML控件：高级主题</a><ul>
+<li class="chapter" data-level="3.1" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#section-3.1"><i class="fa fa-check"></i><b>3.1</b> 本节概述</a></li>
+<li class="chapter" data-level="3.2" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 数据变换</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#htmlwidgets.dataframetod3"><i class="fa fa-check"></i><b>3.2.1</b> HTMLWidgets.dataframeToD3()</a></li>
+<li class="chapter" data-level="3.2.2" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#htmlwidgets.transposearray2d"><i class="fa fa-check"></i><b>3.2.2</b> HTMLWidgets.transposeArray2D()</a></li>
+<li class="chapter" data-level="3.2.3" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#json"><i class="fa fa-check"></i><b>3.2.3</b> 自定义JSON串行化器</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#javascript"><i class="fa fa-check"></i><b>3.3</b> 传递JavaScript函数</a></li>
+<li class="chapter" data-level="3.4" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#html"><i class="fa fa-check"></i><b>3.4</b> 自定义控件HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html"><i class="fa fa-check"></i><b>4</b> htmlwidgets包中函数的总结</a><ul>
+<li class="chapter" data-level="4.1" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#htmlwidgets"><i class="fa fa-check"></i><b>4.1</b> htmlwidgets包函数</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#htmlwidgets-package"><i class="fa fa-check"></i><b>4.1.1</b> htmlwidgets-package</a></li>
+<li class="chapter" data-level="4.1.2" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#createwidget"><i class="fa fa-check"></i><b>4.1.2</b> createWidget</a></li>
+<li class="chapter" data-level="4.1.3" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#getdependency"><i class="fa fa-check"></i><b>4.1.3</b> getDependency</a></li>
+<li class="chapter" data-level="4.1.4" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#htmlwidgets-shiny"><i class="fa fa-check"></i><b>4.1.4</b> htmlwidgets-shiny</a></li>
+<li class="chapter" data-level="4.1.5" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#js"><i class="fa fa-check"></i><b>4.1.5</b> JS</a></li>
+<li class="chapter" data-level="4.1.6" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#onrender"><i class="fa fa-check"></i><b>4.1.6</b> onRender</a></li>
+<li class="chapter" data-level="4.1.7" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#onstaticrendercomplete"><i class="fa fa-check"></i><b>4.1.7</b> onStaticRenderComplete</a></li>
+<li class="chapter" data-level="4.1.8" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#prependcontent"><i class="fa fa-check"></i><b>4.1.8</b> prependContent</a></li>
+<li class="chapter" data-level="4.1.9" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#savewidget"><i class="fa fa-check"></i><b>4.1.9</b> saveWidget</a></li>
+<li class="chapter" data-level="4.1.10" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#scaffoldwidget"><i class="fa fa-check"></i><b>4.1.10</b> scaffoldWidget</a></li>
+<li class="chapter" data-level="4.1.11" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#setwidgetidseed"><i class="fa fa-check"></i><b>4.1.11</b> setWidgetIdSeed</a></li>
+<li class="chapter" data-level="4.1.12" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#sizingpolicy"><i class="fa fa-check"></i><b>4.1.12</b> sizingPolicy</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>5</b> 总结</a></li>
+<li class="chapter" data-level="6" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>6</b> 参考文献</a></li>
+<li class="divider"></li>
+<li><a href="https://dataxujing.github.io/" target="blank">个人主页</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R语言模型部署实战</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="htmlwidgets-intro" class="section level1">
+<h1><span class="header-section-number">第 1 章</span> 简介</h1>
+<div id="section-1.1" class="section level2">
+<h2><span class="header-section-number">1.1</span> 概况</h2>
+<p><a href="https://cran.r-project.org/web/packages/htmlwidgets/index.html">htmlwidgets</a>包提供了一个R语言链接Javascript库的框架,HTML控件能够：</p>
+<ul>
+<li><p>在R命令中做分析比如方便的R作图</p></li>
+<li><p>和R Markdown结合在一起</p></li>
+<li><p>和shiny结合在一起</p></li>
+<li><p>保存为独立的网页，通过电子邮件，Dropbox等ad-oc共享。</p></li>
+</ul>
+<p>通过遵循一小部分易于遵循的约定，可以创建非常小的代码和HTML控件，所有控件包含如下部分：</p>
+<ol style="list-style-type: decimal">
+<li><p><em>Dependencies</em>: 这些是控件用到的需要声明的Javascript和CSS</p></li>
+<li><p><em>R binding</em>: 这是终端用户将调用的功能，以向控件提供输入数据，并制定控件应该如何呈现各种选项，这包括在shiny应用程序中使用控件所需要的一些简短的样板功能。</p></li>
+<li><p><em>javaScript binding</em>: 这是JavaScript代码，把所有的东西粘在一起。将R绑定中收集的数据和选项传递给底层的JavaScript库</p></li>
+</ol>
+<p>已经有非常多的包基于htmlwidgets去完成,包括：</p>
+<ul>
+<li><p>leaflet – 交互的地图绘制包</p></li>
+<li><p>dygraphs – 交互时间序列绘图包</p></li>
+<li><p>networkD3 – 基于D3.js的交互网络图可视化</p></li>
+<li><p>sparkline – 小型的内联图</p></li>
+<li><p>DT – 表格可视化</p></li>
+<li><p>rthreejs – 交互3D图</p></li>
+</ul>
+<p>包的作者包括：Ramnath Vaidyanathan, Joe Cheng, JJ Allaire, Yihui Xie, and Kenton Russell等。</p>
+<p>HTML控件一般会寄存在一个R包中，并且应该包含他们的依赖关系的所有源代码，例如这里译者写的以个基于htmlwidgets的R包:<a href="https://github.com/DataXujing/XuJIngd3plus">XuJIngd3plus</a>。这是为了确保依赖的控件的完全可重复的(既不需要联网，也不需要运行服务器)，说白了在你R包中，应该包含所有的源码包括你底层调用的JavaScript包或CSS。</p>
+</div>
+<div id="section-1.2" class="section level2">
+<h2><span class="header-section-number">1.2</span> 简单的开始</h2>
+<p>如果你懂R语言和一点JavaScript,创建自己的小控件非常简单，最先要做的就是要安装htmlwidgets,在CRAN上：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;htmlwidgets&#39;</span>)</code></pre></div>
+<p>你也可以在GitHub上安装开发版本：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;ramnathv/htmlwidgets&#39;</span>)</code></pre></div>
+<p>通过包中自带的说明文档，让你快速的熟悉htmlwidgets并进入开发者状态,包括：</p>
+<ul>
+<li><p>Introduction to HTML Widgets</p></li>
+<li><p>HTML Widget Sizing</p></li>
+<li><p>HTML Widgets: Advanced Topics</p></li>
+</ul>
+<p>我们会持续把他们翻译成中文,让中国人看起来更爽。</p>
+</div>
+<div id="sigma.js" class="section level2">
+<h2><span class="header-section-number">1.3</span> 例子(sigma.js)</h2>
+<p>首先，我们将通过创建一个控件来封装<a href="http://sigmajs.org/">sigma.js</a>图形可视化库。当我们完成后，我们可以用来显示<a href="https://gephi.org/gexf/format/">GEXF</a>(Graph Exchange XML Format)数据文件的交互可视化，例如：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sigma)
+data &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;examples/ediaspora.gexf.xml&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;sigma&quot;</span>)
+<span class="kw">sigma</span>(data)</code></pre></div>
+<p><img src="pic/ch1_1.png" width="248" style="display: block; margin: auto;" /></p>
+<p>注意上面的输出仅仅是一个静态图像，你可以按照下文的Demo做一个交互的版本。</p>
+<p>创建这种绑定所需的代码非常少。下面我们将一步一步地介绍所有的控件。然后，我们将描述如何创建自己的控件（包括为所有核心组件自动生成基本的脚手架）。</p>
+<div id="section-1.3.1" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> 文件布局</h3>
+<p>假设我们的控件被命名为<strong>sigma</strong>,并且位于同名的R包中。我们的JavaScript绑定源代码文件名为sigma.js。由于我们的控件将读取GEXF数据文件，我们还需要包括基础sigma.min.js库以及GEXF插件，下面是我们将添加到包中的文件：</p>
+<pre class="powershell"><code>R/
+| sigma.R
+
+inst/
+|-- htmlwidgets/
+|   |-- sigma.js
+|   |-- sigma.yaml
+|   |-- lib/
+|   |   |-- sigma-1.0.3/
+|   |   |   |-- sigma.min.js
+|   |   |   |-- plugins/
+|   |   |   |   |-- sigma.parsers.gexf.min.js
+</code></pre>
+<p>请注意，JavaScript,YAML和其他依赖项都包含在inst/htmlwidgets目录中(随后将被安装到一个名为htmlwidgets的包的子目录中)。</p>
+</div>
+<div id="section-1.3.2" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> 依赖关系</h3>
+<p>依赖项是控件使用的JavaScript和CSS资源。依赖项包含在inst/htmlwidgets/lib目录中。依赖关系是使用YAML配置文件指定的，该文件使用控件的名称作为其基本文件名。以下是我们的sigma.yaml文件的样子</p>
+<pre class="powershell"><code>dependencies:
+  - name: sigma
+    version: 1.0.3
+    src: htmlwidgets/lib/sigma-1.0.3
+    script: 
+      - sigma.min.js
+      - plugins/sigma.parsers.gexf.min.js</code></pre>
+<p>依赖关系src详述了引用目录，包含库和指定的JavaScript代码文件。如果包含多个JS脚本，每一个占每一行，并且以‘-开头。同时你可以天剑stylesheet条目，还有元条目或头条目，多依赖关系可以在一个YAML文件中声明，更多的请参考htmlDependency函数，该函数在<a href="https://cran.r-project.org/web/packages/htmltools/index.html">htmltools</a>包中</p>
+</div>
+<div id="rr-binding" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> R绑定(R binding)</h3>
+<p>我们需要为用户提供一个调用我们的控件的R函数。通常，该函数将接受输入数据以及控制控件的显示的各种选项。下面是sigma的R函数：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; @import htmlwidgets</span>
+<span class="co">#&#39; @export</span>
+sigma &lt;-<span class="st"> </span><span class="cf">function</span>(gexf, <span class="dt">drawEdges =</span> <span class="ot">TRUE</span>, <span class="dt">drawNodes =</span> <span class="ot">TRUE</span>,
+                  <span class="dt">width =</span> <span class="ot">NULL</span>, <span class="dt">height =</span> <span class="ot">NULL</span>) {
+  
+  <span class="co"># read the gexf file</span>
+  data &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="kw">readLines</span>(gexf), <span class="dt">collapse=</span><span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)
+  
+  <span class="co"># create a list that contains the settings</span>
+  settings &lt;-<span class="st"> </span><span class="kw">list</span>(
+    <span class="dt">drawEdges =</span> drawEdges,
+    <span class="dt">drawNodes =</span> drawNodes
+  )
+  
+  <span class="co"># pass the data and settings using &#39;x&#39;</span>
+  x &lt;-<span class="st"> </span><span class="kw">list</span>(
+    <span class="dt">data =</span> data,
+    <span class="dt">settings =</span> settings
+  )
+  
+  <span class="co"># create the widget</span>
+  htmlwidgets<span class="op">::</span><span class="kw">createWidget</span>(<span class="st">&quot;sigma&quot;</span>, x, <span class="dt">width =</span> width, <span class="dt">height =</span> height)
+}</code></pre></div>
+<p>函数包含两类输入：GEXF数据文件和一些附加的设置参数用来控制如何显示图片。这些输入都集中在一个叫做x的列表中，然后灌入到htmlwidgets::createWidget函数。这个x变量随后将被用于sigma的JavaScript绑定（下面将对此进行描述）,指定的任何宽度或高度参数也会被转发到widget（默认情况下，控件自动调整大小，因此通常不需要显式的宽度或高度）。</p>
+<p>我们也希望sigma控件能够在shiny应用中使用，因此我们添加了下面的公式化的shiny output和render函数（对于所有的控件来说，它总是相同的）</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; @export</span>
+sigmaOutput &lt;-<span class="st"> </span><span class="cf">function</span>(outputId, <span class="dt">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="dt">height =</span> <span class="st">&quot;400px&quot;</span>) {
+  htmlwidgets<span class="op">::</span><span class="kw">shinyWidgetOutput</span>(outputId, <span class="st">&quot;sigma&quot;</span>, width, height, <span class="dt">package =</span> <span class="st">&quot;sigma&quot;</span>)
+}
+<span class="co">#&#39; @export</span>
+<span class="co">#https://blog.csdn.net/songzhilian22/article/details/49487467</span>
+renderSigma &lt;-<span class="st"> </span><span class="cf">function</span>(expr, <span class="dt">env =</span> <span class="kw">parent.frame</span>(), <span class="dt">quoted =</span> <span class="ot">FALSE</span>) {
+  <span class="cf">if</span> (<span class="op">!</span>quoted) { expr &lt;-<span class="st"> </span><span class="kw">substitute</span>(expr) } <span class="co"># force quoted</span>
+  htmlwidgets<span class="op">::</span><span class="kw">shinyRenderWidget</span>(expr, sigmaOutput, env, <span class="dt">quoted =</span> <span class="ot">TRUE</span>)
+}</code></pre></div>
+</div>
+<div id="javascriptjavascript-binding" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> JavaScript绑定(JavaScript binding)</h3>
+<p>注意：在htmlwidgets0.5.2和更早的版本中使用了一个更老、更不直观的JavaScript绑定API，并在htmlwidgets的更新版本中继续支持。有关遗留绑定API的详细信息，请参见此归档版本。新的控件件被鼓励使用下面描述的更新的API。谜题中的第三个部分是激活控件所需的JavaScript。按照惯例，我们将在文件inst/htmlwidgets/sigma.js中定义JavaScript绑定。下面是绑定的完整源代码：</p>
+<pre class="javascrit"><code>HTMLWidgets.widget({
+
+  name: &quot;sigma&quot;,
+  
+  type: &quot;output&quot;,
+  
+  factory: function(el, width, height) {
+  
+    // create our sigma object and bind it to the element
+    var sig = new sigma(el.id);
+    
+    return {
+      renderValue: function(x) {
+          
+        // parse gexf data
+        var parser = new DOMParser();
+        var data = parser.parseFromString(x.data, &quot;application/xml&quot;);
+        
+        // apply settings
+        for (var name in x.settings)
+          sig.settings(name, x.settings[name]);
+        
+        // update the sigma object
+        sigma.parsers.gexf(
+          data,          // parsed gexf data
+          sig,           // sigma object
+          function() {
+            // need to call refresh to reflect new settings and data
+            sig.refresh();
+          }
+        );
+      },
+      
+      resize: function(width, height) {
+        
+        // forward resize on to sigma renderers
+        for (var name in sig.renderers)
+          sig.renderers[name].resize(width, height);  
+      },
+      
+      // Make the sigma object available as a property on the widget
+      // instance we&#39;re returning from factory(). This is generally a
+      // good idea for extensibility--it helps users of this widget
+      // interact directly with sigma, if needed.
+      s: sig
+    };
+  }
+});
+</code></pre>
+<p>我们为控件提供了名称和类型，再加上一个工厂函数，它采用el（将承载这控件的HTML元素）、宽度和高度（HTML元素的宽度和高度，以像素为单位），您总是可以使用OffStStand宽度和OffSETHEE来实现这一点。</p>
+<p>工厂函数要准备启动接收HTML元素的值。在这个案例，我们创建一个新的sigma元素和把它的DOM元素的ID，承载页面的控件。</p>
+<p>我们稍后需要访问sigma对象（以更新它的数据和设置），因此我们将其保存为变量sig。请注意，直接在工厂函数内部声明的变量与特定的控件实例/el绑定。</p>
+<p>工厂函数的返回值被称为控件实例对象。它是htmlwidgets运行时和正在包装的JavaScript可视化之间的桥梁。顾名思义，每个控件实例对象负责管理页面上的单个控件实例。</p>
+<p>您创建的控件实例对象必须有一个所需的方法，并且可以有一个可选的方法：</p>
+<ol style="list-style-type: decimal">
+<li><p>所需的renderValue方法实际上将动态数据和设置填充到WEB的DOM元素中。x包含控件数据和设置。我们解析和更新GEXF数据，将设置应用到我们先前创建的sig Sigma对象，最后调用刷新以反映屏幕上的新值。这种方法可以重复调用不同的数据（例如：在shiny中），所以一定要考虑到这种可能性。如果它对你的控件有意义， 考虑使您的可视化转换顺利地从x的一个值开始到另一个。</p></li>
+<li><p>每当包含控件的元素被调整大小时，就会调用可选的大小调整方法。不执行此方法的唯一原因是如果您的控件自然缩放（当它的元素大小改变时不需要附加的JavaScript代码）。在sigma .js的情况下，我们将大小调整信息转发给每个底层sigma渲染器。</p></li>
+</ol>
+<p>所有JavaScript库都处理初始化、绑定到DOM元素、动态更新数据和稍微不同地调整大小。创建控件的JavaScript方面的大部分工作是将这三个函数工厂、渲染值和大小正确地映射到底层库的行为。sigma.js示例使用一个简单的对象文字来创建它的控件实例对象，但是您也可以使用基于类的对象或任何其他样式的对象，只要obj.renderValue(x)和obj.resize(width, height)（宽度，高度）可以调用它。</p>
+<p>可以在控件实例对象上添加其他方法和属性。虽然它们不会被htmlwidgets本身调用，但它们可能对知道一些JavaScript的控件的用户有用，并希望通过添加自定义JS代码（例如使用htmlwidgets::onRender R函数）来进一步定制您的控件。在这种情况下，我们添加一个s属性，使sigma对象本身可用。</p>
+</div>
+<div id="section-1.3.5" class="section level3">
+<h3><span class="header-section-number">1.3.5</span> 演示</h3>
+<p>我们的控件现在完成了！如果您想在不重放所有代码的情况下测试它，您可以从GitHub安装它如下：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&#39;jjallaire/sigma&#39;</span>)</code></pre></div>
+<p>下面是代码的示例，其中包含了包中包含的一些示例数据：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(sigma)
+<span class="kw">sigma</span>(<span class="kw">system.file</span>(<span class="st">&quot;examples/ediaspora.gexf.xml&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;sigma&quot;</span>))</code></pre></div>
+<p>如果在R控制台中执行此代码，您将看到在RStudio Viewer中显示的控件（或者如果不运行RStudio，则在外部浏览器中）。如果将其包含在R Markdown文档中，则窗口控件将嵌入到文档中。</p>
+<p>我们还可以在shiny应用程序中使用控件：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(shiny)
+<span class="kw">library</span>(sigma)
+
+gexf &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;examples/ediaspora.gexf.xml&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;sigma&quot;</span>)
+
+ui =<span class="st"> </span><span class="kw">shinyUI</span>(<span class="kw">fluidPage</span>(
+  <span class="kw">checkboxInput</span>(<span class="st">&quot;drawEdges&quot;</span>, <span class="st">&quot;Draw Edges&quot;</span>, <span class="dt">value =</span> <span class="ot">TRUE</span>),
+  <span class="kw">checkboxInput</span>(<span class="st">&quot;drawNodes&quot;</span>, <span class="st">&quot;Draw Nodes&quot;</span>, <span class="dt">value =</span> <span class="ot">TRUE</span>),
+  <span class="kw">sigmaOutput</span>(<span class="st">&#39;sigma&#39;</span>)
+))
+
+server =<span class="st"> </span><span class="cf">function</span>(input, output) {
+  output<span class="op">$</span>sigma &lt;-<span class="st"> </span><span class="kw">renderSigma</span>(
+    <span class="kw">sigma</span>(gexf, 
+          <span class="dt">drawEdges =</span> input<span class="op">$</span>drawEdges, 
+          <span class="dt">drawNodes =</span> input<span class="op">$</span>drawNodes)
+  )
+}
+
+<span class="kw">shinyApp</span>(<span class="dt">ui =</span> ui, <span class="dt">server =</span> server)</code></pre></div>
+</div>
+</div>
+<div id="widgets" class="section level2">
+<h2><span class="header-section-number">1.4</span> 创建你自己的widgets</h2>
+<div id="requirements" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> 需求（Requirements）</h3>
+<p>要实现一个控件，您需要创建一个新的R包，而这又取决于htmlwidgets包。可以在CRAN中安装：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;htmlwidgets&quot;</span>)</code></pre></div>
+</div>
+<div id="scaffolding" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> 脚手架（Scaffolding）</h3>
+<p>要创建一个新的控件，可以调用<strong>scaffoldWidget</strong>函数来生成控件的基本结构。函数将：</p>
+<ul>
+<li><p>创建.R,.js,.yaml等控件需要的文件</p></li>
+<li><p>如果提供，取一个<a href="https://bower.io/">Bower</a>包名称并自动下载JavaScript库（及其依赖项），并将所需的条目添加到.yaml文件中。</p></li>
+</ul>
+<p>这个方法是非常推荐的，因为它确保你开始使用正确的文件结构。 下面是一个示例，假设您希望在一个新的同名包中创建名为“mywidget”的小部件：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">create</span>(<span class="st">&quot;mywidget&quot;</span>)               <span class="co"># create package using devtools</span>
+<span class="kw">setwd</span>(<span class="st">&quot;mywidget&quot;</span>)                          <span class="co"># navigate to package dir</span>
+htmlwidgets<span class="op">::</span><span class="kw">scaffoldWidget</span>(<span class="st">&quot;mywidget&quot;</span>)    <span class="co"># create widget scaffolding</span>
+devtools<span class="op">::</span><span class="kw">install</span>()  </code></pre></div>
+<p>这将创建一个简单的控件，它使用单个文本参数，并在控件HTML元素中显示该文本。你可以这样试试：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(mywidget)
+<span class="kw">mywidget</span>(<span class="st">&quot;hello, world&quot;</span>)</code></pre></div>
+<p>这是最可能的控件，并且还没有包含一个JavaScript库来连接（注意，scaffoldWidget可以可选地包含通过JavaScript库依赖关系的bowerPkg参数）这是最可能的小部件，并且还没有包含一个JavaScript库来连接（注意，scaffoldWidget可以可选地包含通过JavaScript库依赖关系的bowerPkg参数）。 在开始开发之前，您应该查看上面的介绍性示例，以确保您理解各个组件，并在下一节中查看与文章相关联的附加文章和示例。</p>
+</div>
+<div id="section-1.4.3" class="section level3">
+<h3><span class="header-section-number">1.4.3</span> 更多</h3>
+<div id="section-1.4.3.1" class="section level4">
+<h4><span class="header-section-number">1.4.3.1</span> 其他</h4>
+<p>还有更多的文章覆盖更高级的领域：</p>
+<ul>
+<li><p>HTML Widget Sizing：解释自定义大小调整策略以及何时可能需要使用它们，并描述在JavaScript绑定中实现调整大小的方法。</p></li>
+<li><p>HTML Widgets: Advanced Topics：描述支持每个控件实例数据、数据转换（例如，将数据帧转换为D3数据集）以及提供live JavaScript对象（例如函数定义）的控件选项的框架特征。</p></li>
+</ul>
+<p>当大多数JavaScript库需要一些额外的交互以保持它们的大小与它们的包含元素同步时，HTML Widget Sizing就显得尤为重要。</p>
+</div>
+<div id="section-1.4.3.2" class="section level4">
+<h4><span class="header-section-number">1.4.3.2</span> 例子</h4>
+<p>学习其他包的代码是了解更多关于创建小部件的一个好方法：</p>
+<ul>
+<li><p><a href="https://CRAN.R-project.org/package=networkD3">networkD3</a></p></li>
+<li><p><a href="https://CRAN.R-project.org/package=dygraphs">dygraphs</a></p></li>
+<li><p><a href="https://github.com/htmlwidgets/sparkline">sparkline</a></p></li>
+</ul>
+</div>
+<div id="section-1.4.3.3" class="section level4">
+<h4><span class="header-section-number">1.4.3.3</span> 问题</h4>
+<p>如果您对开发控件或开发过程中遇到的问题有疑问，请毫不犹豫地在项目的GitHub存储库上发布一个问题。</p>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="e585b3e4ba8ee4bd9ce88085.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="htmlwidgets-Sizing.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["R-deployment.pdf", "R-deployment.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

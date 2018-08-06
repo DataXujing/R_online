@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>R语言模型部署实战</title>
+  <meta name="description" content="R语言模型部署实战">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="R语言模型部署实战" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="R语言模型部署实战" />
+  <meta name="github-repo" content="DataXujing/R-deployment" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="R语言模型部署实战" />
+  
+  <meta name="twitter:description" content="R语言模型部署实战" />
+  
+
+<meta name="author" content="徐静">
+
+
+<meta name="date" content="2018-08-06">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="e585b3e4ba8ee4bd9ce88085.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css\style.css" type="text/css" />
+<link rel="stylesheet" href="css\toc.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://github.com/DataXujing/htmlwidgets_CN" target='blank'>项目地址</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>声明</a></li>
+<li class="chapter" data-level="" data-path="e5ba8fe8a880.html"><a href="e5ba8fe8a880.html"><i class="fa fa-check"></i>序言</a></li>
+<li class="chapter" data-level="" data-path="e585b3e4ba8ee4bd9ce88085.html"><a href="e585b3e4ba8ee4bd9ce88085.html"><i class="fa fa-check"></i>关于作者</a></li>
+<li class="chapter" data-level="1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html"><i class="fa fa-check"></i><b>1</b> 简介</a><ul>
+<li class="chapter" data-level="1.1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 概况</a></li>
+<li class="chapter" data-level="1.2" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 简单的开始</a></li>
+<li class="chapter" data-level="1.3" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#sigma.js"><i class="fa fa-check"></i><b>1.3</b> 例子(sigma.js)</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.3.1"><i class="fa fa-check"></i><b>1.3.1</b> 文件布局</a></li>
+<li class="chapter" data-level="1.3.2" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.3.2"><i class="fa fa-check"></i><b>1.3.2</b> 依赖关系</a></li>
+<li class="chapter" data-level="1.3.3" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#rr-binding"><i class="fa fa-check"></i><b>1.3.3</b> R绑定(R binding)</a></li>
+<li class="chapter" data-level="1.3.4" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#javascriptjavascript-binding"><i class="fa fa-check"></i><b>1.3.4</b> JavaScript绑定(JavaScript binding)</a></li>
+<li class="chapter" data-level="1.3.5" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.3.5"><i class="fa fa-check"></i><b>1.3.5</b> 演示</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#widgets"><i class="fa fa-check"></i><b>1.4</b> 创建你自己的widgets</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#requirements"><i class="fa fa-check"></i><b>1.4.1</b> 需求（Requirements）</a></li>
+<li class="chapter" data-level="1.4.2" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#scaffolding"><i class="fa fa-check"></i><b>1.4.2</b> 脚手架（Scaffolding）</a></li>
+<li class="chapter" data-level="1.4.3" data-path="htmlwidgets-intro.html"><a href="htmlwidgets-intro.html#section-1.4.3"><i class="fa fa-check"></i><b>1.4.3</b> 更多</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html"><i class="fa fa-check"></i><b>2</b> HTML空间尺寸调整</a><ul>
+<li class="chapter" data-level="2.1" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 概述</a></li>
+<li class="chapter" data-level="2.2" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#section-2.2"><i class="fa fa-check"></i><b>2.2</b> 指定大小调整策略</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#-1"><i class="fa fa-check"></i><b>2.2.1</b> 例子</a></li>
+<li class="chapter" data-level="2.2.2" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#section-2.2.2"><i class="fa fa-check"></i><b>2.2.2</b> 可用选项</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#javascript"><i class="fa fa-check"></i><b>2.3</b> JavaScript调整大小方法</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#-2"><i class="fa fa-check"></i><b>2.3.1</b> 例子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html"><i class="fa fa-check"></i><b>3</b> HTML控件：高级主题</a><ul>
+<li class="chapter" data-level="3.1" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#section-3.1"><i class="fa fa-check"></i><b>3.1</b> 本节概述</a></li>
+<li class="chapter" data-level="3.2" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 数据变换</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#htmlwidgets.dataframetod3"><i class="fa fa-check"></i><b>3.2.1</b> HTMLWidgets.dataframeToD3()</a></li>
+<li class="chapter" data-level="3.2.2" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#htmlwidgets.transposearray2d"><i class="fa fa-check"></i><b>3.2.2</b> HTMLWidgets.transposeArray2D()</a></li>
+<li class="chapter" data-level="3.2.3" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#json"><i class="fa fa-check"></i><b>3.2.3</b> 自定义JSON串行化器</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="htmlwidgets-Sizing.html"><a href="htmlwidgets-Sizing.html#javascript"><i class="fa fa-check"></i><b>3.3</b> 传递JavaScript函数</a></li>
+<li class="chapter" data-level="3.4" data-path="htmlwidgets-advanced.html"><a href="htmlwidgets-advanced.html#html"><i class="fa fa-check"></i><b>3.4</b> 自定义控件HTML</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html"><i class="fa fa-check"></i><b>4</b> htmlwidgets包中函数的总结</a><ul>
+<li class="chapter" data-level="4.1" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#htmlwidgets"><i class="fa fa-check"></i><b>4.1</b> htmlwidgets包函数</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#htmlwidgets-package"><i class="fa fa-check"></i><b>4.1.1</b> htmlwidgets-package</a></li>
+<li class="chapter" data-level="4.1.2" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#createwidget"><i class="fa fa-check"></i><b>4.1.2</b> createWidget</a></li>
+<li class="chapter" data-level="4.1.3" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#getdependency"><i class="fa fa-check"></i><b>4.1.3</b> getDependency</a></li>
+<li class="chapter" data-level="4.1.4" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#htmlwidgets-shiny"><i class="fa fa-check"></i><b>4.1.4</b> htmlwidgets-shiny</a></li>
+<li class="chapter" data-level="4.1.5" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#js"><i class="fa fa-check"></i><b>4.1.5</b> JS</a></li>
+<li class="chapter" data-level="4.1.6" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#onrender"><i class="fa fa-check"></i><b>4.1.6</b> onRender</a></li>
+<li class="chapter" data-level="4.1.7" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#onstaticrendercomplete"><i class="fa fa-check"></i><b>4.1.7</b> onStaticRenderComplete</a></li>
+<li class="chapter" data-level="4.1.8" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#prependcontent"><i class="fa fa-check"></i><b>4.1.8</b> prependContent</a></li>
+<li class="chapter" data-level="4.1.9" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#savewidget"><i class="fa fa-check"></i><b>4.1.9</b> saveWidget</a></li>
+<li class="chapter" data-level="4.1.10" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#scaffoldwidget"><i class="fa fa-check"></i><b>4.1.10</b> scaffoldWidget</a></li>
+<li class="chapter" data-level="4.1.11" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#setwidgetidseed"><i class="fa fa-check"></i><b>4.1.11</b> setWidgetIdSeed</a></li>
+<li class="chapter" data-level="4.1.12" data-path="htmlwidgets-pkgintro.html"><a href="htmlwidgets-pkgintro.html#sizingpolicy"><i class="fa fa-check"></i><b>4.1.12</b> sizingPolicy</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>5</b> 总结</a></li>
+<li class="chapter" data-level="6" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>6</b> 参考文献</a></li>
+<li class="divider"></li>
+<li><a href="https://dataxujing.github.io/" target="blank">个人主页</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R语言模型部署实战</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="e5ba8fe8a880" class="section level1 unnumbered">
+<h1>序言</h1>
+<p>目前针对于htmlwidgets并没有详细的中文教程,译者会持续更新翻译htmlwidgets，并推出更多基于htmlwidgets的R包。</p>
+<p style="float:right;">
+徐静
+</p>
+<p><br></p>
+<p style="float:right;">
+联信商务咨询有限公司
+</p>
+<p><br></p>
+<p style="float:right;">
+2017-06-02
+</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="e585b3e4ba8ee4bd9ce88085.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": ["R-deployment.pdf", "R-deployment.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

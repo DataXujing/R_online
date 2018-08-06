@@ -1,0 +1,36 @@
+--- 
+title: "R语言模型部署实战"
+author: "徐静"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "R语言模型部署实战"
+github-repo: DataXujing/R-deployment
+---
+
+
+
+
+# 序言{-}
+
+我们的模型不能只停留在线下的分析报告中，训练好的R模型如何应用到生产环境？目前针对于R语言的模型生产环境应用的方式有很多，比如用其他语言去掉用，Java，Python等语言均可方便的调用R脚本；生成PMML文件，目前R中主流的一些R模型均支持PMML比如xgboost,lightGBM等，其他语言不需要调用R脚本只需调用统一的PMML文件就可以；还有就是Web端的部署，比如可以做成REST API供其他语言调用，或直接做成web应用供其他用户访问，本书主要针对于R语言模型的Web端的部署。过程中，我们会先后介绍httpuv,opencpu,plumber, jug,fiery,Rserve,RestRserve,等一些和模型线上化部署相关的R包，最后会介绍mailR和Rweixin两个R和邮件与微信通信的R包，用于线上化部署的监测。当然会有其他的线上化部署方式。
+
+欢迎进入R模型线上化部署的海洋！
+
+
+
+
+# 关于我{-}
+
+**徐静：**
+
+硕士研究生, 目前的研究兴趣主要包括：数理统计，统计机器学习，深度学习，网络爬虫，前端可视化，R语言和Python语言的超级粉丝，多个R包和Python模块的作者，现在正逐步向Java迁移。
+
+Graduate students,the current research interests include: mathematical statistics, statistical machine learning, deep learning, web crawler, front-end visualization.
+He is a super fan of R and Python, and the author of several R packages and Python modules, and now gradually migrating to Java.
+
+
+
