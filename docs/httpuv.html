@@ -49,6 +49,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="css\style.css" type="text/css" />
 <link rel="stylesheet" href="css\toc.css" type="text/css" />
@@ -69,7 +106,10 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>序言</a></li>
 <li class="chapter" data-level="" data-path="e585b3e4ba8ee68891.html"><a href="e585b3e4ba8ee68891.html"><i class="fa fa-check"></i>关于我</a></li>
-<li class="chapter" data-level="1" data-path="httpuv.html"><a href="httpuv.html"><i class="fa fa-check"></i><b>1</b> httpuv</a></li>
+<li class="chapter" data-level="1" data-path="httpuv.html"><a href="httpuv.html"><i class="fa fa-check"></i><b>1</b> httpuv</a><ul>
+<li class="chapter" data-level="1.1" data-path="httpuv.html"><a href="httpuv.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 方法介绍</a></li>
+<li class="chapter" data-level="1.2" data-path="httpuv.html"><a href="httpuv.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 例子演示</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="opencpu.html"><a href="opencpu.html"><i class="fa fa-check"></i><b>2</b> opencpu</a></li>
 <li class="chapter" data-level="3" data-path="plumber.html"><a href="plumber.html"><i class="fa fa-check"></i><b>3</b> plumber</a></li>
 <li class="chapter" data-level="4" data-path="jug.html"><a href="jug.html"><i class="fa fa-check"></i><b>4</b> jug</a></li>
@@ -101,7 +141,322 @@
             <section class="normal" id="section-">
 <div id="httpuv" class="section level1">
 <h1><span class="header-section-number">第 1 章</span> httpuv</h1>
+<p>在httpuv的官网中,有这么一段描述：</p>
+<blockquote>
+<p>Allows R code to listen for and interact with HTTP and WebSocket clients, so you can serve web traffic directly out of your R process. Implementation is based on libuv and http-parser.</p>
+</blockquote>
+<blockquote>
+<p>This is a low-level library that provides little more than network I/O and implementations of the HTTP and WebSocket protocols. For an easy way to create web applications, try Shiny instead.</p>
+</blockquote>
+<p>我们可以通过httpuv搭建一个访问R模型的web API,但可能这不是最好的。</p>
+<p>本部分我们首先介绍官方提供的一些方法，然后解析官方提供的演示Demo,从而达到熟练使用httpuv的目的。</p>
+<div id="section-1.1" class="section level2">
+<h2><span class="header-section-number">1.1</span> 方法介绍</h2>
+<p>下面我们解析一下httpuv官方提供的一些调用方法，并演示一些调用方法对应的实例</p>
+<p>1.使用URI编码/解码以与Web浏览器相同的方式对字符串进行编码/解码。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">encodeURI</span>(value)
+<span class="kw">encodeURIComponent</span>(value)
+<span class="kw">decodeURI</span>(value)
+<span class="kw">decodeURIComponent</span>(value)</code></pre></div>
+<p>参数列表</p>
+<ul>
+<li>value 用于编码和解码的字符向量，UTF-8字符编码</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(httpuv)
+value &lt;-<span class="st"> &quot;https://baidu.com/中国;?/&quot;</span>
+<span class="kw">encodeURI</span>(value)</code></pre></div>
+<pre><code>## [1] &quot;https://baidu.com/%D6%D0%B9%FA;?/&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">encodeURIComponent</span>(value)</code></pre></div>
+<pre><code>## [1] &quot;https%3A%2F%2Fbaidu.com%2F%D6%D0%B9%FA%3B%3F%2F&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">decodeURI</span>(value)</code></pre></div>
+<pre><code>## [1] &quot;https://baidu.com/中国;?/&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">decodeURIComponent</span>(value)</code></pre></div>
+<pre><code>## [1] &quot;https://baidu.com/中国;?/&quot;</code></pre>
+<p>注意： encodeURI 与 encodeURIComponent是不一样的因为前者不对特殊字符: ;,/?:@&amp;=+$等进行encode</p>
+<p>2.中断httpuv运行的环路</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">interrupt</span>()</code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>检查ip地址的类型是ipv4还是ipv6</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ipFamily</span>(ip)</code></pre></div>
+<p>参数列表</p>
+<ul>
+<li><p>ip 一个代表IP地址的字符串</p></li>
+<li><p>返回值的意义：如果是IPv4返回4，如果是IPv6返回6，如果不是IP地址返回-1</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ipFamily</span>(<span class="st">&quot;127.0.0.1&quot;</span>) <span class="co"># 4</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ipFamily</span>(<span class="st">&quot;500.0.0.500&quot;</span>) <span class="co"># -1</span></code></pre></div>
+<pre><code>## [1] -1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ipFamily</span>(<span class="st">&quot;500.0.0.500&quot;</span>) <span class="co"># -1</span></code></pre></div>
+<pre><code>## [1] -1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ipFamily</span>(<span class="st">&quot;::&quot;</span>) <span class="co"># 6</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ipFamily</span>(<span class="st">&quot;::1&quot;</span>) <span class="co"># 6</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ipFamily</span>(<span class="st">&quot;fe80::1ff:fe23:4567:890a&quot;</span>) <span class="co"># 6</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<p>3.将原始向量转换为BASE64编码字符串</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rawToBase64</span>(x)</code></pre></div>
+<p>参数列表</p>
+<ul>
+<li>x 原始向量</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>)
+result &lt;-<span class="st"> </span><span class="kw">rawToBase64</span>(<span class="kw">as.raw</span>(<span class="kw">runif</span>(<span class="dv">19</span>, <span class="dt">min=</span><span class="dv">0</span>, <span class="dt">max=</span><span class="dv">256</span>)))
+<span class="co">#stopifnot(identical(result, &quot;TkGNDnd7z16LK5/hR2bDqzRbXA==&quot;))</span>
+result</code></pre></div>
+<pre><code>## [1] &quot;TkGNDnd7z16LK5/hR2bDqzRbXA==&quot;</code></pre>
+<p>4.运行一个server</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">runServer</span>(host, port, app, <span class="dt">interruptIntervalMs =</span> <span class="ot">NULL</span>)</code></pre></div>
+<p>参数列表</p>
+<ul>
+<li><p>host IPv4地址, 或是“0.0.0.0”监听所有的IP</p></li>
+<li><p>port 端口号</p></li>
+<li><p>app 一个定义应用的函数集合</p></li>
+<li><p>interruptIntervalMs 该参数不提倡使用，1.3.5版本后废除</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">app &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">call =</span> <span class="cf">function</span>(req){
+  <span class="kw">list</span>(<span class="dt">status=</span>200L,
+       <span class="dt">headers =</span> <span class="kw">list</span>(
+         <span class="st">&#39;Content-Type&#39;</span> =<span class="st"> &#39;text/html&#39;</span>
+       ),
+       <span class="dt">body =</span> <span class="st">&quot;HelloWorld!&quot;</span>)
+})
 
+<span class="kw">runServer</span>(<span class="st">&quot;0.0.0.0&quot;</span>, <span class="dv">5000</span>,app)</code></pre></div>
+<p>5.过程请求</p>
+<p>处理HTTP请求和WebSocket消息。 如果R的调用堆栈上没有任何东西，如果R是 在命令提示符下闲置，不必调用此函数，因为请求将 自动处理。但是，如果R正在执行代码，则请求将不被处理。 要么调用栈是空的，要么调用这个函数(或者，调用run_now())。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">service</span>(<span class="dt">timeoutMs =</span> <span class="kw">ifelse</span>(<span class="kw">interactive</span>(), <span class="dv">100</span>, <span class="dv">1000</span>))</code></pre></div>
+<p>参数列表</p>
+<ul>
+<li>timeoutMs 返回之前运行的毫秒数。</li>
+</ul>
+<p>6.创建HTTP/WebSocket后台服务器（弃用）</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">startDaemonizedServer</span>(host, port, app)</code></pre></div>
+<p>7.创建HTTP/WebSocket服务器</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">startServer</span>(host, port, app)
+<span class="kw">startPipeServer</span>(name, mask, app)</code></pre></div>
+<p>参数列表</p>
+<ul>
+<li><p>host ip地址</p></li>
+<li><p>port 端口号</p></li>
+<li><p>app 一个定义应用的函数集</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+app &lt;-<span class="st"> </span><span class="kw">list</span>(
+  <span class="dt">call =</span> <span class="cf">function</span>(req) {
+    <span class="kw">list</span>(
+      <span class="dt">status =</span> 200L,
+      <span class="dt">headers =</span> <span class="kw">list</span>(
+        <span class="st">&#39;Content-Type&#39;</span> =<span class="st"> &#39;text/html&#39;</span>
+        ),
+      <span class="dt">body =</span> <span class="st">&quot;Hello world!&quot;</span>
+    )
+    }
+  )
+handle &lt;-<span class="st"> </span><span class="kw">startServer</span>(<span class="st">&quot;0.0.0.0&quot;</span>, <span class="dv">5000</span>,app)
+
+<span class="co"># 此服务器的句柄，可以传递给StestServer以关闭服务器。</span>
+<span class="kw">stopServer</span>(handle)</code></pre></div>
+<p>8.停止所有应用</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stopAllServers</span>()</code></pre></div>
+<p>9.在UNIX环境中停止运行的后台服务器（弃用）</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stopDaemonizedServer</span>(handle)</code></pre></div>
+<p>10.停止一个服务</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">stopServer</span>(handle)</code></pre></div>
+</div>
+<div id="section-1.2" class="section level2">
+<h2><span class="header-section-number">1.2</span> 例子演示</h2>
+<ol style="list-style-type: decimal">
+<li>json-server</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="co"># Connect to this using websockets on port 9454</span>
+<span class="co"># Client sends to server in the format of {&quot;data&quot;:[1,2,3]}</span>
+<span class="co"># The websocket server returns the standard deviation of the sent array</span>
+<span class="kw">library</span>(jsonlite)
+<span class="kw">library</span>(httpuv)
+
+<span class="co"># Server</span>
+app &lt;-<span class="st"> </span><span class="kw">list</span>(
+  <span class="dt">onWSOpen =</span> <span class="cf">function</span>(ws) {
+    ws<span class="op">$</span><span class="kw">onMessage</span>(<span class="cf">function</span>(binary, message) {
+      <span class="co"># Decodes message from client</span>
+      message &lt;-<span class="st"> </span><span class="kw">fromJSON</span>(message)
+      <span class="co"># Sends message to client</span>
+      ws<span class="op">$</span><span class="kw">send</span>(
+        <span class="co"># JSON encode the message</span>
+        <span class="kw">toJSON</span>(
+          <span class="co"># Returns standard deviation for message</span>
+          <span class="kw">sd</span>(message<span class="op">$</span>data)
+        )
+      )
+    })
+  }
+)
+<span class="kw">runServer</span>(<span class="st">&quot;0.0.0.0&quot;</span>, <span class="dv">9454</span>, app, <span class="dv">250</span>)</code></pre></div>
+<p>2.echo</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(httpuv)
+
+app &lt;-<span class="st"> </span><span class="kw">list</span>(
+  <span class="dt">call =</span> <span class="cf">function</span>(req) {
+    wsUrl =<span class="st"> </span><span class="kw">paste</span>(<span class="dt">sep=</span><span class="st">&#39;&#39;</span>,
+                  <span class="st">&#39;&quot;&#39;</span>,
+                  <span class="st">&quot;ws://&quot;</span>,
+                  <span class="kw">ifelse</span>(<span class="kw">is.null</span>(req<span class="op">$</span>HTTP_HOST), req<span class="op">$</span>SERVER_NAME, req<span class="op">$</span>HTTP_HOST),
+                  <span class="st">&#39;&quot;&#39;</span>)
+    
+    <span class="kw">list</span>(
+      <span class="dt">status =</span> 200L,
+      <span class="dt">headers =</span> <span class="kw">list</span>(
+        <span class="st">&#39;Content-Type&#39;</span> =<span class="st"> &#39;text/html&#39;</span>
+      ),
+      <span class="dt">body =</span> <span class="kw">paste</span>(
+        <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\r\n</span><span class="st">&quot;</span>,
+        <span class="st">&quot;&lt;!DOCTYPE html&gt;&quot;</span>,
+        <span class="st">&quot;&lt;html&gt;&quot;</span>,
+        <span class="st">&quot;&lt;head&gt;&quot;</span>,
+        <span class="st">&#39;&lt;style type=&quot;text/css&quot;&gt;&#39;</span>,
+        <span class="st">&#39;body { font-family: Helvetica; }&#39;</span>,
+        <span class="st">&#39;pre { margin: 0 }&#39;</span>,
+        <span class="st">&#39;&lt;/style&gt;&#39;</span>,
+        <span class="st">&quot;&lt;script&gt;&quot;</span>,
+        <span class="kw">sprintf</span>(<span class="st">&quot;var ws = new WebSocket(%s);&quot;</span>, wsUrl),
+        <span class="st">&quot;ws.onmessage = function(msg) {&quot;</span>,
+        <span class="st">&#39;  var msgDiv = document.createElement(&quot;pre&quot;);&#39;</span>,
+        <span class="st">&#39;  msgDiv.innerHTML = msg.data.replace(/&amp;/g, &quot;&amp;amp;&quot;).replace(/</span><span class="ch">\\</span><span class="st">&lt;/g, &quot;&amp;lt;&quot;);&#39;</span>,
+        <span class="st">&#39;  document.getElementById(&quot;output&quot;).appendChild(msgDiv);&#39;</span>,
+        <span class="st">&quot;}&quot;</span>,
+        <span class="st">&quot;function sendInput() {&quot;</span>,
+        <span class="st">&quot;  var input = document.getElementById(&#39;input&#39;);&quot;</span>,
+        <span class="st">&quot;  ws.send(input.value);&quot;</span>,
+        <span class="st">&quot;  input.value = &#39;&#39;;&quot;</span>,
+        <span class="st">&quot;}&quot;</span>,
+        <span class="st">&quot;&lt;/script&gt;&quot;</span>,
+        <span class="st">&quot;&lt;/head&gt;&quot;</span>,
+        <span class="st">&quot;&lt;body&gt;&quot;</span>,
+        <span class="st">&#39;&lt;h3&gt;Send Message&lt;/h3&gt;&#39;</span>,
+        <span class="st">&#39;&lt;form action=&quot;&quot; onsubmit=&quot;sendInput(); return false&quot;&gt;&#39;</span>,
+        <span class="st">&#39;&lt;input type=&quot;text&quot; id=&quot;input&quot;/&gt;&#39;</span>,
+        <span class="st">&#39;&lt;h3&gt;Received&lt;/h3&gt;&#39;</span>,
+        <span class="st">&#39;&lt;div id=&quot;output&quot;/&gt;&#39;</span>,
+        <span class="st">&#39;&lt;/form&gt;&#39;</span>,
+        <span class="st">&quot;&lt;/body&gt;&quot;</span>,
+        <span class="st">&quot;&lt;/html&gt;&quot;</span>
+      )
+    )
+  },
+  <span class="dt">onWSOpen =</span> <span class="cf">function</span>(ws) {
+    ws<span class="op">$</span><span class="kw">onMessage</span>(<span class="cf">function</span>(binary, message) {
+      ws<span class="op">$</span><span class="kw">send</span>(message)
+    })
+  }
+)
+
+<span class="kw">browseURL</span>(<span class="st">&quot;http://localhost:9454/&quot;</span>)
+<span class="kw">runServer</span>(<span class="st">&quot;0.0.0.0&quot;</span>, <span class="dv">9454</span>, app, <span class="dv">250</span>)
+</code></pre></div>
+<p>3.deamon-echo</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(httpuv)
+
+.lastMessage &lt;-<span class="st"> </span><span class="ot">NULL</span>
+
+app &lt;-<span class="st"> </span><span class="kw">list</span>(
+  <span class="dt">call =</span> <span class="cf">function</span>(req) {
+    wsUrl =<span class="st"> </span><span class="kw">paste</span>(<span class="dt">sep=</span><span class="st">&#39;&#39;</span>,
+                  <span class="st">&#39;&quot;&#39;</span>,
+                  <span class="st">&quot;ws://&quot;</span>,
+                  <span class="kw">ifelse</span>(<span class="kw">is.null</span>(req<span class="op">$</span>HTTP_HOST), req<span class="op">$</span>SERVER_NAME, req<span class="op">$</span>HTTP_HOST),
+                  <span class="st">&#39;&quot;&#39;</span>)
+    
+    <span class="kw">list</span>(
+      <span class="dt">status =</span> 200L,
+      <span class="dt">headers =</span> <span class="kw">list</span>(
+        <span class="st">&#39;Content-Type&#39;</span> =<span class="st"> &#39;text/html&#39;</span>
+      ),
+      <span class="dt">body =</span> <span class="kw">paste</span>(
+        <span class="dt">sep =</span> <span class="st">&quot;</span><span class="ch">\r\n</span><span class="st">&quot;</span>,
+        <span class="st">&quot;&lt;!DOCTYPE html&gt;&quot;</span>,
+        <span class="st">&quot;&lt;html&gt;&quot;</span>,
+        <span class="st">&quot;&lt;head&gt;&quot;</span>,
+        <span class="st">&#39;&lt;style type=&quot;text/css&quot;&gt;&#39;</span>,
+        <span class="st">&#39;body { font-family: Helvetica; }&#39;</span>,
+        <span class="st">&#39;pre { margin: 0 }&#39;</span>,
+        <span class="st">&#39;&lt;/style&gt;&#39;</span>,
+        <span class="st">&quot;&lt;script&gt;&quot;</span>,
+        <span class="kw">sprintf</span>(<span class="st">&quot;var ws = new WebSocket(%s);&quot;</span>, wsUrl),
+        <span class="st">&quot;ws.onmessage = function(msg) {&quot;</span>,
+        <span class="st">&#39;  var msgDiv = document.createElement(&quot;pre&quot;);&#39;</span>,
+        <span class="st">&#39;  msgDiv.innerHTML = msg.data.replace(/&amp;/g, &quot;&amp;amp;&quot;).replace(/</span><span class="ch">\\</span><span class="st">&lt;/g, &quot;&amp;lt;&quot;);&#39;</span>,
+        <span class="st">&#39;  document.getElementById(&quot;output&quot;).appendChild(msgDiv);&#39;</span>,
+        <span class="st">&quot;}&quot;</span>,
+        <span class="st">&quot;function sendInput() {&quot;</span>,
+        <span class="st">&quot;  var input = document.getElementById(&#39;input&#39;);&quot;</span>,
+        <span class="st">&quot;  ws.send(input.value);&quot;</span>,
+        <span class="st">&quot;  input.value = &#39;&#39;;&quot;</span>,
+        <span class="st">&quot;}&quot;</span>,
+        <span class="st">&quot;&lt;/script&gt;&quot;</span>,
+        <span class="st">&quot;&lt;/head&gt;&quot;</span>,
+        <span class="st">&quot;&lt;body&gt;&quot;</span>,
+        <span class="st">&#39;&lt;h3&gt;Send Message&lt;/h3&gt;&#39;</span>,
+        <span class="st">&#39;&lt;form action=&quot;&quot; onsubmit=&quot;sendInput(); return false&quot;&gt;&#39;</span>,
+        <span class="st">&#39;&lt;input type=&quot;text&quot; id=&quot;input&quot;/&gt;&#39;</span>,
+        <span class="st">&#39;&lt;h3&gt;Received&lt;/h3&gt;&#39;</span>,
+        <span class="st">&#39;&lt;div id=&quot;output&quot;/&gt;&#39;</span>,
+        <span class="st">&#39;&lt;/form&gt;&#39;</span>,
+        <span class="st">&quot;&lt;/body&gt;&quot;</span>,
+        <span class="st">&quot;&lt;/html&gt;&quot;</span>
+      )
+    )
+  },
+  <span class="dt">onWSOpen =</span> <span class="cf">function</span>(ws) {
+    ws<span class="op">$</span><span class="kw">onMessage</span>(<span class="cf">function</span>(binary, message) {
+      .lastMessage &lt;&lt;-<span class="st"> </span>message
+      ws<span class="op">$</span><span class="kw">send</span>(message)
+    })
+  }
+)
+
+server &lt;-<span class="st"> </span><span class="kw">startDaemonizedServer</span>(<span class="st">&quot;0.0.0.0&quot;</span>, <span class="dv">9454</span>, app)
+
+<span class="co"># check the value of .lastMessage after echoing to check it is being updated</span>
+
+<span class="co"># call this after done</span>
+<span class="co">#stopDaemonizedServer(server)</span>
+</code></pre></div>
+<ol start="4" style="list-style-type: decimal">
+<li></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(httpuv)
+app =<span class="st"> </span><span class="kw">list</span>(<span class="dt">call =</span> <span class="cf">function</span>(req){
+  <span class="co"># 获取POST的参数</span>
+  postdata =<span class="st"> </span>req<span class="op">$</span>rook.input<span class="op">$</span><span class="kw">read_lines</span>()
+  qs =<span class="st"> </span>httr<span class="op">:::</span><span class="kw">parse_query</span>(<span class="kw">gsub</span>(<span class="st">&quot;^</span><span class="ch">\\</span><span class="st">?&quot;</span>, <span class="st">&quot;&quot;</span>, postdata))
+  dat =<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">fromJSON</span>(qs<span class="op">$</span>jsonDat)
+  <span class="kw">print</span>(dat)
+  <span class="co"># 计算返回结果</span>
+  r =<span class="st"> </span><span class="fl">0.3</span> <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span> <span class="op">*</span><span class="st"> </span>dat<span class="op">$</span>v1 <span class="op">-</span><span class="st"> </span><span class="fl">0.2</span> <span class="op">*</span><span class="st"> </span>dat<span class="op">$</span>v2 <span class="op">+</span><span class="st"> </span><span class="fl">0.1</span> <span class="op">*</span><span class="st"> </span>dat<span class="op">$</span>v3
+  output =<span class="st"> </span>jsonlite<span class="op">::</span><span class="kw">toJSON</span>(<span class="kw">list</span>(<span class="dt">message =</span> <span class="st">&#39;suceess&#39;</span>, <span class="dt">result =</span> r), <span class="dt">auto_unbox =</span> T)
+  res =<span class="st"> </span><span class="kw">list</span>(<span class="dt">status =</span> 200L, <span class="dt">headers =</span> <span class="kw">list</span>(<span class="st">&#39;Content-Type&#39;</span> =<span class="st"> &#39;application/json&#39;</span>), <span class="dt">body =</span> output)
+                                           <span class="kw">return</span>(res)
+})
+                                           <span class="co"># 启动服务</span>
+                                           server =<span class="st"> </span><span class="kw">startServer</span>(<span class="st">&quot;0.0.0.0&quot;</span>, 1124L, <span class="dt">app =</span> app)
+                                           <span class="cf">while</span>(<span class="ot">TRUE</span>) {
+                                           <span class="kw">service</span>()
+                                           <span class="kw">Sys.sleep</span>(<span class="fl">0.001</span>)
+                                           }
+                                           <span class="co"># stopServer(server)</span>
+</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+RCurl<span class="op">::</span><span class="kw">postForm</span>(<span class="st">&#39;127.0.0.1:1124&#39;</span>,
+<span class="dt">style =</span> <span class="st">&#39;post&#39;</span>,
+<span class="dt">.params =</span> <span class="kw">list</span>(<span class="dt">jsonDat =</span> <span class="st">&#39;{&quot;v1&quot;:1,&quot;v2&quot;:2,&quot;v3&quot;:3}&#39;</span>)
+)</code></pre></div>
+<p>httpuv是相对比较底层的包，熟练使用需要掌握前端知识，并且需要用到RCurl，httr相关爬虫包的一些知识去处理。本人不推荐这种方式进行模型的部署。</p>
+
+</div>
 </div>
             </section>
 

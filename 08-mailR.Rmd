@@ -1,1 +1,153 @@
 # mailR
+
+mailR是一个比较小的包，主要解决的问题是R与邮件发送的问题,该包就一个方法：send.mail()
+方法调用方式为：
+
+```r
+send.mail(from, to, subject = "", body = "", encoding = "iso-8859-1",
+html = FALSE, inline = FALSE, smtp = list(), authenticate = FALSE,
+send = TRUE, attach.files = NULL, debug = FALSE, ...)
+
+```
+
+参数列表：
+
+
++ from 有效的发送者的邮箱
+
++ to 目标接收的邮箱
+
++ subject 邮箱主题
+
++ body 邮件体
+
++ encoding 邮件内容字符编码 支持包括 iso-8859-1 (default), utf-8, us-ascii, and koi8-r
+
++ html bool值，是否把邮箱体解析成html
+
++ inline 布尔值，HTML文件中的图像是否应该嵌入内联。
+
++ smtp lsit类型，链接邮箱的smtp
+
++ authenticate 一个布尔变量，用于指示是否需要授权连接到
+SMTP服务器。如果设置为true，请参阅SMTP参数所需参数的详细信息。
+发送一个布尔值，指示电子邮件是否应该在函数的末尾发送。
+（默认行为）。如果设置为false，函数将电子邮件对象返回给父
+环境。
+
++ attach.files 链接到文件的文件系统中路径的字符向量或*有效* URL到附加到电子邮件（详见更多信息附加URL）
+
++ debug bool值，是否查看debug的真实细节
+
++  ...  Optional arguments to be passed related to file attachments. See details for more
+
+
+Example1:
+
+```r
+mailR::send.mail(
+  from = 'sender@tuandai.com', # 发送人
+  to = 'sendee@tuandai.com', # 接收人
+  cc = 'carboncopy@tuandai.com', # 抄送人
+  subject = '邮件标题',
+  body = as.character(
+    '<div style = "color:red">邮件正文，可以为HTML格式</div>'
+  ),
+  attach.files = NULL, # 附件的路径
+  encoding = "utf-8",
+  smtp = list(
+    host.name = 'smtp.exmail.qq.com', # 邮件服务器IP地址
+    port = 465, # 邮件服务器端口
+    user.name = 'senderName', # 发送人名称
+    passwd = 'yourpassword', # 密码
+    ssl = T),
+  html = T, inline = T, authenticate = T, send = T, debug = F
+)
+```
+
+Example2:
+
+
+```r
+send.mail(from = "sender@gmail.com",
+          to = c("Recipient 1 <recipient1@gmail.com>", "recipient2@gmail.com"),
+          cc = c("CC Recipient <cc.recipient@gmail.com>"),
+          bcc = c("BCC Recipient <bcc.recipient@gmail.com>"),
+          subject="Subject of the email",
+          body = "Body of the email",
+          smtp = list(host.name = "aspmx.l.google.com", port = 25),
+          authenticate = FALSE,
+          send = TRUE)
+```
+
+Example3:
+
+
+```r
+send.mail(from = "sender@gmail.com",
+          to = c("recipient1@gmail.com", "recipient2@gmail.com"),
+          subject = "Subject of the email",
+          body = "Body of the email",
+          smtp = list(host.name = "smtp.gmail.com", port = 465, user.name = "gmail_username", passwd = "password", ssl = TRUE),
+          authenticate = TRUE,
+          send = TRUE)
+
+```
+
+Example4:
+
+```r
+
+email <- send.mail(from = "Sender Name <sender@gmail.com>",
+                   to = "recipient@gmail.com",
+                   subject = "A quote from Gandhi",
+                   body = "In Hindi :  थोडा सा अभ्यास बहुत सारे उपदेशों से बेहतर है।
+                   English translation: An ounce of practice is worth more than tons of preaching.",
+                   encoding = "utf-8",
+                   smtp = list(host.name = "smtp.gmail.com", port = 465, user.name = "gmail_username", passwd = "password", ssl = T),
+               authenticate = TRUE,
+                   send = TRUE)
+```
+
+Example5:
+
+```r
+
+send.mail(from = "sender@gmail.com",
+          to = c("recipient1@gmail.com", "recipient2@gmail.com"),
+          subject = "Subject of the email",
+          body = "Body of the email",
+          smtp = list(host.name = "smtp.gmail.com", port = 465, user.name = "gmail_username", passwd = "password", ssl = TRUE),
+          authenticate = TRUE,
+          send = TRUE,
+          attach.files = c("./download.log", "upload.log"),
+          file.names = c("Download log", "Upload log"), # optional parameter
+          file.descriptions = c("Description for download log", "Description for upload log"))
+```
+
+Example6:
+
+```r
+send.mail(from = "sender@gmail.com",
+          to = c("recipient1@gmail.com", "recipient2@gmail.com"),
+          subject = "Subject of the email",
+          body = "<html>The apache logo - <img src=\"http://www.apache.org/images/asf_logo_wide.gif\"></html>", # can also point to local file (see next example)
+          html = TRUE,
+          smtp = list(host.name = "smtp.gmail.com", port = 465, user.name = "gmail_username", passwd = "password", ssl = TRUE),
+          authenticate = TRUE,
+          send = TRUE)
+```
+
+Example7:
+
+```r
+send.mail(from = "sender@gmail.com",
+          to = c("recipient1@gmail.com", "recipient2@gmail.com"),
+          subject = "Subject of the email",
+          body = "path.to.local.html.file",
+          html = TRUE,
+          inline = TRUE,
+          smtp = list(host.name = "smtp.gmail.com", port = 465, user.name = "gmail_username", passwd = "password", ssl = TRUE),
+          authenticate = TRUE,
+          send = TRUE)
+```

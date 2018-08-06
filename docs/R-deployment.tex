@@ -31,6 +31,46 @@
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{natbib}
 \bibliographystyle{apalike}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -98,6 +138,20 @@
 
 \setmonofont{Courier New}
 
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -108,9 +162,9 @@
 \chapter*{序言}
 \addcontentsline{toc}{chapter}{序言}
 
-我们的模型不能只停留在线下的分析报告中，训练好的R模型如何应用到生产环境？目前针对于R语言的模型生产环境应用的方式有很多，比如用其他语言去掉用，Java，Python等语言均可方便的调用R脚本；生成PMML文件，目前R中主流的一些R模型均支持PMML比如xgboost,lightGBM等，其他语言不需要调用R脚本只需调用统一的PMML文件就可以；还有就是Web端的部署，比如可以做成REST
+我们的模型不能只停留在线下的分析报告中，训练好的R模型如何应用到生产环境？目前针对于R语言的模型生产环境应用的方式有很多，比如用其他语言去调用，Java，Python等语言均可方便的调用R脚本；生成PMML文件，目前R中主流的一些R模型均支持PMML比如xgboost,lightGBM等，其他语言不需要调用R脚本只需调用统一的PMML文件就可以；还有就是Web端的部署，比如可以做成REST
 API供其他语言调用，或直接做成web应用供其他用户访问，本书主要针对于R语言模型的Web端的部署。过程中，我们会先后介绍httpuv,opencpu,plumber,
-jug,fiery,Rserve,RestRserve,等一些和模型线上化部署相关的R包，最后会介绍mailR和Rweixin两个R和邮件与微信通信的R包，用于线上化部署的监测。当然会有其他的线上化部署方式。
+jug,fiery,Rserve,RestRserve,等一些和模型线上化部署相关的R包(当然shiny也可以，但他不是我们本书的重点)，最后会介绍mailR和Rweixin两个R和邮件与微信通信的R包，用于线上化部署的监测。当然会有其他的线上化部署方式。
 
 欢迎进入R模型线上化部署的海洋！
 
@@ -130,6 +184,565 @@ migrating to Java.
 
 \chapter{httpuv}\label{httpuv}
 
+在httpuv的官网中,有这么一段描述：
+
+\begin{quote}
+Allows R code to listen for and interact with HTTP and WebSocket
+clients, so you can serve web traffic directly out of your R process.
+Implementation is based on libuv and http-parser.
+\end{quote}
+
+\begin{quote}
+This is a low-level library that provides little more than network I/O
+and implementations of the HTTP and WebSocket protocols. For an easy way
+to create web applications, try Shiny instead.
+\end{quote}
+
+我们可以通过httpuv搭建一个访问R模型的web API,但可能这不是最好的。
+
+本部分我们首先介绍官方提供的一些方法，然后解析官方提供的演示Demo,从而达到熟练使用httpuv的目的。
+
+\section{方法介绍}
+
+下面我们解析一下httpuv官方提供的一些调用方法，并演示一些调用方法对应的实例
+
+1.使用URI编码/解码以与Web浏览器相同的方式对字符串进行编码/解码。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{encodeURI}\NormalTok{(value)}
+\KeywordTok{encodeURIComponent}\NormalTok{(value)}
+\KeywordTok{decodeURI}\NormalTok{(value)}
+\KeywordTok{decodeURIComponent}\NormalTok{(value)}
+\end{Highlighting}
+\end{Shaded}
+
+参数列表
+
+\begin{itemize}
+\tightlist
+\item
+  value 用于编码和解码的字符向量，UTF-8字符编码
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(httpuv)}
+\NormalTok{value <-}\StringTok{ "https://baidu.com/中国;?/"}
+\KeywordTok{encodeURI}\NormalTok{(value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "https://baidu.com/%D6%D0%B9%FA;?/"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{encodeURIComponent}\NormalTok{(value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "https%3A%2F%2Fbaidu.com%2F%D6%D0%B9%FA%3B%3F%2F"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{decodeURI}\NormalTok{(value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "https://baidu.com/中国;?/"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{decodeURIComponent}\NormalTok{(value)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "https://baidu.com/中国;?/"
+\end{verbatim}
+
+注意： encodeURI 与 encodeURIComponent是不一样的因为前者不对特殊字符:
+;,/?:@\&=+\$等进行encode
+
+2.中断httpuv运行的环路
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{interrupt}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  检查ip地址的类型是ipv4还是ipv6
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ipFamily}\NormalTok{(ip)}
+\end{Highlighting}
+\end{Shaded}
+
+参数列表
+
+\begin{itemize}
+\item
+  ip 一个代表IP地址的字符串
+\item
+  返回值的意义：如果是IPv4返回4，如果是IPv6返回6，如果不是IP地址返回-1
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ipFamily}\NormalTok{(}\StringTok{"127.0.0.1"}\NormalTok{) }\CommentTok{# 4}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ipFamily}\NormalTok{(}\StringTok{"500.0.0.500"}\NormalTok{) }\CommentTok{# -1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ipFamily}\NormalTok{(}\StringTok{"500.0.0.500"}\NormalTok{) }\CommentTok{# -1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ipFamily}\NormalTok{(}\StringTok{"::"}\NormalTok{) }\CommentTok{# 6}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ipFamily}\NormalTok{(}\StringTok{"::1"}\NormalTok{) }\CommentTok{# 6}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ipFamily}\NormalTok{(}\StringTok{"fe80::1ff:fe23:4567:890a"}\NormalTok{) }\CommentTok{# 6}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 6
+\end{verbatim}
+
+3.将原始向量转换为BASE64编码字符串
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{rawToBase64}\NormalTok{(x)}
+\end{Highlighting}
+\end{Shaded}
+
+参数列表
+
+\begin{itemize}
+\tightlist
+\item
+  x 原始向量
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{100}\NormalTok{)}
+\NormalTok{result <-}\StringTok{ }\KeywordTok{rawToBase64}\NormalTok{(}\KeywordTok{as.raw}\NormalTok{(}\KeywordTok{runif}\NormalTok{(}\DecValTok{19}\NormalTok{, }\DataTypeTok{min=}\DecValTok{0}\NormalTok{, }\DataTypeTok{max=}\DecValTok{256}\NormalTok{)))}
+\CommentTok{#stopifnot(identical(result, "TkGNDnd7z16LK5/hR2bDqzRbXA=="))}
+\NormalTok{result}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "TkGNDnd7z16LK5/hR2bDqzRbXA=="
+\end{verbatim}
+
+4.运行一个server
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{runServer}\NormalTok{(host, port, app, }\DataTypeTok{interruptIntervalMs =} \OtherTok{NULL}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+参数列表
+
+\begin{itemize}
+\item
+  host IPv4地址, 或是``0.0.0.0''监听所有的IP
+\item
+  port 端口号
+\item
+  app 一个定义应用的函数集合
+\item
+  interruptIntervalMs 该参数不提倡使用，1.3.5版本后废除
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{app <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{call =} \ControlFlowTok{function}\NormalTok{(req)\{}
+  \KeywordTok{list}\NormalTok{(}\DataTypeTok{status=}\NormalTok{200L,}
+       \DataTypeTok{headers =} \KeywordTok{list}\NormalTok{(}
+         \StringTok{'Content-Type'}\NormalTok{ =}\StringTok{ 'text/html'}
+\NormalTok{       ),}
+       \DataTypeTok{body =} \StringTok{"HelloWorld!"}\NormalTok{)}
+\NormalTok{\})}
+
+\KeywordTok{runServer}\NormalTok{(}\StringTok{"0.0.0.0"}\NormalTok{, }\DecValTok{5000}\NormalTok{,app)}
+\end{Highlighting}
+\end{Shaded}
+
+5.过程请求
+
+处理HTTP请求和WebSocket消息。 如果R的调用堆栈上没有任何东西，如果R是
+在命令提示符下闲置，不必调用此函数，因为请求将
+自动处理。但是，如果R正在执行代码，则请求将不被处理。
+要么调用栈是空的，要么调用这个函数(或者，调用run\_now())。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{service}\NormalTok{(}\DataTypeTok{timeoutMs =} \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{interactive}\NormalTok{(), }\DecValTok{100}\NormalTok{, }\DecValTok{1000}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+参数列表
+
+\begin{itemize}
+\tightlist
+\item
+  timeoutMs 返回之前运行的毫秒数。
+\end{itemize}
+
+6.创建HTTP/WebSocket后台服务器（弃用）
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{startDaemonizedServer}\NormalTok{(host, port, app)}
+\end{Highlighting}
+\end{Shaded}
+
+7.创建HTTP/WebSocket服务器
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{startServer}\NormalTok{(host, port, app)}
+\KeywordTok{startPipeServer}\NormalTok{(name, mask, app)}
+\end{Highlighting}
+\end{Shaded}
+
+参数列表
+
+\begin{itemize}
+\item
+  host ip地址
+\item
+  port 端口号
+\item
+  app 一个定义应用的函数集
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{app <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+  \DataTypeTok{call =} \ControlFlowTok{function}\NormalTok{(req) \{}
+    \KeywordTok{list}\NormalTok{(}
+      \DataTypeTok{status =}\NormalTok{ 200L,}
+      \DataTypeTok{headers =} \KeywordTok{list}\NormalTok{(}
+        \StringTok{'Content-Type'}\NormalTok{ =}\StringTok{ 'text/html'}
+\NormalTok{        ),}
+      \DataTypeTok{body =} \StringTok{"Hello world!"}
+\NormalTok{    )}
+\NormalTok{    \}}
+\NormalTok{  )}
+\NormalTok{handle <-}\StringTok{ }\KeywordTok{startServer}\NormalTok{(}\StringTok{"0.0.0.0"}\NormalTok{, }\DecValTok{5000}\NormalTok{,app)}
+
+\CommentTok{# 此服务器的句柄，可以传递给StestServer以关闭服务器。}
+\KeywordTok{stopServer}\NormalTok{(handle)}
+\end{Highlighting}
+\end{Shaded}
+
+8.停止所有应用
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{stopAllServers}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+9.在UNIX环境中停止运行的后台服务器（弃用）
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{stopDaemonizedServer}\NormalTok{(handle)}
+\end{Highlighting}
+\end{Shaded}
+
+10.停止一个服务
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{stopServer}\NormalTok{(handle)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{例子演示}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  json-server
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\CommentTok{# Connect to this using websockets on port 9454}
+\CommentTok{# Client sends to server in the format of \{"data":[1,2,3]\}}
+\CommentTok{# The websocket server returns the standard deviation of the sent array}
+\KeywordTok{library}\NormalTok{(jsonlite)}
+\KeywordTok{library}\NormalTok{(httpuv)}
+
+\CommentTok{# Server}
+\NormalTok{app <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+  \DataTypeTok{onWSOpen =} \ControlFlowTok{function}\NormalTok{(ws) \{}
+\NormalTok{    ws}\OperatorTok{$}\KeywordTok{onMessage}\NormalTok{(}\ControlFlowTok{function}\NormalTok{(binary, message) \{}
+      \CommentTok{# Decodes message from client}
+\NormalTok{      message <-}\StringTok{ }\KeywordTok{fromJSON}\NormalTok{(message)}
+      \CommentTok{# Sends message to client}
+\NormalTok{      ws}\OperatorTok{$}\KeywordTok{send}\NormalTok{(}
+        \CommentTok{# JSON encode the message}
+        \KeywordTok{toJSON}\NormalTok{(}
+          \CommentTok{# Returns standard deviation for message}
+          \KeywordTok{sd}\NormalTok{(message}\OperatorTok{$}\NormalTok{data)}
+\NormalTok{        )}
+\NormalTok{      )}
+\NormalTok{    \})}
+\NormalTok{  \}}
+\NormalTok{)}
+\KeywordTok{runServer}\NormalTok{(}\StringTok{"0.0.0.0"}\NormalTok{, }\DecValTok{9454}\NormalTok{, app, }\DecValTok{250}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+2.echo
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(httpuv)}
+
+\NormalTok{app <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+  \DataTypeTok{call =} \ControlFlowTok{function}\NormalTok{(req) \{}
+\NormalTok{    wsUrl =}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\DataTypeTok{sep=}\StringTok{''}\NormalTok{,}
+                  \StringTok{'"'}\NormalTok{,}
+                  \StringTok{"ws://"}\NormalTok{,}
+                  \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{is.null}\NormalTok{(req}\OperatorTok{$}\NormalTok{HTTP_HOST), req}\OperatorTok{$}\NormalTok{SERVER_NAME, req}\OperatorTok{$}\NormalTok{HTTP_HOST),}
+                  \StringTok{'"'}\NormalTok{)}
+    
+    \KeywordTok{list}\NormalTok{(}
+      \DataTypeTok{status =}\NormalTok{ 200L,}
+      \DataTypeTok{headers =} \KeywordTok{list}\NormalTok{(}
+        \StringTok{'Content-Type'}\NormalTok{ =}\StringTok{ 'text/html'}
+\NormalTok{      ),}
+      \DataTypeTok{body =} \KeywordTok{paste}\NormalTok{(}
+        \DataTypeTok{sep =} \StringTok{"}\CharTok{\textbackslash{}r\textbackslash{}n}\StringTok{"}\NormalTok{,}
+        \StringTok{"<!DOCTYPE html>"}\NormalTok{,}
+        \StringTok{"<html>"}\NormalTok{,}
+        \StringTok{"<head>"}\NormalTok{,}
+        \StringTok{'<style type="text/css">'}\NormalTok{,}
+        \StringTok{'body \{ font-family: Helvetica; \}'}\NormalTok{,}
+        \StringTok{'pre \{ margin: 0 \}'}\NormalTok{,}
+        \StringTok{'</style>'}\NormalTok{,}
+        \StringTok{"<script>"}\NormalTok{,}
+        \KeywordTok{sprintf}\NormalTok{(}\StringTok{"var ws = new WebSocket(%s);"}\NormalTok{, wsUrl),}
+        \StringTok{"ws.onmessage = function(msg) \{"}\NormalTok{,}
+        \StringTok{'  var msgDiv = document.createElement("pre");'}\NormalTok{,}
+        \StringTok{'  msgDiv.innerHTML = msg.data.replace(/&/g, "&amp;").replace(/}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{</g, "&lt;");'}\NormalTok{,}
+        \StringTok{'  document.getElementById("output").appendChild(msgDiv);'}\NormalTok{,}
+        \StringTok{"\}"}\NormalTok{,}
+        \StringTok{"function sendInput() \{"}\NormalTok{,}
+        \StringTok{"  var input = document.getElementById('input');"}\NormalTok{,}
+        \StringTok{"  ws.send(input.value);"}\NormalTok{,}
+        \StringTok{"  input.value = '';"}\NormalTok{,}
+        \StringTok{"\}"}\NormalTok{,}
+        \StringTok{"</script>"}\NormalTok{,}
+        \StringTok{"</head>"}\NormalTok{,}
+        \StringTok{"<body>"}\NormalTok{,}
+        \StringTok{'<h3>Send Message</h3>'}\NormalTok{,}
+        \StringTok{'<form action="" onsubmit="sendInput(); return false">'}\NormalTok{,}
+        \StringTok{'<input type="text" id="input"/>'}\NormalTok{,}
+        \StringTok{'<h3>Received</h3>'}\NormalTok{,}
+        \StringTok{'<div id="output"/>'}\NormalTok{,}
+        \StringTok{'</form>'}\NormalTok{,}
+        \StringTok{"</body>"}\NormalTok{,}
+        \StringTok{"</html>"}
+\NormalTok{      )}
+\NormalTok{    )}
+\NormalTok{  \},}
+  \DataTypeTok{onWSOpen =} \ControlFlowTok{function}\NormalTok{(ws) \{}
+\NormalTok{    ws}\OperatorTok{$}\KeywordTok{onMessage}\NormalTok{(}\ControlFlowTok{function}\NormalTok{(binary, message) \{}
+\NormalTok{      ws}\OperatorTok{$}\KeywordTok{send}\NormalTok{(message)}
+\NormalTok{    \})}
+\NormalTok{  \}}
+\NormalTok{)}
+
+\KeywordTok{browseURL}\NormalTok{(}\StringTok{"http://localhost:9454/"}\NormalTok{)}
+\KeywordTok{runServer}\NormalTok{(}\StringTok{"0.0.0.0"}\NormalTok{, }\DecValTok{9454}\NormalTok{, app, }\DecValTok{250}\NormalTok{)}
+
+\end{Highlighting}
+\end{Shaded}
+
+3.deamon-echo
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(httpuv)}
+
+\NormalTok{.lastMessage <-}\StringTok{ }\OtherTok{NULL}
+
+\NormalTok{app <-}\StringTok{ }\KeywordTok{list}\NormalTok{(}
+  \DataTypeTok{call =} \ControlFlowTok{function}\NormalTok{(req) \{}
+\NormalTok{    wsUrl =}\StringTok{ }\KeywordTok{paste}\NormalTok{(}\DataTypeTok{sep=}\StringTok{''}\NormalTok{,}
+                  \StringTok{'"'}\NormalTok{,}
+                  \StringTok{"ws://"}\NormalTok{,}
+                  \KeywordTok{ifelse}\NormalTok{(}\KeywordTok{is.null}\NormalTok{(req}\OperatorTok{$}\NormalTok{HTTP_HOST), req}\OperatorTok{$}\NormalTok{SERVER_NAME, req}\OperatorTok{$}\NormalTok{HTTP_HOST),}
+                  \StringTok{'"'}\NormalTok{)}
+    
+    \KeywordTok{list}\NormalTok{(}
+      \DataTypeTok{status =}\NormalTok{ 200L,}
+      \DataTypeTok{headers =} \KeywordTok{list}\NormalTok{(}
+        \StringTok{'Content-Type'}\NormalTok{ =}\StringTok{ 'text/html'}
+\NormalTok{      ),}
+      \DataTypeTok{body =} \KeywordTok{paste}\NormalTok{(}
+        \DataTypeTok{sep =} \StringTok{"}\CharTok{\textbackslash{}r\textbackslash{}n}\StringTok{"}\NormalTok{,}
+        \StringTok{"<!DOCTYPE html>"}\NormalTok{,}
+        \StringTok{"<html>"}\NormalTok{,}
+        \StringTok{"<head>"}\NormalTok{,}
+        \StringTok{'<style type="text/css">'}\NormalTok{,}
+        \StringTok{'body \{ font-family: Helvetica; \}'}\NormalTok{,}
+        \StringTok{'pre \{ margin: 0 \}'}\NormalTok{,}
+        \StringTok{'</style>'}\NormalTok{,}
+        \StringTok{"<script>"}\NormalTok{,}
+        \KeywordTok{sprintf}\NormalTok{(}\StringTok{"var ws = new WebSocket(%s);"}\NormalTok{, wsUrl),}
+        \StringTok{"ws.onmessage = function(msg) \{"}\NormalTok{,}
+        \StringTok{'  var msgDiv = document.createElement("pre");'}\NormalTok{,}
+        \StringTok{'  msgDiv.innerHTML = msg.data.replace(/&/g, "&amp;").replace(/}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{</g, "&lt;");'}\NormalTok{,}
+        \StringTok{'  document.getElementById("output").appendChild(msgDiv);'}\NormalTok{,}
+        \StringTok{"\}"}\NormalTok{,}
+        \StringTok{"function sendInput() \{"}\NormalTok{,}
+        \StringTok{"  var input = document.getElementById('input');"}\NormalTok{,}
+        \StringTok{"  ws.send(input.value);"}\NormalTok{,}
+        \StringTok{"  input.value = '';"}\NormalTok{,}
+        \StringTok{"\}"}\NormalTok{,}
+        \StringTok{"</script>"}\NormalTok{,}
+        \StringTok{"</head>"}\NormalTok{,}
+        \StringTok{"<body>"}\NormalTok{,}
+        \StringTok{'<h3>Send Message</h3>'}\NormalTok{,}
+        \StringTok{'<form action="" onsubmit="sendInput(); return false">'}\NormalTok{,}
+        \StringTok{'<input type="text" id="input"/>'}\NormalTok{,}
+        \StringTok{'<h3>Received</h3>'}\NormalTok{,}
+        \StringTok{'<div id="output"/>'}\NormalTok{,}
+        \StringTok{'</form>'}\NormalTok{,}
+        \StringTok{"</body>"}\NormalTok{,}
+        \StringTok{"</html>"}
+\NormalTok{      )}
+\NormalTok{    )}
+\NormalTok{  \},}
+  \DataTypeTok{onWSOpen =} \ControlFlowTok{function}\NormalTok{(ws) \{}
+\NormalTok{    ws}\OperatorTok{$}\KeywordTok{onMessage}\NormalTok{(}\ControlFlowTok{function}\NormalTok{(binary, message) \{}
+\NormalTok{      .lastMessage <<-}\StringTok{ }\NormalTok{message}
+\NormalTok{      ws}\OperatorTok{$}\KeywordTok{send}\NormalTok{(message)}
+\NormalTok{    \})}
+\NormalTok{  \}}
+\NormalTok{)}
+
+\NormalTok{server <-}\StringTok{ }\KeywordTok{startDaemonizedServer}\NormalTok{(}\StringTok{"0.0.0.0"}\NormalTok{, }\DecValTok{9454}\NormalTok{, app)}
+
+\CommentTok{# check the value of .lastMessage after echoing to check it is being updated}
+
+\CommentTok{# call this after done}
+\CommentTok{#stopDaemonizedServer(server)}
+
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(httpuv)}
+\NormalTok{app =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{call =} \ControlFlowTok{function}\NormalTok{(req)\{}
+  \CommentTok{# 获取POST的参数}
+\NormalTok{  postdata =}\StringTok{ }\NormalTok{req}\OperatorTok{$}\NormalTok{rook.input}\OperatorTok{$}\KeywordTok{read_lines}\NormalTok{()}
+\NormalTok{  qs =}\StringTok{ }\NormalTok{httr}\OperatorTok{:::}\KeywordTok{parse_query}\NormalTok{(}\KeywordTok{gsub}\NormalTok{(}\StringTok{"^}\CharTok{\textbackslash{}\textbackslash{}}\StringTok{?"}\NormalTok{, }\StringTok{""}\NormalTok{, postdata))}
+\NormalTok{  dat =}\StringTok{ }\NormalTok{jsonlite}\OperatorTok{::}\KeywordTok{fromJSON}\NormalTok{(qs}\OperatorTok{$}\NormalTok{jsonDat)}
+  \KeywordTok{print}\NormalTok{(dat)}
+  \CommentTok{# 计算返回结果}
+\NormalTok{  r =}\StringTok{ }\FloatTok{0.3} \OperatorTok{+}\StringTok{ }\FloatTok{0.1} \OperatorTok{*}\StringTok{ }\NormalTok{dat}\OperatorTok{$}\NormalTok{v1 }\OperatorTok{-}\StringTok{ }\FloatTok{0.2} \OperatorTok{*}\StringTok{ }\NormalTok{dat}\OperatorTok{$}\NormalTok{v2 }\OperatorTok{+}\StringTok{ }\FloatTok{0.1} \OperatorTok{*}\StringTok{ }\NormalTok{dat}\OperatorTok{$}\NormalTok{v3}
+\NormalTok{  output =}\StringTok{ }\NormalTok{jsonlite}\OperatorTok{::}\KeywordTok{toJSON}\NormalTok{(}\KeywordTok{list}\NormalTok{(}\DataTypeTok{message =} \StringTok{'suceess'}\NormalTok{, }\DataTypeTok{result =}\NormalTok{ r), }\DataTypeTok{auto_unbox =}\NormalTok{ T)}
+\NormalTok{  res =}\StringTok{ }\KeywordTok{list}\NormalTok{(}\DataTypeTok{status =}\NormalTok{ 200L, }\DataTypeTok{headers =} \KeywordTok{list}\NormalTok{(}\StringTok{'Content-Type'}\NormalTok{ =}\StringTok{ 'application/json'}\NormalTok{), }\DataTypeTok{body =}\NormalTok{ output)}
+                                           \KeywordTok{return}\NormalTok{(res)}
+\NormalTok{\})}
+                                           \CommentTok{# 启动服务}
+\NormalTok{                                           server =}\StringTok{ }\KeywordTok{startServer}\NormalTok{(}\StringTok{"0.0.0.0"}\NormalTok{, 1124L, }\DataTypeTok{app =}\NormalTok{ app)}
+                                           \ControlFlowTok{while}\NormalTok{(}\OtherTok{TRUE}\NormalTok{) \{}
+                                           \KeywordTok{service}\NormalTok{()}
+                                           \KeywordTok{Sys.sleep}\NormalTok{(}\FloatTok{0.001}\NormalTok{)}
+\NormalTok{                                           \}}
+                                           \CommentTok{# stopServer(server)}
+
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{RCurl}\OperatorTok{::}\KeywordTok{postForm}\NormalTok{(}\StringTok{'127.0.0.1:1124'}\NormalTok{,}
+\DataTypeTok{style =} \StringTok{'post'}\NormalTok{,}
+\DataTypeTok{.params =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{jsonDat =} \StringTok{'\{"v1":1,"v2":2,"v3":3\}'}\NormalTok{)}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+httpuv是相对比较底层的包，熟练使用需要掌握前端知识，并且需要用到RCurl，httr相关爬虫包的一些知识去处理。本人不推荐这种方式进行模型的部署。
+
 \chapter{opencpu}\label{opencpu}
 
 \chapter{plumber}\label{plumber}
@@ -143,6 +756,173 @@ migrating to Java.
 \chapter{RestRserve}\label{restrserve}
 
 \chapter{mailR}\label{mailr}
+
+mailR是一个比较小的包，主要解决的问题是R与邮件发送的问题,该包就一个方法：send.mail()
+方法调用方式为：
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{send.mail}\NormalTok{(from, to, }\DataTypeTok{subject =} \StringTok{""}\NormalTok{, }\DataTypeTok{body =} \StringTok{""}\NormalTok{, }\DataTypeTok{encoding =} \StringTok{"iso-8859-1"}\NormalTok{,}
+\DataTypeTok{html =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{inline =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{smtp =} \KeywordTok{list}\NormalTok{(), }\DataTypeTok{authenticate =} \OtherTok{FALSE}\NormalTok{,}
+\DataTypeTok{send =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{attach.files =} \OtherTok{NULL}\NormalTok{, }\DataTypeTok{debug =} \OtherTok{FALSE}\NormalTok{, ...)}
+\end{Highlighting}
+\end{Shaded}
+
+参数列表：
+
+\begin{itemize}
+\item
+  from 有效的发送者的邮箱
+\item
+  to 目标接收的邮箱
+\item
+  subject 邮箱主题
+\item
+  body 邮件体
+\item
+  encoding 邮件内容字符编码 支持包括 iso-8859-1 (default), utf-8,
+  us-ascii, and koi8-r
+\item
+  html bool值，是否把邮箱体解析成html
+\item
+  inline 布尔值，HTML文件中的图像是否应该嵌入内联。
+\item
+  smtp lsit类型，链接邮箱的smtp
+\item
+  authenticate 一个布尔变量，用于指示是否需要授权连接到
+  SMTP服务器。如果设置为true，请参阅SMTP参数所需参数的详细信息。
+  发送一个布尔值，指示电子邮件是否应该在函数的末尾发送。
+  （默认行为）。如果设置为false，函数将电子邮件对象返回给父 环境。
+\item
+  attach.files 链接到文件的文件系统中路径的字符向量或\emph{有效}
+  URL到附加到电子邮件（详见更多信息附加URL）
+\item
+  debug bool值，是否查看debug的真实细节
+\item
+  \ldots{} Optional arguments to be passed related to file attachments.
+  See details for more
+\end{itemize}
+
+Example1:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mailR}\OperatorTok{::}\KeywordTok{send.mail}\NormalTok{(}
+  \DataTypeTok{from =} \StringTok{'sender@tuandai.com'}\NormalTok{, }\CommentTok{# 发送人}
+  \DataTypeTok{to =} \StringTok{'sendee@tuandai.com'}\NormalTok{, }\CommentTok{# 接收人}
+  \DataTypeTok{cc =} \StringTok{'carboncopy@tuandai.com'}\NormalTok{, }\CommentTok{# 抄送人}
+  \DataTypeTok{subject =} \StringTok{'邮件标题'}\NormalTok{,}
+  \DataTypeTok{body =} \KeywordTok{as.character}\NormalTok{(}
+    \StringTok{'<div style = "color:red">邮件正文，可以为HTML格式</div>'}
+\NormalTok{  ),}
+  \DataTypeTok{attach.files =} \OtherTok{NULL}\NormalTok{, }\CommentTok{# 附件的路径}
+  \DataTypeTok{encoding =} \StringTok{"utf-8"}\NormalTok{,}
+  \DataTypeTok{smtp =} \KeywordTok{list}\NormalTok{(}
+    \DataTypeTok{host.name =} \StringTok{'smtp.exmail.qq.com'}\NormalTok{, }\CommentTok{# 邮件服务器IP地址}
+    \DataTypeTok{port =} \DecValTok{465}\NormalTok{, }\CommentTok{# 邮件服务器端口}
+    \DataTypeTok{user.name =} \StringTok{'senderName'}\NormalTok{, }\CommentTok{# 发送人名称}
+    \DataTypeTok{passwd =} \StringTok{'yourpassword'}\NormalTok{, }\CommentTok{# 密码}
+    \DataTypeTok{ssl =}\NormalTok{ T),}
+  \DataTypeTok{html =}\NormalTok{ T, }\DataTypeTok{inline =}\NormalTok{ T, }\DataTypeTok{authenticate =}\NormalTok{ T, }\DataTypeTok{send =}\NormalTok{ T, }\DataTypeTok{debug =}\NormalTok{ F}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Example2:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{send.mail}\NormalTok{(}\DataTypeTok{from =} \StringTok{"sender@gmail.com"}\NormalTok{,}
+          \DataTypeTok{to =} \KeywordTok{c}\NormalTok{(}\StringTok{"Recipient 1 <recipient1@gmail.com>"}\NormalTok{, }\StringTok{"recipient2@gmail.com"}\NormalTok{),}
+          \DataTypeTok{cc =} \KeywordTok{c}\NormalTok{(}\StringTok{"CC Recipient <cc.recipient@gmail.com>"}\NormalTok{),}
+          \DataTypeTok{bcc =} \KeywordTok{c}\NormalTok{(}\StringTok{"BCC Recipient <bcc.recipient@gmail.com>"}\NormalTok{),}
+          \DataTypeTok{subject=}\StringTok{"Subject of the email"}\NormalTok{,}
+          \DataTypeTok{body =} \StringTok{"Body of the email"}\NormalTok{,}
+          \DataTypeTok{smtp =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{host.name =} \StringTok{"aspmx.l.google.com"}\NormalTok{, }\DataTypeTok{port =} \DecValTok{25}\NormalTok{),}
+          \DataTypeTok{authenticate =} \OtherTok{FALSE}\NormalTok{,}
+          \DataTypeTok{send =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Example3:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{send.mail}\NormalTok{(}\DataTypeTok{from =} \StringTok{"sender@gmail.com"}\NormalTok{,}
+          \DataTypeTok{to =} \KeywordTok{c}\NormalTok{(}\StringTok{"recipient1@gmail.com"}\NormalTok{, }\StringTok{"recipient2@gmail.com"}\NormalTok{),}
+          \DataTypeTok{subject =} \StringTok{"Subject of the email"}\NormalTok{,}
+          \DataTypeTok{body =} \StringTok{"Body of the email"}\NormalTok{,}
+          \DataTypeTok{smtp =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{host.name =} \StringTok{"smtp.gmail.com"}\NormalTok{, }\DataTypeTok{port =} \DecValTok{465}\NormalTok{, }\DataTypeTok{user.name =} \StringTok{"gmail_username"}\NormalTok{, }\DataTypeTok{passwd =} \StringTok{"password"}\NormalTok{, }\DataTypeTok{ssl =} \OtherTok{TRUE}\NormalTok{),}
+          \DataTypeTok{authenticate =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{send =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Example4:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\NormalTok{email <-}\StringTok{ }\KeywordTok{send.mail}\NormalTok{(}\DataTypeTok{from =} \StringTok{"Sender Name <sender@gmail.com>"}\NormalTok{,}
+                   \DataTypeTok{to =} \StringTok{"recipient@gmail.com"}\NormalTok{,}
+                   \DataTypeTok{subject =} \StringTok{"A quote from Gandhi"}\NormalTok{,}
+                   \DataTypeTok{body =} \StringTok{"In Hindi :  थोडा सा अभ्यास बहुत सारे उपदेशों से बेहतर है।}
+\StringTok{                   English translation: An ounce of practice is worth more than tons of preaching."}\NormalTok{,}
+                   \DataTypeTok{encoding =} \StringTok{"utf-8"}\NormalTok{,}
+                   \DataTypeTok{smtp =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{host.name =} \StringTok{"smtp.gmail.com"}\NormalTok{, }\DataTypeTok{port =} \DecValTok{465}\NormalTok{, }\DataTypeTok{user.name =} \StringTok{"gmail_username"}\NormalTok{, }\DataTypeTok{passwd =} \StringTok{"password"}\NormalTok{, }\DataTypeTok{ssl =}\NormalTok{ T),}
+               \DataTypeTok{authenticate =} \OtherTok{TRUE}\NormalTok{,}
+                   \DataTypeTok{send =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Example5:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+
+\KeywordTok{send.mail}\NormalTok{(}\DataTypeTok{from =} \StringTok{"sender@gmail.com"}\NormalTok{,}
+          \DataTypeTok{to =} \KeywordTok{c}\NormalTok{(}\StringTok{"recipient1@gmail.com"}\NormalTok{, }\StringTok{"recipient2@gmail.com"}\NormalTok{),}
+          \DataTypeTok{subject =} \StringTok{"Subject of the email"}\NormalTok{,}
+          \DataTypeTok{body =} \StringTok{"Body of the email"}\NormalTok{,}
+          \DataTypeTok{smtp =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{host.name =} \StringTok{"smtp.gmail.com"}\NormalTok{, }\DataTypeTok{port =} \DecValTok{465}\NormalTok{, }\DataTypeTok{user.name =} \StringTok{"gmail_username"}\NormalTok{, }\DataTypeTok{passwd =} \StringTok{"password"}\NormalTok{, }\DataTypeTok{ssl =} \OtherTok{TRUE}\NormalTok{),}
+          \DataTypeTok{authenticate =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{send =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{attach.files =} \KeywordTok{c}\NormalTok{(}\StringTok{"./download.log"}\NormalTok{, }\StringTok{"upload.log"}\NormalTok{),}
+          \DataTypeTok{file.names =} \KeywordTok{c}\NormalTok{(}\StringTok{"Download log"}\NormalTok{, }\StringTok{"Upload log"}\NormalTok{), }\CommentTok{# optional parameter}
+          \DataTypeTok{file.descriptions =} \KeywordTok{c}\NormalTok{(}\StringTok{"Description for download log"}\NormalTok{, }\StringTok{"Description for upload log"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Example6:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{send.mail}\NormalTok{(}\DataTypeTok{from =} \StringTok{"sender@gmail.com"}\NormalTok{,}
+          \DataTypeTok{to =} \KeywordTok{c}\NormalTok{(}\StringTok{"recipient1@gmail.com"}\NormalTok{, }\StringTok{"recipient2@gmail.com"}\NormalTok{),}
+          \DataTypeTok{subject =} \StringTok{"Subject of the email"}\NormalTok{,}
+          \DataTypeTok{body =} \StringTok{"<html>The apache logo - <img src=}\CharTok{\textbackslash{}"}\StringTok{http://www.apache.org/images/asf_logo_wide.gif}\CharTok{\textbackslash{}"}\StringTok{></html>"}\NormalTok{, }\CommentTok{# can also point to local file (see next example)}
+          \DataTypeTok{html =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{smtp =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{host.name =} \StringTok{"smtp.gmail.com"}\NormalTok{, }\DataTypeTok{port =} \DecValTok{465}\NormalTok{, }\DataTypeTok{user.name =} \StringTok{"gmail_username"}\NormalTok{, }\DataTypeTok{passwd =} \StringTok{"password"}\NormalTok{, }\DataTypeTok{ssl =} \OtherTok{TRUE}\NormalTok{),}
+          \DataTypeTok{authenticate =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{send =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Example7:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{send.mail}\NormalTok{(}\DataTypeTok{from =} \StringTok{"sender@gmail.com"}\NormalTok{,}
+          \DataTypeTok{to =} \KeywordTok{c}\NormalTok{(}\StringTok{"recipient1@gmail.com"}\NormalTok{, }\StringTok{"recipient2@gmail.com"}\NormalTok{),}
+          \DataTypeTok{subject =} \StringTok{"Subject of the email"}\NormalTok{,}
+          \DataTypeTok{body =} \StringTok{"path.to.local.html.file"}\NormalTok{,}
+          \DataTypeTok{html =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{inline =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{smtp =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{host.name =} \StringTok{"smtp.gmail.com"}\NormalTok{, }\DataTypeTok{port =} \DecValTok{465}\NormalTok{, }\DataTypeTok{user.name =} \StringTok{"gmail_username"}\NormalTok{, }\DataTypeTok{passwd =} \StringTok{"password"}\NormalTok{, }\DataTypeTok{ssl =} \OtherTok{TRUE}\NormalTok{),}
+          \DataTypeTok{authenticate =} \OtherTok{TRUE}\NormalTok{,}
+          \DataTypeTok{send =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \chapter{Rweixin}\label{rweixin}
 

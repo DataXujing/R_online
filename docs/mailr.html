@@ -49,6 +49,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="css\style.css" type="text/css" />
 <link rel="stylesheet" href="css\toc.css" type="text/css" />
@@ -69,7 +106,10 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>序言</a></li>
 <li class="chapter" data-level="" data-path="e585b3e4ba8ee68891.html"><a href="e585b3e4ba8ee68891.html"><i class="fa fa-check"></i>关于我</a></li>
-<li class="chapter" data-level="1" data-path="httpuv.html"><a href="httpuv.html"><i class="fa fa-check"></i><b>1</b> httpuv</a></li>
+<li class="chapter" data-level="1" data-path="httpuv.html"><a href="httpuv.html"><i class="fa fa-check"></i><b>1</b> httpuv</a><ul>
+<li class="chapter" data-level="1.1" data-path="httpuv.html"><a href="httpuv.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 方法介绍</a></li>
+<li class="chapter" data-level="1.2" data-path="httpuv.html"><a href="httpuv.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 例子演示</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="opencpu.html"><a href="opencpu.html"><i class="fa fa-check"></i><b>2</b> opencpu</a></li>
 <li class="chapter" data-level="3" data-path="plumber.html"><a href="plumber.html"><i class="fa fa-check"></i><b>3</b> plumber</a></li>
 <li class="chapter" data-level="4" data-path="jug.html"><a href="jug.html"><i class="fa fa-check"></i><b>4</b> jug</a></li>
@@ -101,6 +141,104 @@
             <section class="normal" id="section-">
 <div id="mailr" class="section level1">
 <h1><span class="header-section-number">第 8 章</span> mailR</h1>
+<p>mailR是一个比较小的包，主要解决的问题是R与邮件发送的问题,该包就一个方法：send.mail() 方法调用方式为：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">send.mail</span>(from, to, <span class="dt">subject =</span> <span class="st">&quot;&quot;</span>, <span class="dt">body =</span> <span class="st">&quot;&quot;</span>, <span class="dt">encoding =</span> <span class="st">&quot;iso-8859-1&quot;</span>,
+<span class="dt">html =</span> <span class="ot">FALSE</span>, <span class="dt">inline =</span> <span class="ot">FALSE</span>, <span class="dt">smtp =</span> <span class="kw">list</span>(), <span class="dt">authenticate =</span> <span class="ot">FALSE</span>,
+<span class="dt">send =</span> <span class="ot">TRUE</span>, <span class="dt">attach.files =</span> <span class="ot">NULL</span>, <span class="dt">debug =</span> <span class="ot">FALSE</span>, ...)</code></pre></div>
+<p>参数列表：</p>
+<ul>
+<li><p>from 有效的发送者的邮箱</p></li>
+<li><p>to 目标接收的邮箱</p></li>
+<li><p>subject 邮箱主题</p></li>
+<li><p>body 邮件体</p></li>
+<li><p>encoding 邮件内容字符编码 支持包括 iso-8859-1 (default), utf-8, us-ascii, and koi8-r</p></li>
+<li><p>html bool值，是否把邮箱体解析成html</p></li>
+<li><p>inline 布尔值，HTML文件中的图像是否应该嵌入内联。</p></li>
+<li><p>smtp lsit类型，链接邮箱的smtp</p></li>
+<li><p>authenticate 一个布尔变量，用于指示是否需要授权连接到 SMTP服务器。如果设置为true，请参阅SMTP参数所需参数的详细信息。 发送一个布尔值，指示电子邮件是否应该在函数的末尾发送。 （默认行为）。如果设置为false，函数将电子邮件对象返回给父 环境。</p></li>
+<li><p>attach.files 链接到文件的文件系统中路径的字符向量或<em>有效</em> URL到附加到电子邮件（详见更多信息附加URL）</p></li>
+<li><p>debug bool值，是否查看debug的真实细节</p></li>
+<li><p>… Optional arguments to be passed related to file attachments. See details for more</p></li>
+</ul>
+<p>Example1:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mailR<span class="op">::</span><span class="kw">send.mail</span>(
+  <span class="dt">from =</span> <span class="st">&#39;sender@tuandai.com&#39;</span>, <span class="co"># 发送人</span>
+  <span class="dt">to =</span> <span class="st">&#39;sendee@tuandai.com&#39;</span>, <span class="co"># 接收人</span>
+  <span class="dt">cc =</span> <span class="st">&#39;carboncopy@tuandai.com&#39;</span>, <span class="co"># 抄送人</span>
+  <span class="dt">subject =</span> <span class="st">&#39;邮件标题&#39;</span>,
+  <span class="dt">body =</span> <span class="kw">as.character</span>(
+    <span class="st">&#39;&lt;div style = &quot;color:red&quot;&gt;邮件正文，可以为HTML格式&lt;/div&gt;&#39;</span>
+  ),
+  <span class="dt">attach.files =</span> <span class="ot">NULL</span>, <span class="co"># 附件的路径</span>
+  <span class="dt">encoding =</span> <span class="st">&quot;utf-8&quot;</span>,
+  <span class="dt">smtp =</span> <span class="kw">list</span>(
+    <span class="dt">host.name =</span> <span class="st">&#39;smtp.exmail.qq.com&#39;</span>, <span class="co"># 邮件服务器IP地址</span>
+    <span class="dt">port =</span> <span class="dv">465</span>, <span class="co"># 邮件服务器端口</span>
+    <span class="dt">user.name =</span> <span class="st">&#39;senderName&#39;</span>, <span class="co"># 发送人名称</span>
+    <span class="dt">passwd =</span> <span class="st">&#39;yourpassword&#39;</span>, <span class="co"># 密码</span>
+    <span class="dt">ssl =</span> T),
+  <span class="dt">html =</span> T, <span class="dt">inline =</span> T, <span class="dt">authenticate =</span> T, <span class="dt">send =</span> T, <span class="dt">debug =</span> F
+)</code></pre></div>
+<p>Example2:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">send.mail</span>(<span class="dt">from =</span> <span class="st">&quot;sender@gmail.com&quot;</span>,
+          <span class="dt">to =</span> <span class="kw">c</span>(<span class="st">&quot;Recipient 1 &lt;recipient1@gmail.com&gt;&quot;</span>, <span class="st">&quot;recipient2@gmail.com&quot;</span>),
+          <span class="dt">cc =</span> <span class="kw">c</span>(<span class="st">&quot;CC Recipient &lt;cc.recipient@gmail.com&gt;&quot;</span>),
+          <span class="dt">bcc =</span> <span class="kw">c</span>(<span class="st">&quot;BCC Recipient &lt;bcc.recipient@gmail.com&gt;&quot;</span>),
+          <span class="dt">subject=</span><span class="st">&quot;Subject of the email&quot;</span>,
+          <span class="dt">body =</span> <span class="st">&quot;Body of the email&quot;</span>,
+          <span class="dt">smtp =</span> <span class="kw">list</span>(<span class="dt">host.name =</span> <span class="st">&quot;aspmx.l.google.com&quot;</span>, <span class="dt">port =</span> <span class="dv">25</span>),
+          <span class="dt">authenticate =</span> <span class="ot">FALSE</span>,
+          <span class="dt">send =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p>Example3:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">send.mail</span>(<span class="dt">from =</span> <span class="st">&quot;sender@gmail.com&quot;</span>,
+          <span class="dt">to =</span> <span class="kw">c</span>(<span class="st">&quot;recipient1@gmail.com&quot;</span>, <span class="st">&quot;recipient2@gmail.com&quot;</span>),
+          <span class="dt">subject =</span> <span class="st">&quot;Subject of the email&quot;</span>,
+          <span class="dt">body =</span> <span class="st">&quot;Body of the email&quot;</span>,
+          <span class="dt">smtp =</span> <span class="kw">list</span>(<span class="dt">host.name =</span> <span class="st">&quot;smtp.gmail.com&quot;</span>, <span class="dt">port =</span> <span class="dv">465</span>, <span class="dt">user.name =</span> <span class="st">&quot;gmail_username&quot;</span>, <span class="dt">passwd =</span> <span class="st">&quot;password&quot;</span>, <span class="dt">ssl =</span> <span class="ot">TRUE</span>),
+          <span class="dt">authenticate =</span> <span class="ot">TRUE</span>,
+          <span class="dt">send =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p>Example4:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+email &lt;-<span class="st"> </span><span class="kw">send.mail</span>(<span class="dt">from =</span> <span class="st">&quot;Sender Name &lt;sender@gmail.com&gt;&quot;</span>,
+                   <span class="dt">to =</span> <span class="st">&quot;recipient@gmail.com&quot;</span>,
+                   <span class="dt">subject =</span> <span class="st">&quot;A quote from Gandhi&quot;</span>,
+                   <span class="dt">body =</span> <span class="st">&quot;In Hindi :  थोडा सा अभ्यास बहुत सारे उपदेशों से बेहतर है।</span>
+<span class="st">                   English translation: An ounce of practice is worth more than tons of preaching.&quot;</span>,
+                   <span class="dt">encoding =</span> <span class="st">&quot;utf-8&quot;</span>,
+                   <span class="dt">smtp =</span> <span class="kw">list</span>(<span class="dt">host.name =</span> <span class="st">&quot;smtp.gmail.com&quot;</span>, <span class="dt">port =</span> <span class="dv">465</span>, <span class="dt">user.name =</span> <span class="st">&quot;gmail_username&quot;</span>, <span class="dt">passwd =</span> <span class="st">&quot;password&quot;</span>, <span class="dt">ssl =</span> T),
+               <span class="dt">authenticate =</span> <span class="ot">TRUE</span>,
+                   <span class="dt">send =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p>Example5:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="kw">send.mail</span>(<span class="dt">from =</span> <span class="st">&quot;sender@gmail.com&quot;</span>,
+          <span class="dt">to =</span> <span class="kw">c</span>(<span class="st">&quot;recipient1@gmail.com&quot;</span>, <span class="st">&quot;recipient2@gmail.com&quot;</span>),
+          <span class="dt">subject =</span> <span class="st">&quot;Subject of the email&quot;</span>,
+          <span class="dt">body =</span> <span class="st">&quot;Body of the email&quot;</span>,
+          <span class="dt">smtp =</span> <span class="kw">list</span>(<span class="dt">host.name =</span> <span class="st">&quot;smtp.gmail.com&quot;</span>, <span class="dt">port =</span> <span class="dv">465</span>, <span class="dt">user.name =</span> <span class="st">&quot;gmail_username&quot;</span>, <span class="dt">passwd =</span> <span class="st">&quot;password&quot;</span>, <span class="dt">ssl =</span> <span class="ot">TRUE</span>),
+          <span class="dt">authenticate =</span> <span class="ot">TRUE</span>,
+          <span class="dt">send =</span> <span class="ot">TRUE</span>,
+          <span class="dt">attach.files =</span> <span class="kw">c</span>(<span class="st">&quot;./download.log&quot;</span>, <span class="st">&quot;upload.log&quot;</span>),
+          <span class="dt">file.names =</span> <span class="kw">c</span>(<span class="st">&quot;Download log&quot;</span>, <span class="st">&quot;Upload log&quot;</span>), <span class="co"># optional parameter</span>
+          <span class="dt">file.descriptions =</span> <span class="kw">c</span>(<span class="st">&quot;Description for download log&quot;</span>, <span class="st">&quot;Description for upload log&quot;</span>))</code></pre></div>
+<p>Example6:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">send.mail</span>(<span class="dt">from =</span> <span class="st">&quot;sender@gmail.com&quot;</span>,
+          <span class="dt">to =</span> <span class="kw">c</span>(<span class="st">&quot;recipient1@gmail.com&quot;</span>, <span class="st">&quot;recipient2@gmail.com&quot;</span>),
+          <span class="dt">subject =</span> <span class="st">&quot;Subject of the email&quot;</span>,
+          <span class="dt">body =</span> <span class="st">&quot;&lt;html&gt;The apache logo - &lt;img src=</span><span class="ch">\&quot;</span><span class="st">http://www.apache.org/images/asf_logo_wide.gif</span><span class="ch">\&quot;</span><span class="st">&gt;&lt;/html&gt;&quot;</span>, <span class="co"># can also point to local file (see next example)</span>
+          <span class="dt">html =</span> <span class="ot">TRUE</span>,
+          <span class="dt">smtp =</span> <span class="kw">list</span>(<span class="dt">host.name =</span> <span class="st">&quot;smtp.gmail.com&quot;</span>, <span class="dt">port =</span> <span class="dv">465</span>, <span class="dt">user.name =</span> <span class="st">&quot;gmail_username&quot;</span>, <span class="dt">passwd =</span> <span class="st">&quot;password&quot;</span>, <span class="dt">ssl =</span> <span class="ot">TRUE</span>),
+          <span class="dt">authenticate =</span> <span class="ot">TRUE</span>,
+          <span class="dt">send =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p>Example7:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">send.mail</span>(<span class="dt">from =</span> <span class="st">&quot;sender@gmail.com&quot;</span>,
+          <span class="dt">to =</span> <span class="kw">c</span>(<span class="st">&quot;recipient1@gmail.com&quot;</span>, <span class="st">&quot;recipient2@gmail.com&quot;</span>),
+          <span class="dt">subject =</span> <span class="st">&quot;Subject of the email&quot;</span>,
+          <span class="dt">body =</span> <span class="st">&quot;path.to.local.html.file&quot;</span>,
+          <span class="dt">html =</span> <span class="ot">TRUE</span>,
+          <span class="dt">inline =</span> <span class="ot">TRUE</span>,
+          <span class="dt">smtp =</span> <span class="kw">list</span>(<span class="dt">host.name =</span> <span class="st">&quot;smtp.gmail.com&quot;</span>, <span class="dt">port =</span> <span class="dv">465</span>, <span class="dt">user.name =</span> <span class="st">&quot;gmail_username&quot;</span>, <span class="dt">passwd =</span> <span class="st">&quot;password&quot;</span>, <span class="dt">ssl =</span> <span class="ot">TRUE</span>),
+          <span class="dt">authenticate =</span> <span class="ot">TRUE</span>,
+          <span class="dt">send =</span> <span class="ot">TRUE</span>)</code></pre></div>
 
 </div>
             </section>
