@@ -5,27 +5,27 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>R语言模型部署实战</title>
-  <meta name="description" content="R语言模型部署实战">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>第 2 章 opencpu | R语言模型部署实战</title>
+  <meta name="description" content="第 2 章 opencpu | R语言模型部署实战">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="R语言模型部署实战" />
+  <meta property="og:title" content="第 2 章 opencpu | R语言模型部署实战" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="R语言模型部署实战" />
+  <meta property="og:description" content="第 2 章 opencpu | R语言模型部署实战" />
   <meta name="github-repo" content="DataXujing/R-deployment" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R语言模型部署实战" />
+  <meta name="twitter:title" content="第 2 章 opencpu | R语言模型部署实战" />
   
-  <meta name="twitter:description" content="R语言模型部署实战" />
+  <meta name="twitter:description" content="第 2 章 opencpu | R语言模型部署实战" />
   
 
 <meta name="author" content="徐静">
 
 
-<meta name="date" content="2018-08-06">
+<meta name="date" content="2018-12-31">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="plumber.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -110,15 +111,102 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1" data-path="httpuv.html"><a href="httpuv.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 方法介绍</a></li>
 <li class="chapter" data-level="1.2" data-path="httpuv.html"><a href="httpuv.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 例子演示</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="opencpu.html"><a href="opencpu.html"><i class="fa fa-check"></i><b>2</b> opencpu</a></li>
-<li class="chapter" data-level="3" data-path="plumber.html"><a href="plumber.html"><i class="fa fa-check"></i><b>3</b> plumber</a></li>
-<li class="chapter" data-level="4" data-path="jug.html"><a href="jug.html"><i class="fa fa-check"></i><b>4</b> jug</a></li>
+<li class="chapter" data-level="2" data-path="opencpu.html"><a href="opencpu.html"><i class="fa fa-check"></i><b>2</b> opencpu</a><ul>
+<li class="chapter" data-level="2.1" data-path="opencpu.html"><a href="opencpu.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 安装</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="opencpu.html"><a href="opencpu.html#ubuntu-18.0416.04-"><i class="fa fa-check"></i><b>2.1.1</b> Ubuntu 18.04/16.04 安装</a></li>
+<li class="chapter" data-level="2.1.2" data-path="opencpu.html"><a href="opencpu.html#section-2.1.2"><i class="fa fa-check"></i><b>2.1.2</b> 本地单用户服务器</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="opencpu.html"><a href="opencpu.html#api"><i class="fa fa-check"></i><b>2.2</b> API文档</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="opencpu.html"><a href="opencpu.html#opencpuhttp"><i class="fa fa-check"></i><b>2.2.1</b> OpenCPU中的HTTP</a></li>
+<li class="chapter" data-level="2.2.2" data-path="opencpu.html"><a href="opencpu.html#api-endpoints"><i class="fa fa-check"></i><b>2.2.2</b> API 端点(EndPoints)</a></li>
+<li class="chapter" data-level="2.2.3" data-path="opencpu.html"><a href="opencpu.html#section-2.2.3"><i class="fa fa-check"></i><b>2.2.3</b> 输入，输出：数据和格式</a></li>
+<li class="chapter" data-level="2.2.4" data-path="opencpu.html"><a href="opencpu.html#section-2.2.4"><i class="fa fa-check"></i><b>2.2.4</b> 其他功能</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="opencpu.html"><a href="opencpu.html#xgboost"><i class="fa fa-check"></i><b>2.3</b> XGBoost模型部署实例</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="opencpu.html"><a href="opencpu.html#section-2.3.1"><i class="fa fa-check"></i><b>2.3.1</b> 训练模型</a></li>
+<li class="chapter" data-level="2.3.2" data-path="opencpu.html"><a href="opencpu.html#r"><i class="fa fa-check"></i><b>2.3.2</b> 构建R包</a></li>
+<li class="chapter" data-level="2.3.3" data-path="opencpu.html"><a href="opencpu.html#r"><i class="fa fa-check"></i><b>2.3.3</b> 编译R包并安装</a></li>
+<li class="chapter" data-level="2.3.4" data-path="opencpu.html"><a href="opencpu.html#opencpu"><i class="fa fa-check"></i><b>2.3.4</b> opencpu的一些配置</a></li>
+<li class="chapter" data-level="2.3.5" data-path="opencpu.html"><a href="opencpu.html#opencpu"><i class="fa fa-check"></i><b>2.3.5</b> 本地opencpu服务测试</a></li>
+<li class="chapter" data-level="2.3.6" data-path="opencpu.html"><a href="opencpu.html#ubuntu-16.04-opencpu-server"><i class="fa fa-check"></i><b>2.3.6</b> Ubuntu 16.04 opencpu-server部署测试</a></li>
+<li class="chapter" data-level="2.3.7" data-path="opencpu.html"><a href="opencpu.html#github"><i class="fa fa-check"></i><b>2.3.7</b> Github部署测试</a></li>
+<li class="chapter" data-level="2.3.8" data-path="opencpu.html"><a href="opencpu.html#section-2.3.8"><i class="fa fa-check"></i><b>2.3.8</b> 官方例子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="plumber.html"><a href="plumber.html"><i class="fa fa-check"></i><b>3</b> plumber</a><ul>
+<li class="chapter" data-level="3.1" data-path="plumber.html"><a href="plumber.html#section-3.1"><i class="fa fa-check"></i><b>3.1</b> 快速开始</a></li>
+<li class="chapter" data-level="3.2" data-path="plumber.html"><a href="plumber.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 路由和输入</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="plumber.html"><a href="plumber.html#section-3.2.1"><i class="fa fa-check"></i><b>3.2.1</b> 端点</a></li>
+<li class="chapter" data-level="3.2.2" data-path="plumber.html"><a href="plumber.html#section-3.2.2"><i class="fa fa-check"></i><b>3.2.2</b> 过滤器</a></li>
+<li class="chapter" data-level="3.2.3" data-path="plumber.html"><a href="plumber.html#section-3.2.3"><i class="fa fa-check"></i><b>3.2.3</b> 动态路由</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="plumber.html"><a href="plumber.html#rendering-output"><i class="fa fa-check"></i><b>3.3</b> Rendering Output</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="plumber.html"><a href="plumber.html#section-3.3.1"><i class="fa fa-check"></i><b>3.3.1</b> 序列化器</a></li>
+<li class="chapter" data-level="3.3.2" data-path="plumber.html"><a href="plumber.html#section-3.3.2"><i class="fa fa-check"></i><b>3.3.2</b> 绕过序列化</a></li>
+<li class="chapter" data-level="3.3.3" data-path="plumber.html"><a href="plumber.html#boxed-and-unboxed-json"><i class="fa fa-check"></i><b>3.3.3</b> boxed and unboxed JSON</a></li>
+<li class="chapter" data-level="3.3.4" data-path="plumber.html"><a href="plumber.html#section-3.3.4"><i class="fa fa-check"></i><b>3.3.4</b> 自定义图像序列化程序</a></li>
+<li class="chapter" data-level="3.3.5" data-path="plumber.html"><a href="plumber.html#section-3.3.5"><i class="fa fa-check"></i><b>3.3.5</b> 错误处理</a></li>
+<li class="chapter" data-level="3.3.6" data-path="plumber.html"><a href="plumber.html#cookies"><i class="fa fa-check"></i><b>3.3.6</b> 设置Cookies(*)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="plumber.html"><a href="plumber.html#section-3.4"><i class="fa fa-check"></i><b>3.4</b> 部署</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="plumber.html"><a href="plumber.html#docker"><i class="fa fa-check"></i><b>3.4.1</b> Docker（基础）</a></li>
+<li class="chapter" data-level="3.4.2" data-path="plumber.html"><a href="plumber.html#docker"><i class="fa fa-check"></i><b>3.4.2</b> Docker（高级）</a></li>
+<li class="chapter" data-level="3.4.3" data-path="plumber.html"><a href="plumber.html#pm2"><i class="fa fa-check"></i><b>3.4.3</b> pm2</a></li>
+<li class="chapter" data-level="3.4.4" data-path="opencpu.html"><a href="opencpu.html#xgboost"><i class="fa fa-check"></i><b>3.4.4</b> XGBoost模型预测部署实例</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="plumber.html"><a href="plumber.html#section-3.5"><i class="fa fa-check"></i><b>3.5</b> 其他</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="plumber.html"><a href="plumber.html#section-3.5.1"><i class="fa fa-check"></i><b>3.5.1</b> 环境</a></li>
+<li class="chapter" data-level="3.5.2" data-path="plumber.html"><a href="plumber.html#section-3.5.2"><i class="fa fa-check"></i><b>3.5.2</b> 文件系统</a></li>
+<li class="chapter" data-level="3.5.3" data-path="opencpu.html"><a href="opencpu.html#api"><i class="fa fa-check"></i><b>3.5.3</b> API的安全性</a></li>
+<li class="chapter" data-level="3.5.4" data-path="plumber.html"><a href="plumber.html#section-3.5.4"><i class="fa fa-check"></i><b>3.5.4</b> 创建和控制路由器</a></li>
+<li class="chapter" data-level="3.5.5" data-path="plumber.html"><a href="plumber.html#section-3.5.5"><i class="fa fa-check"></i><b>3.5.5</b> 定义端点</a></li>
+<li class="chapter" data-level="3.5.6" data-path="plumber.html"><a href="plumber.html#section-3.5.6"><i class="fa fa-check"></i><b>3.5.6</b> 定义过滤器</a></li>
+<li class="chapter" data-level="3.5.7" data-path="plumber.html"><a href="plumber.html#section-3.5.7"><i class="fa fa-check"></i><b>3.5.7</b> 在路由器上注册钩子(*)</a></li>
+<li class="chapter" data-level="3.5.8" data-path="plumber.html"><a href="plumber.html#mounting-static-file-routers"><i class="fa fa-check"></i><b>3.5.8</b> Mounting &amp; Static File Routers（*）</a></li>
+<li class="chapter" data-level="3.5.9" data-path="plumber.html"><a href="plumber.html#section-3.5.9"><i class="fa fa-check"></i><b>3.5.9</b> 自定义路由器</a></li>
+<li class="chapter" data-level="3.5.10" data-path="plumber.html"><a href="plumber.html#section-3.5.10"><i class="fa fa-check"></i><b>3.5.10</b> 调试</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="jug.html"><a href="jug.html"><i class="fa fa-check"></i><b>4</b> jug</a><ul>
+<li class="chapter" data-level="4.1" data-path="jug.html"><a href="jug.html#what-is-jug"><i class="fa fa-check"></i><b>4.1</b> What is jug?</a></li>
+<li class="chapter" data-level="4.2" data-path="jug.html"><a href="jug.html#install-and-hello-world"><i class="fa fa-check"></i><b>4.2</b> Install and Hello World</a></li>
+<li class="chapter" data-level="4.3" data-path="jug.html"><a href="jug.html#middleware"><i class="fa fa-check"></i><b>4.3</b> Middleware（中间件）</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="jug.html"><a href="jug.html#section-4.3.1"><i class="fa fa-check"></i><b>4.3.1</b> 方法不敏感的中间件</a></li>
+<li class="chapter" data-level="4.3.2" data-path="jug.html"><a href="jug.html#section-4.3.2"><i class="fa fa-check"></i><b>4.3.2</b> 方法敏感的中间件</a></li>
+<li class="chapter" data-level="4.3.3" data-path="jug.html"><a href="jug.html#websocket"><i class="fa fa-check"></i><b>4.3.3</b> Websocket协议</a></li>
+<li class="chapter" data-level="4.3.4" data-path="jug.html"><a href="jug.html#include"><i class="fa fa-check"></i><b>4.3.4</b> include定义其他位置的中间件</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="jug.html"><a href="jug.html#section-4.4"><i class="fa fa-check"></i><b>4.4</b> 预定义的中间件</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="jug.html"><a href="jug.html#-1"><i class="fa fa-check"></i><b>4.4.1</b> 错误处理</a></li>
+<li class="chapter" data-level="4.4.2" data-path="jug.html"><a href="jug.html#section-4.4.2"><i class="fa fa-check"></i><b>4.4.2</b> 轻松使用自己的函数</a></li>
+<li class="chapter" data-level="4.4.3" data-path="jug.html"><a href="jug.html#section-4.4.3"><i class="fa fa-check"></i><b>4.4.3</b> 静态文件服务器</a></li>
+<li class="chapter" data-level="4.4.4" data-path="jug.html"><a href="jug.html#cors"><i class="fa fa-check"></i><b>4.4.4</b> CORS功能(*)</a></li>
+<li class="chapter" data-level="4.4.5" data-path="jug.html"><a href="jug.html#section-4.4.5"><i class="fa fa-check"></i><b>4.4.5</b> 认证</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="jug.html"><a href="jug.html#section-4.5"><i class="fa fa-check"></i><b>4.5</b> 事件监听</a></li>
+<li class="chapter" data-level="4.6" data-path="jug.html"><a href="jug.html#section-4.6"><i class="fa fa-check"></i><b>4.6</b> 预定义的事件侦听器</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="jug.html"><a href="jug.html#logger"><i class="fa fa-check"></i><b>4.6.1</b> Logger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="jug.html"><a href="jug.html#section-4.7"><i class="fa fa-check"></i><b>4.7</b> 请求，响应和错误对象</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="jug.html"><a href="jug.html#requestreq"><i class="fa fa-check"></i><b>4.7.1</b> Request（req）对象</a></li>
+<li class="chapter" data-level="4.7.2" data-path="jug.html"><a href="jug.html#responseres"><i class="fa fa-check"></i><b>4.7.2</b> Response（res）对象</a></li>
+<li class="chapter" data-level="4.7.3" data-path="jug.html"><a href="jug.html#errorerr"><i class="fa fa-check"></i><b>4.7.3</b> Error（err）对象</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="jug.html"><a href="jug.html#url"><i class="fa fa-check"></i><b>4.8</b> URL调度</a></li>
+<li class="chapter" data-level="4.9" data-path="jug.html"><a href="jug.html#jug"><i class="fa fa-check"></i><b>4.9</b> 启动jug实例</a></li>
+<li class="chapter" data-level="4.10" data-path="opencpu.html"><a href="opencpu.html#api"><i class="fa fa-check"></i><b>4.10</b> 线性回归模型的API举栗</a></li>
+<li class="chapter" data-level="4.11" data-path="jug.html"><a href="jug.html#section-4.11"><i class="fa fa-check"></i><b>4.11</b> 官方栗子</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="fiery.html"><a href="fiery.html"><i class="fa fa-check"></i><b>5</b> fiery</a></li>
 <li class="chapter" data-level="6" data-path="rserve.html"><a href="rserve.html"><i class="fa fa-check"></i><b>6</b> Rserve</a></li>
 <li class="chapter" data-level="7" data-path="restrserve.html"><a href="restrserve.html"><i class="fa fa-check"></i><b>7</b> RestRserve</a></li>
 <li class="chapter" data-level="8" data-path="mailr.html"><a href="mailr.html"><i class="fa fa-check"></i><b>8</b> mailR</a></li>
-<li class="chapter" data-level="9" data-path="rweixin.html"><a href="rweixin.html"><i class="fa fa-check"></i><b>9</b> Rweixin</a></li>
-<li class="chapter" data-level="10" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>10</b> 参考文献</a></li>
+<li class="chapter" data-level="9" data-path="rweixin.html"><a href="rweixin.html"><i class="fa fa-check"></i><b>9</b> Rweixin(*)</a></li>
+<li class="chapter" data-level="10" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>10</b> 参考文献</a><ul>
+<li class="chapter" data-level="10.1" data-path="reference.html"><a href="reference.html#opencpu-1"><i class="fa fa-check"></i><b>10.1</b> opencpu</a></li>
+<li class="chapter" data-level="10.2" data-path="reference.html"><a href="reference.html#plumber-1"><i class="fa fa-check"></i><b>10.2</b> plumber</a></li>
+<li class="chapter" data-level="10.3" data-path="reference.html"><a href="reference.html#jug-1"><i class="fa fa-check"></i><b>10.3</b> jug</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://dataxujing.github.io/" target="blank">个人主页</a></li>
 
@@ -141,7 +229,592 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="opencpu" class="section level1">
 <h1><span class="header-section-number">第 2 章</span> opencpu</h1>
+<div id="section-2.1" class="section level2">
+<h2><span class="header-section-number">2.1</span> 安装</h2>
+<p>关于opencpu-server的安装和本地单用户服务器的安装可以参考 <a href="https://www.opencpu.org/download.html" class="uri">https://www.opencpu.org/download.html</a>, opencpu官方推荐在Ubuntu 18.04 / 16.04中使用opencpu-server, 关于Fedora,Debian,CentOS等系统的安装可以参考<a href="https://github.com/opencpu" class="uri">https://github.com/opencpu</a></p>
+<div id="ubuntu-18.0416.04-" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Ubuntu 18.04/16.04 安装</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Requires Ubuntu 18.04 (Bionic) or 16.04 (Xenial)</span>
+sudo add<span class="op">-</span>apt<span class="op">-</span>repository <span class="op">-</span>y ppa<span class="op">:</span>opencpu<span class="op">/</span>opencpu<span class="op">-</span><span class="fl">2.1</span>
+sudo apt<span class="op">-</span>get update 
+sudo apt<span class="op">-</span>get upgrade
 
+<span class="co"># Installs OpenCPU server</span>
+sudo apt<span class="op">-</span>get install <span class="op">-</span>y opencpu<span class="op">-</span>server
+<span class="co"># Done! Open http://yourhost/ocpu in your browser</span>
+
+<span class="co"># rstudio server的安装(不是必须的)</span>
+sudo apt<span class="op">-</span>get install <span class="op">-</span>y rstudio<span class="op">-</span>server 
+
+<span class="co"># 安装完之后，需要检查自己R中的curl包及stringi等包的版本，</span>
+<span class="co"># 同时如果需要R markdown还需要安装pandoc</span>
+
+sudo apt<span class="op">-</span>get install pandoc</code></pre></div>
+</div>
+<div id="section-2.1.2" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> 本地单用户服务器</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install OpenCPU</span>
+<span class="kw">install.packages</span>(<span class="st">&quot;opencpu&quot;</span>)
+
+<span class="co"># Run Apps directly from Github</span>
+<span class="kw">library</span>(opencpu)
+<span class="kw">ocpu_start_app</span>(<span class="st">&quot;rwebapps/nabel&quot;</span>)
+<span class="kw">ocpu_start_app</span>(<span class="st">&quot;rwebapps/markdownapp&quot;</span>)
+<span class="kw">ocpu_start_app</span>(<span class="st">&quot;rwebapps/stockapp&quot;</span>)
+
+<span class="co"># Run Apps directly from library</span>
+<span class="kw">library</span>(opencpu)
+<span class="kw">ocpu_start_server</span>()
+
+<span class="co"># Install / remove apps</span>
+<span class="kw">remove_apps</span>(<span class="st">&quot;rwebapps/stockapp&quot;</span>)</code></pre></div>
+</div>
+</div>
+<div id="api" class="section level2">
+<h2><span class="header-section-number">2.2</span> API文档</h2>
+<style type="text/css"> 
+/*  .panel-primary {
+        border-color: #428bca;
+    }*/
+
+    .panel {
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+        border-color: #428bca;
+    }
+
+    .panel-heading {
+        padding: 5px 15px;
+        border-bottom: 1px solid #357ae8;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+        background-color:#357ae8
+    }
+
+    .panel-body {
+        padding: 15px;
+    }
+</style>
+<div id="opencpuhttp" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> OpenCPU中的HTTP</h3>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenCPU根路径</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+API的root是动态的。默认为<code>/ocpu/</code>，可以更改此设置。通过R启动的本地服务，可以通过<code>ocpu_start_server(port = 5656, root = &quot;/ocpu&quot;, workers = 2,preload = NULL, on_startup = NULL, no_cache = FALSE)</code>中的rootc参数修改，opencpu-server可以通过修改<code>/usr/lib/opencpu/rapache</code>中的文件进行修改。在下面的示例中，我们假设默认值/ocpu/。
+</p>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Debug</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<ul>
+<li><code>http://172.16.100.202/ocpu/info</code> opencpu的一些详细的信息</li>
+<li>该<code>http://172.16.100.202/ocpu/test</code> URL为您提供了一个方便的测试网页来执行服务器请求</li>
+</ul>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Http的方法</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+OpenCPU目前只使用HTTP方法GET和POST。GET用于检索资源，POST用于<a href="https://blog.csdn.net/b1303110335/article/details/79557292">RPC</a>。POST请求仅对脚本或功能URL有效。
+</p>
+<div align="center">
+<img src="pic/opencpu/p1.png" />
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Get 举栗</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>data<span class="op">/</span>Boston<span class="op">/</span>json
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>NEWS
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>scripts<span class="op">/</span>
+
+<span class="co">#Post 举栗 -X POST or -d &quot;arg=value&quot;</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>scripts<span class="op">/</span>ch01.R <span class="op">-</span>X POST
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>stats<span class="op">/</span>R<span class="op">/</span>rnorm <span class="op">-</span>d <span class="st">&quot;n=10&amp;mean=5&quot;</span>
+</code></pre></div>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Http状态码</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+这些是OpenCPU返回的常见状态代码，客户端应该能够解释这些状态代码
+</p>
+<div align="center">
+<img src="pic/opencpu/p2.png" />
+</div>
+</div>
+</div>
+</div>
+<div id="api-endpoints" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> API 端点(EndPoints)</h3>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The API Libraries</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<div align="center">
+<img src="pic/opencpu/p3.png" />
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#read packages 举栗</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>apps<span class="op">/</span>rwebapps<span class="op">/</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>user<span class="op">/</span>jeroen<span class="op">/</span>library<span class="op">/</span>
+
+<span class="co">#read session 举栗</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x2c5ab8d4d6</code></pre></div>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The R package API</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+<code>/{package}/</code>库都支持以下端点：
+</p>
+<div align="center">
+<img src="pic/opencpu/p4.png" />
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#package info</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>
+
+<span class="co">#package objects (mostly functions)</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>R<span class="op">/</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>R<span class="op">/</span>rlm<span class="op">/</span>print
+
+<span class="co">#package data objects</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>data<span class="op">/</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>data<span class="op">/</span>housing<span class="op">/</span>json
+
+<span class="co">#read manuals pages</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>man<span class="op">/</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>man<span class="op">/</span>rlm<span class="op">/</span>text
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>man<span class="op">/</span>rlm<span class="op">/</span>html
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>man<span class="op">/</span>rlm<span class="op">/</span>pdf
+
+<span class="co">#read files included with this package</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>scripts<span class="op">/</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>scripts<span class="op">/</span>ch01.R
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>NEWS
+
+<span class="co">#call a function (example from &#39;rlm&#39; help page)</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>R<span class="op">/</span>rlm <span class="op">-</span>d <span class="st">&quot;formula=stack.loss ~ .&amp;data=stackloss&amp;psi=psi.bisquare&quot;</span>
+
+<span class="co">#run R script</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>scripts<span class="op">/</span>ch01.R <span class="op">-</span>X POST
+
+<span class="co">#read output (replace key with value returned from previous request)</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x0648ec526b<span class="op">/</span>R<span class="op">/</span>.val<span class="op">/</span>print</code></pre></div>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The R object API</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+<code>/R</code> API 用来读取R对象或者调用R的方法.
+</p>
+<div align="center">
+<img src="pic/opencpu/p5.png" />
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#list objects and datasets from MASS</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>R<span class="op">/</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>data<span class="op">/</span>
+
+<span class="co">#retrieve objects</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>R<span class="op">/</span>truehist<span class="op">/</span>print
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>data<span class="op">/</span>bacteria<span class="op">/</span>print
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>data<span class="op">/</span>bacteria<span class="op">/</span>json
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>data<span class="op">/</span>bacteria<span class="op">/</span>csv
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>data<span class="op">/</span>bacteria<span class="op">/</span>rda
+
+<span class="co">#call a function</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>R<span class="op">/</span>truehist <span class="op">-</span>d <span class="st">&quot;data=[1,3,7,4,2,4,2,6,23,13,5,2]&quot;</span></code></pre></div>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The R session API</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+会话(session)是一个容器，用于保存从远程函数/脚本调用（RPC）创建的资源。
+</p>
+<div align="center">
+<img src="pic/opencpu/p6.png" />
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#A POST will create a temporary session</span>
+<span class="co">#Use the returned key for the subsequent calls below</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>scripts<span class="op">/</span>ch01.R <span class="op">-</span>X POST
+
+<span class="co">#Look at console input/output</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x05b85461<span class="op">/</span>console<span class="op">/</span>text
+
+<span class="co">#We read session R objects</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x05b85461<span class="op">/</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x05b85461<span class="op">/</span>R<span class="op">/</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x05b85461<span class="op">/</span>R<span class="op">/</span>dd<span class="op">/</span>csv
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x05b85461<span class="op">/</span>R<span class="op">/</span>t.stat<span class="op">/</span>print
+
+<span class="co">#Or even call a function</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x05b85461<span class="op">/</span>R<span class="op">/</span>t.stat <span class="op">-</span>d <span class="st">&quot;x=[1,0,0,1,1,1,0,1,1,0]&quot;</span>
+
+<span class="co">#Download file from the working dir</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x05b85461<span class="op">/</span>files<span class="op">/</span>ch01.pdf
+
+<span class="co">#Check sessionInfo</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x05b85461<span class="op">/</span>info<span class="op">/</span>print</code></pre></div>
+</div>
+</div>
+</div>
+<div id="section-2.2.3" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> 输入，输出：数据和格式</h3>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">R对象的输出格式</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+可以以各种输出格式检索任何R对象（包括记录的图形）
+</p>
+<div align="center">
+<img src="pic/opencpu/p7.png" />
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#read R objects from packages.</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>datasets<span class="op">/</span>R<span class="op">/</span>mtcars<span class="op">/</span>json?digits=<span class="dv">0</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>datasets<span class="op">/</span>R<span class="op">/</span>mtcars<span class="op">/</span>csv
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>datasets<span class="op">/</span>R<span class="op">/</span>mtcars<span class="op">/</span>tab?sep=<span class="st">&quot;|&quot;</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>R<span class="op">/</span>loglm<span class="op">/</span>print</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#create a simple plot</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>graphics<span class="op">/</span>R<span class="op">/</span>plot <span class="op">-</span>d <span class="st">&quot;x=cars&quot;</span>
+
+<span class="co">#replace session id with returned one</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x0468b7ab<span class="op">/</span>graphics<span class="op">/</span>last<span class="op">/</span>png
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x0468b7ab<span class="op">/</span>graphics<span class="op">/</span><span class="dv">1</span><span class="op">/</span>png?width=<span class="dv">1000</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x0468b7ab<span class="op">/</span>graphics<span class="op">/</span>last<span class="op">/</span>svg
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x0468b7ab<span class="op">/</span>graphics<span class="op">/</span>last<span class="op">/</span>pdf?width=<span class="dv">8</span></code></pre></div>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">R函数调用的参数格式（仅限HTTP POST）</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+调用函数时，我们需要传递参数。OpenCPU接受以下类型的参数
+</p>
+<div align="center">
+<img src="pic/opencpu/p8.png" />
+</div>
+<p>执行函数功能时, Post的数据 (请求体) 可以使下面面的任意形式：<code>multipart/form-data</code>, <code>application/x-www-form-urlencoded</code>, <code>application/json</code> 或者 <code>application/x-protobuf</code>. 并非每个content-type都支持任何参数格式:</p>
+<div align="center">
+<img src="pic/opencpu/p9.png" />
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#call some functions</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>stats<span class="op">/</span>R<span class="op">/</span>rnorm <span class="op">-</span>d <span class="st">&quot;n=10&amp;mean=5&quot;</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>graphics<span class="op">/</span>R<span class="op">/</span>hist <span class="op">-</span>d <span class="st">&quot;x=[2,3,2,3,4,3,3]&amp;breaks=10&quot;</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>graphics<span class="op">/</span>R<span class="op">/</span>plot <span class="op">-</span>d <span class="st">&quot;x=cars&amp;main=&#39;test&#39;&quot;</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>base<span class="op">/</span>R<span class="op">/</span>identity <span class="op">-</span>d <span class="st">&quot;x=coef(lm(speed~dist, data=cars))&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#upload local file mydata.csv</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>utils<span class="op">/</span>R<span class="op">/</span>read.csv <span class="op">-</span>F <span class="st">&quot;file=@mydata.csv&quot;</span>
+
+<span class="co">#replace session id with returned one above</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>tmp<span class="op">/</span>x067b4172<span class="op">/</span>R<span class="op">/</span>.val<span class="op">/</span>print
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>base<span class="op">/</span>R<span class="op">/</span>summary <span class="op">-</span>d <span class="st">&quot;object=x067b4172&quot;</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#post arguments in json</span>
+curl http<span class="op">:</span><span class="er">//</span>cloud.opencpu.org<span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>stats<span class="op">/</span>R<span class="op">/</span>rnorm \
+<span class="op">-</span>H <span class="st">&quot;Content-Type: application/json&quot;</span> <span class="op">-</span>d <span class="st">&#39;{&quot;n&quot;:10, &quot;mean&quot;: 10, &quot;sd&quot;:10}&#39;</span></code></pre></div>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运行脚本和可重现的文档</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+我们可以通过对文件执行HTTP POST来运行脚本。该脚本根据其（不区分大小写）文件扩展名进行解释。任何HTTP POST参数都会传递给解释函数。支持以下类型：
+</p>
+<div align="center">
+<img src="pic/opencpu/p10.png" />
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#run scripts which exist in packages</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>MASS<span class="op">/</span>scripts<span class="op">/</span>ch01.R <span class="op">-</span>X POST
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>brew<span class="op">/</span>featurefull.brew <span class="op">-</span>X POST
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>brew<span class="op">/</span>brew<span class="op">-</span>test<span class="op">-</span><span class="fl">2.</span>brew <span class="op">-</span>d <span class="st">&quot;output=output.html&quot;</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>knitr<span class="op">/</span>examples<span class="op">/</span>knitr<span class="op">-</span>minimal.Rmd <span class="op">-</span>X POST
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>knitr<span class="op">/</span>examples<span class="op">/</span>knitr<span class="op">-</span>minimal.Rmd <span class="op">-</span>d <span class="st">&quot;format=docx&quot;</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>knitr<span class="op">/</span>examples<span class="op">/</span>knitr<span class="op">-</span>minimal.Rmd <span class="op">-</span>d <span class="st">&quot;format=html&quot;</span>
+curl http<span class="op">:</span><span class="er">//</span><span class="fl">172.16</span>.<span class="fl">100.202</span><span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>knitr<span class="op">/</span>examples<span class="op">/</span>knitr<span class="op">-</span>minimal.Rnw</code></pre></div>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">JSON I / O RPC（又名数据处理单元）</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+对于客户端只对JSON格式的函数调用的输出数据感兴趣的常见特殊情况，可以使用后置修复HTTP POST请求URL /json。在这种情况下，成功调用将返回状态200（而不是201），并且响应主体直接包含JSON中返回的对象; 无需额外的GET请求。
+</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">curl http<span class="op">:</span><span class="er">//</span>cloud.opencpu.org<span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>stats<span class="op">/</span>R<span class="op">/</span>rnorm<span class="op">/</span>json <span class="op">-</span>d n=<span class="dv">2</span>
+[
+<span class="op">-</span><span class="fl">1.2804</span>,
+<span class="op">-</span><span class="fl">0.75013</span>
+]</code></pre></div>
+<p>
+我们可以将它与application/jsonR函数上的完整JSON RPC 的请求内容类型相结合
+</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">curl http<span class="op">:</span><span class="er">//</span>cloud.opencpu.org<span class="op">/</span>ocpu<span class="op">/</span>library<span class="op">/</span>stats<span class="op">/</span>R<span class="op">/</span>rnorm<span class="op">/</span>json \
+<span class="op">-</span>H <span class="st">&quot;Content-Type: application/json&quot;</span> <span class="op">-</span>d <span class="st">&#39;{&quot;n&quot;:3, &quot;mean&quot;: 10, &quot;sd&quot;:10}&#39;</span>
+[
+<span class="fl">4.9829</span>,
+<span class="fl">6.3104</span>,
+<span class="fl">11.411</span>
+]</code></pre></div>
+<p>
+上面的请求调用以下R函数调用:
+</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(jsonlite)
+args &lt;-<span class="st"> </span><span class="kw">fromJSON</span>(<span class="st">&#39;{&quot;n&quot;:3, &quot;mean&quot;: 10, &quot;sd&quot;:10}&#39;</span>)
+output &lt;-<span class="st"> </span><span class="kw">do.call</span>(stats<span class="op">::</span>rnorm, args)
+<span class="kw">toJSON</span>(output)</code></pre></div>
+<p>
+在这种情况下，相当于：
+</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">3</span>, <span class="dt">mean=</span><span class="dv">10</span>, <span class="dt">sd=</span><span class="dv">10</span>)</code></pre></div>
+</div>
+</div>
+</div>
+<div id="section-2.2.4" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> 其他功能</h3>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenCPU应用程序</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+OpenCPU应用程序是包含在R包中的静态网页（html，css，js）。它们通过OpenCPU API连接此包中的R函数。按照惯例，这些应用程序放在<code>/inst/www/</code>R源包的目录中。有关<a href="https://www.opencpu.org/apps.html">应用页面</a>的更多信息，请参阅。
+</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rnorm</span>(<span class="dt">n=</span><span class="dv">3</span>, <span class="dt">mean=</span><span class="dv">10</span>, <span class="dt">sd=</span><span class="dv">10</span>)</code></pre></div>
+</div>
+</div>
+<hr />
+<div class="panel">
+<div class="panel-heading">
+<h4>
+<font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Github CI Hook</font></font>
+</h4>
+</div>
+<div class="panel-body">
+<p>
+OpenCPU云服务器包括对持续集成（CI）的支持。因此，每次将提交推送到主分支时，可以将Github存储库配置为在OpenCPU服务器上自动安装程序包。要利用此功能，需要：
+</p>
+<ol style="list-style-type: decimal">
+<li>R源包位于存储库的根目录中。<a href="https://github.com/rwebapps/appdemo">（例）</a></li>
+<li>Github用户帐户有一个公共电子邮件地址</li>
+</ol>
+<p>要设置CI，<code>/ocpu/webhook</code>请在Github存储库中将服务器的URL 添加为“WebHook”。例如，要使用公共演示服务器，请添加带有以下URL的webhook（您可以保持Content-type和Secret字段不变）</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">https<span class="op">:</span><span class="er">//</span>cloud.opencpu.org<span class="op">/</span>ocpu<span class="op">/</span>webhook</code></pre></div>
+<p>要触发build，请将提交推送到主分支。build将显示在您的github webhook页面中的Recent Deliveries下，如果安装成功，您应该收到一封电子邮件（在您的垃圾邮件文件夹中）。如果是，则该程序包将直接可用于<code>/ocpu/apps/{username}/{package}/</code>服务器上的远程使用。</p>
+<div align="center">
+<img src="pic/opencpu/p11.png" />
+</div>
+<p>如果您使用的是公共服务器，则该程序包也可以通过<code>https://{yourname}.ocpu.io/{package}/</code>。如果您正在运行自己的OpenCPU云服务器，则必须配置SMTP服务器才能使电子邮件通知正常工作。</p>
+</div>
+</div>
+</div>
+</div>
+<div id="xgboost" class="section level2">
+<h2><span class="header-section-number">2.3</span> XGBoost模型部署实例</h2>
+<p>本节将基于垃圾邮件的分类任务，训练一个XGBoost模型，基于训练的XGBoost模型构建一个R包，该R包的功能用于预测一封邮件是垃圾邮件的概率，并构建一个前端的页面，测试前端页面在opencpu中是可用的。其步骤如下:</p>
+<div id="section-2.3.1" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> 训练模型</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(xgboost)
+<span class="kw">library</span>(ElemStatLearn)
+<span class="co"># 用于构建R包使用</span>
+data &lt;-<span class="st"> </span><span class="kw">save</span>(spam,<span class="dt">file=</span><span class="st">&#39;mail_data.rda&#39;</span>)
+
+x =<span class="st"> </span><span class="kw">as.matrix</span>(spam[, <span class="op">-</span><span class="kw">ncol</span>(spam)])
+y =<span class="st"> </span><span class="kw">as.numeric</span>(spam<span class="op">$</span>spam) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
+xgbmodel =<span class="st"> </span><span class="kw">xgboost</span>(<span class="dt">data =</span> x, <span class="dt">label =</span> y, <span class="dt">nrounds =</span> <span class="dv">5</span>, <span class="dt">objective =</span> <span class="st">&#39;binary:logistic&#39;</span>)
+<span class="co"># 这里模型保存的路径可以自己设置</span>
+<span class="co"># 保存的训练模型用于构建R包</span>
+<span class="kw">save</span>(xgbmodel, <span class="dt">file=</span><span class="st">&quot;xgb.rda&quot;</span>)
+
+xgb_model &lt;-<span class="st"> </span><span class="kw">load</span>(<span class="st">&quot;xgb.rda&quot;</span>)
+xgbmodel
+
+data_spam &lt;-<span class="st"> </span><span class="kw">as.matrix</span>(spam[<span class="dv">1</span>, <span class="op">-</span><span class="kw">ncol</span>(spam)])
+pred &lt;-<span class="st"> </span><span class="kw">predict</span>(xgbmodel,data_spam)
+<span class="co"># pred &lt;- xgboost:::predict.xgb.Booster(object = xgbmodel, newdata = data_spam)</span></code></pre></div>
+</div>
+<div id="r" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> 构建R包</h3>
+<p>关于R包的构建，本教程不做详细的介绍，如果个人感兴趣可以参考R官网中的教程或Hadley Wickham的<a href="http://r-pkgs.had.co.nz/">《R packages》</a></p>
+<div align="center">
+<img src="pic/opencpu/p12.png" />
+</div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#&#39; @title Mail predict test for opencpu</span>
+<span class="co">#&#39; @description Mail predict test for opencpu.</span>
+<span class="co">#&#39; @name mailPred</span>
+<span class="co">#&#39; @aliases mailPred</span>
+<span class="co">#&#39; @author Xu Jing</span>
+<span class="co">#&#39; @usage mailPreds(id)</span>
+<span class="co">#&#39; @param id The row of mial data</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @import xgboost</span>
+<span class="co">#&#39; @import jsonlite</span>
+<span class="co">#&#39; @import stats</span>
+<span class="co">#&#39; @import utils</span>
+<span class="co">#&#39;</span>
+<span class="co">#&#39; @export mailPreds</span>
+mailPreds &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">id =</span> <span class="st">&#39;1&#39;</span>) {
+
+  <span class="kw">message</span>(<span class="st">&quot;XGBoost model test on opencpu!&quot;</span>)
+
+  spam &lt;-<span class="st"> </span><span class="ot">NULL</span>
+  xgbmodel &lt;-<span class="st"> </span><span class="ot">NULL</span>
+
+  spam_path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;mail_data.rda&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;mailPred&quot;</span>)
+  xgbmodel_path &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;xgb.rda&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;mailPred&quot;</span>)
+
+  data_spam &lt;-<span class="st"> </span><span class="kw">load</span>(spam_path)
+  model_xgb &lt;-<span class="st"> </span><span class="kw">load</span>(xgbmodel_path)
+
+  x =<span class="st"> </span><span class="kw">as.matrix</span>(spam[<span class="kw">as.integer</span>(id), <span class="op">-</span><span class="kw">ncol</span>(spam)])
+  <span class="co"># y = as.numeric(spam[as.integer(id), ncol(spam)]) - 1</span>
+  pred &lt;-<span class="st"> </span><span class="kw">predict</span>(xgbmodel,x)
+  <span class="co"># print(spam)</span>
+
+  <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">class =</span> pred,<span class="dt">id=</span>id))
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># DESCRIPTION</span>
+
+Package<span class="op">:</span><span class="st"> </span>mailPred
+Type<span class="op">:</span><span class="st"> </span>Package
+Title<span class="op">:</span><span class="st"> </span>XGBoost Predict Mail
+Version<span class="op">:</span><span class="st"> </span><span class="fl">0.1</span>.<span class="dv">0</span>
+Author<span class="op">:</span><span class="st"> </span>XuJing
+Maintainer<span class="op">:</span><span class="st"> </span>XuJing <span class="op">&lt;</span><span class="dv">274762204</span><span class="op">@</span>qq.com<span class="op">&gt;</span>
+Description<span class="op">:</span><span class="st"> </span>Mail predict test <span class="cf">for</span> opencpu.
+License<span class="op">:</span><span class="st"> </span><span class="kw">GPL</span> (<span class="op">&gt;=</span><span class="st"> </span><span class="dv">2</span>)
+Encoding<span class="op">:</span><span class="st"> </span>UTF<span class="op">-</span><span class="dv">8</span>
+LazyData<span class="op">:</span><span class="st"> </span>false
+Date<span class="op">:</span><span class="st"> </span><span class="dv">2018</span><span class="op">-</span><span class="dv">12</span><span class="op">-</span><span class="dv">30</span>
+URL<span class="op">:</span><span class="st"> </span>https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>DataXujing<span class="op">/</span>mailPred
+BugReports<span class="op">:</span><span class="st"> </span>https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>DataXujing<span class="op">/</span>mailPred<span class="op">/</span>issues
+RoxygenNote<span class="op">:</span><span class="st"> </span><span class="fl">6.1</span>.<span class="dv">1</span>
+Depends<span class="op">:</span><span class="st"> </span><span class="kw">R</span> (<span class="op">&gt;=</span><span class="st"> </span><span class="fl">3.4</span>.<span class="dv">0</span>)
+Imports<span class="op">:</span><span class="st"> </span>xgboost,jsonlite,stats,utils
+Suggests<span class="op">:</span><span class="st"> </span>rmarkdown, knitr
+VignetteBuilder<span class="op">:</span><span class="st"> </span>knitr</code></pre></div>
+</div>
+<div id="r" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> 编译R包并安装</h3>
+<div align="center">
+<img src="pic/opencpu/p13.png" />
+</div>
+<ul>
+<li>Rstudio中离线安装</li>
+</ul>
+<div align="center">
+<img src="pic/opencpu/p14.png" />
+</div>
+<ul>
+<li>Ubuntu中离线安装</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">R CMD INSTALL mailPred_<span class="fl">0.1</span>.<span class="fl">0.</span>tar.gz</code></pre></div>
+</div>
+<div id="opencpu" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> opencpu的一些配置</h3>
+<p>修改opencup服务参数，文件位于 <code>/etc/opencpu/server.conf</code>，增加预加载的包</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="st">&quot;preload&quot;</span><span class="op">:</span><span class="st"> </span>[<span class="st">&quot;jsonlite&quot;</span>,<span class="st">&quot;xgboost&quot;</span>,<span class="st">&quot;glmnet&quot;</span>,<span class="st">&quot;mailPred&quot;</span>,<span class="st">&quot;ocputest&quot;</span>]</code></pre></div>
+</div>
+<div id="opencpu" class="section level3">
+<h3><span class="header-section-number">2.3.5</span> 本地opencpu服务测试</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(opencpu)
+<span class="kw">ocpu_start_server</span>(<span class="dt">root=</span><span class="st">&#39;xj&#39;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">http<span class="op">:</span><span class="er">//</span>localhost<span class="op">:</span><span class="dv">5656</span><span class="op">/</span>xj<span class="op">/</span>test<span class="op">/</span>
+http<span class="op">:</span><span class="er">//</span>localhost<span class="op">:</span><span class="dv">5656</span><span class="op">/</span>xj<span class="op">/</span>library<span class="op">/</span>mailPred<span class="op">/</span>info
+http<span class="op">:</span><span class="er">//</span>localhost<span class="op">:</span><span class="dv">5656</span><span class="op">/</span>xj<span class="op">/</span>library<span class="op">/</span>mailPred<span class="op">/</span>www<span class="op">/</span>mailpred.html</code></pre></div>
+<div align="center">
+<img src="pic/opencpu/p15.png" />
+</div>
+<div align="center">
+<img src="pic/opencpu/p16.png" />
+</div>
+</div>
+<div id="ubuntu-16.04-opencpu-server" class="section level3">
+<h3><span class="header-section-number">2.3.6</span> Ubuntu 16.04 opencpu-server部署测试</h3>
+<div align="center">
+<img src="pic/opencpu/p17.png" />
+</div>
+<div align="center">
+<img src="pic/opencpu/p18.png" />
+</div>
+</div>
+<div id="github" class="section level3">
+<h3><span class="header-section-number">2.3.7</span> Github部署测试</h3>
+<p>详细的参考Github CI Hook部分及<a href="https://github.com/DataXujing/mailPred" class="uri">https://github.com/DataXujing/mailPred</a></p>
+</div>
+<div id="section-2.3.8" class="section level3">
+<h3><span class="header-section-number">2.3.8</span> 官方例子</h3>
+<p>官方提供了更多的例子，详细的可以参考<a href="https://www.opencpu.org/apps.html" class="uri">https://www.opencpu.org/apps.html</a></p>
+
+</div>
+</div>
 </div>
             </section>
 
@@ -169,7 +842,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -179,6 +852,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },

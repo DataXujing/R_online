@@ -5,27 +5,27 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>R语言模型部署实战</title>
-  <meta name="description" content="R语言模型部署实战">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>第 4 章 jug | R语言模型部署实战</title>
+  <meta name="description" content="第 4 章 jug | R语言模型部署实战">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="R语言模型部署实战" />
+  <meta property="og:title" content="第 4 章 jug | R语言模型部署实战" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="R语言模型部署实战" />
+  <meta property="og:description" content="第 4 章 jug | R语言模型部署实战" />
   <meta name="github-repo" content="DataXujing/R-deployment" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R语言模型部署实战" />
+  <meta name="twitter:title" content="第 4 章 jug | R语言模型部署实战" />
   
-  <meta name="twitter:description" content="R语言模型部署实战" />
+  <meta name="twitter:description" content="第 4 章 jug | R语言模型部署实战" />
   
 
 <meta name="author" content="徐静">
 
 
-<meta name="date" content="2018-08-06">
+<meta name="date" content="2018-12-31">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="fiery.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -110,15 +111,102 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1" data-path="httpuv.html"><a href="httpuv.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 方法介绍</a></li>
 <li class="chapter" data-level="1.2" data-path="httpuv.html"><a href="httpuv.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 例子演示</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="opencpu.html"><a href="opencpu.html"><i class="fa fa-check"></i><b>2</b> opencpu</a></li>
-<li class="chapter" data-level="3" data-path="plumber.html"><a href="plumber.html"><i class="fa fa-check"></i><b>3</b> plumber</a></li>
-<li class="chapter" data-level="4" data-path="jug.html"><a href="jug.html"><i class="fa fa-check"></i><b>4</b> jug</a></li>
+<li class="chapter" data-level="2" data-path="opencpu.html"><a href="opencpu.html"><i class="fa fa-check"></i><b>2</b> opencpu</a><ul>
+<li class="chapter" data-level="2.1" data-path="opencpu.html"><a href="opencpu.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 安装</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="opencpu.html"><a href="opencpu.html#ubuntu-18.0416.04-"><i class="fa fa-check"></i><b>2.1.1</b> Ubuntu 18.04/16.04 安装</a></li>
+<li class="chapter" data-level="2.1.2" data-path="opencpu.html"><a href="opencpu.html#section-2.1.2"><i class="fa fa-check"></i><b>2.1.2</b> 本地单用户服务器</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="opencpu.html"><a href="opencpu.html#api"><i class="fa fa-check"></i><b>2.2</b> API文档</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="opencpu.html"><a href="opencpu.html#opencpuhttp"><i class="fa fa-check"></i><b>2.2.1</b> OpenCPU中的HTTP</a></li>
+<li class="chapter" data-level="2.2.2" data-path="opencpu.html"><a href="opencpu.html#api-endpoints"><i class="fa fa-check"></i><b>2.2.2</b> API 端点(EndPoints)</a></li>
+<li class="chapter" data-level="2.2.3" data-path="opencpu.html"><a href="opencpu.html#section-2.2.3"><i class="fa fa-check"></i><b>2.2.3</b> 输入，输出：数据和格式</a></li>
+<li class="chapter" data-level="2.2.4" data-path="opencpu.html"><a href="opencpu.html#section-2.2.4"><i class="fa fa-check"></i><b>2.2.4</b> 其他功能</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="opencpu.html"><a href="opencpu.html#xgboost"><i class="fa fa-check"></i><b>2.3</b> XGBoost模型部署实例</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="opencpu.html"><a href="opencpu.html#section-2.3.1"><i class="fa fa-check"></i><b>2.3.1</b> 训练模型</a></li>
+<li class="chapter" data-level="2.3.2" data-path="opencpu.html"><a href="opencpu.html#r"><i class="fa fa-check"></i><b>2.3.2</b> 构建R包</a></li>
+<li class="chapter" data-level="2.3.3" data-path="opencpu.html"><a href="opencpu.html#r"><i class="fa fa-check"></i><b>2.3.3</b> 编译R包并安装</a></li>
+<li class="chapter" data-level="2.3.4" data-path="opencpu.html"><a href="opencpu.html#opencpu"><i class="fa fa-check"></i><b>2.3.4</b> opencpu的一些配置</a></li>
+<li class="chapter" data-level="2.3.5" data-path="opencpu.html"><a href="opencpu.html#opencpu"><i class="fa fa-check"></i><b>2.3.5</b> 本地opencpu服务测试</a></li>
+<li class="chapter" data-level="2.3.6" data-path="opencpu.html"><a href="opencpu.html#ubuntu-16.04-opencpu-server"><i class="fa fa-check"></i><b>2.3.6</b> Ubuntu 16.04 opencpu-server部署测试</a></li>
+<li class="chapter" data-level="2.3.7" data-path="opencpu.html"><a href="opencpu.html#github"><i class="fa fa-check"></i><b>2.3.7</b> Github部署测试</a></li>
+<li class="chapter" data-level="2.3.8" data-path="opencpu.html"><a href="opencpu.html#section-2.3.8"><i class="fa fa-check"></i><b>2.3.8</b> 官方例子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="plumber.html"><a href="plumber.html"><i class="fa fa-check"></i><b>3</b> plumber</a><ul>
+<li class="chapter" data-level="3.1" data-path="plumber.html"><a href="plumber.html#section-3.1"><i class="fa fa-check"></i><b>3.1</b> 快速开始</a></li>
+<li class="chapter" data-level="3.2" data-path="plumber.html"><a href="plumber.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 路由和输入</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="plumber.html"><a href="plumber.html#section-3.2.1"><i class="fa fa-check"></i><b>3.2.1</b> 端点</a></li>
+<li class="chapter" data-level="3.2.2" data-path="plumber.html"><a href="plumber.html#section-3.2.2"><i class="fa fa-check"></i><b>3.2.2</b> 过滤器</a></li>
+<li class="chapter" data-level="3.2.3" data-path="plumber.html"><a href="plumber.html#section-3.2.3"><i class="fa fa-check"></i><b>3.2.3</b> 动态路由</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="plumber.html"><a href="plumber.html#rendering-output"><i class="fa fa-check"></i><b>3.3</b> Rendering Output</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="plumber.html"><a href="plumber.html#section-3.3.1"><i class="fa fa-check"></i><b>3.3.1</b> 序列化器</a></li>
+<li class="chapter" data-level="3.3.2" data-path="plumber.html"><a href="plumber.html#section-3.3.2"><i class="fa fa-check"></i><b>3.3.2</b> 绕过序列化</a></li>
+<li class="chapter" data-level="3.3.3" data-path="plumber.html"><a href="plumber.html#boxed-and-unboxed-json"><i class="fa fa-check"></i><b>3.3.3</b> boxed and unboxed JSON</a></li>
+<li class="chapter" data-level="3.3.4" data-path="plumber.html"><a href="plumber.html#section-3.3.4"><i class="fa fa-check"></i><b>3.3.4</b> 自定义图像序列化程序</a></li>
+<li class="chapter" data-level="3.3.5" data-path="plumber.html"><a href="plumber.html#section-3.3.5"><i class="fa fa-check"></i><b>3.3.5</b> 错误处理</a></li>
+<li class="chapter" data-level="3.3.6" data-path="plumber.html"><a href="plumber.html#cookies"><i class="fa fa-check"></i><b>3.3.6</b> 设置Cookies(*)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="plumber.html"><a href="plumber.html#section-3.4"><i class="fa fa-check"></i><b>3.4</b> 部署</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="plumber.html"><a href="plumber.html#docker"><i class="fa fa-check"></i><b>3.4.1</b> Docker（基础）</a></li>
+<li class="chapter" data-level="3.4.2" data-path="plumber.html"><a href="plumber.html#docker"><i class="fa fa-check"></i><b>3.4.2</b> Docker（高级）</a></li>
+<li class="chapter" data-level="3.4.3" data-path="plumber.html"><a href="plumber.html#pm2"><i class="fa fa-check"></i><b>3.4.3</b> pm2</a></li>
+<li class="chapter" data-level="3.4.4" data-path="opencpu.html"><a href="opencpu.html#xgboost"><i class="fa fa-check"></i><b>3.4.4</b> XGBoost模型预测部署实例</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="plumber.html"><a href="plumber.html#section-3.5"><i class="fa fa-check"></i><b>3.5</b> 其他</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="plumber.html"><a href="plumber.html#section-3.5.1"><i class="fa fa-check"></i><b>3.5.1</b> 环境</a></li>
+<li class="chapter" data-level="3.5.2" data-path="plumber.html"><a href="plumber.html#section-3.5.2"><i class="fa fa-check"></i><b>3.5.2</b> 文件系统</a></li>
+<li class="chapter" data-level="3.5.3" data-path="opencpu.html"><a href="opencpu.html#api"><i class="fa fa-check"></i><b>3.5.3</b> API的安全性</a></li>
+<li class="chapter" data-level="3.5.4" data-path="plumber.html"><a href="plumber.html#section-3.5.4"><i class="fa fa-check"></i><b>3.5.4</b> 创建和控制路由器</a></li>
+<li class="chapter" data-level="3.5.5" data-path="plumber.html"><a href="plumber.html#section-3.5.5"><i class="fa fa-check"></i><b>3.5.5</b> 定义端点</a></li>
+<li class="chapter" data-level="3.5.6" data-path="plumber.html"><a href="plumber.html#section-3.5.6"><i class="fa fa-check"></i><b>3.5.6</b> 定义过滤器</a></li>
+<li class="chapter" data-level="3.5.7" data-path="plumber.html"><a href="plumber.html#section-3.5.7"><i class="fa fa-check"></i><b>3.5.7</b> 在路由器上注册钩子(*)</a></li>
+<li class="chapter" data-level="3.5.8" data-path="plumber.html"><a href="plumber.html#mounting-static-file-routers"><i class="fa fa-check"></i><b>3.5.8</b> Mounting &amp; Static File Routers（*）</a></li>
+<li class="chapter" data-level="3.5.9" data-path="plumber.html"><a href="plumber.html#section-3.5.9"><i class="fa fa-check"></i><b>3.5.9</b> 自定义路由器</a></li>
+<li class="chapter" data-level="3.5.10" data-path="plumber.html"><a href="plumber.html#section-3.5.10"><i class="fa fa-check"></i><b>3.5.10</b> 调试</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="jug.html"><a href="jug.html"><i class="fa fa-check"></i><b>4</b> jug</a><ul>
+<li class="chapter" data-level="4.1" data-path="jug.html"><a href="jug.html#what-is-jug"><i class="fa fa-check"></i><b>4.1</b> What is jug?</a></li>
+<li class="chapter" data-level="4.2" data-path="jug.html"><a href="jug.html#install-and-hello-world"><i class="fa fa-check"></i><b>4.2</b> Install and Hello World</a></li>
+<li class="chapter" data-level="4.3" data-path="jug.html"><a href="jug.html#middleware"><i class="fa fa-check"></i><b>4.3</b> Middleware（中间件）</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="jug.html"><a href="jug.html#section-4.3.1"><i class="fa fa-check"></i><b>4.3.1</b> 方法不敏感的中间件</a></li>
+<li class="chapter" data-level="4.3.2" data-path="jug.html"><a href="jug.html#section-4.3.2"><i class="fa fa-check"></i><b>4.3.2</b> 方法敏感的中间件</a></li>
+<li class="chapter" data-level="4.3.3" data-path="jug.html"><a href="jug.html#websocket"><i class="fa fa-check"></i><b>4.3.3</b> Websocket协议</a></li>
+<li class="chapter" data-level="4.3.4" data-path="jug.html"><a href="jug.html#include"><i class="fa fa-check"></i><b>4.3.4</b> include定义其他位置的中间件</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="jug.html"><a href="jug.html#section-4.4"><i class="fa fa-check"></i><b>4.4</b> 预定义的中间件</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="jug.html"><a href="jug.html#-1"><i class="fa fa-check"></i><b>4.4.1</b> 错误处理</a></li>
+<li class="chapter" data-level="4.4.2" data-path="jug.html"><a href="jug.html#section-4.4.2"><i class="fa fa-check"></i><b>4.4.2</b> 轻松使用自己的函数</a></li>
+<li class="chapter" data-level="4.4.3" data-path="jug.html"><a href="jug.html#section-4.4.3"><i class="fa fa-check"></i><b>4.4.3</b> 静态文件服务器</a></li>
+<li class="chapter" data-level="4.4.4" data-path="jug.html"><a href="jug.html#cors"><i class="fa fa-check"></i><b>4.4.4</b> CORS功能(*)</a></li>
+<li class="chapter" data-level="4.4.5" data-path="jug.html"><a href="jug.html#section-4.4.5"><i class="fa fa-check"></i><b>4.4.5</b> 认证</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="jug.html"><a href="jug.html#section-4.5"><i class="fa fa-check"></i><b>4.5</b> 事件监听</a></li>
+<li class="chapter" data-level="4.6" data-path="jug.html"><a href="jug.html#section-4.6"><i class="fa fa-check"></i><b>4.6</b> 预定义的事件侦听器</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="jug.html"><a href="jug.html#logger"><i class="fa fa-check"></i><b>4.6.1</b> Logger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="jug.html"><a href="jug.html#section-4.7"><i class="fa fa-check"></i><b>4.7</b> 请求，响应和错误对象</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="jug.html"><a href="jug.html#requestreq"><i class="fa fa-check"></i><b>4.7.1</b> Request（req）对象</a></li>
+<li class="chapter" data-level="4.7.2" data-path="jug.html"><a href="jug.html#responseres"><i class="fa fa-check"></i><b>4.7.2</b> Response（res）对象</a></li>
+<li class="chapter" data-level="4.7.3" data-path="jug.html"><a href="jug.html#errorerr"><i class="fa fa-check"></i><b>4.7.3</b> Error（err）对象</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="jug.html"><a href="jug.html#url"><i class="fa fa-check"></i><b>4.8</b> URL调度</a></li>
+<li class="chapter" data-level="4.9" data-path="jug.html"><a href="jug.html#jug"><i class="fa fa-check"></i><b>4.9</b> 启动jug实例</a></li>
+<li class="chapter" data-level="4.10" data-path="opencpu.html"><a href="opencpu.html#api"><i class="fa fa-check"></i><b>4.10</b> 线性回归模型的API举栗</a></li>
+<li class="chapter" data-level="4.11" data-path="jug.html"><a href="jug.html#section-4.11"><i class="fa fa-check"></i><b>4.11</b> 官方栗子</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="fiery.html"><a href="fiery.html"><i class="fa fa-check"></i><b>5</b> fiery</a></li>
 <li class="chapter" data-level="6" data-path="rserve.html"><a href="rserve.html"><i class="fa fa-check"></i><b>6</b> Rserve</a></li>
 <li class="chapter" data-level="7" data-path="restrserve.html"><a href="restrserve.html"><i class="fa fa-check"></i><b>7</b> RestRserve</a></li>
 <li class="chapter" data-level="8" data-path="mailr.html"><a href="mailr.html"><i class="fa fa-check"></i><b>8</b> mailR</a></li>
-<li class="chapter" data-level="9" data-path="rweixin.html"><a href="rweixin.html"><i class="fa fa-check"></i><b>9</b> Rweixin</a></li>
-<li class="chapter" data-level="10" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>10</b> 参考文献</a></li>
+<li class="chapter" data-level="9" data-path="rweixin.html"><a href="rweixin.html"><i class="fa fa-check"></i><b>9</b> Rweixin(*)</a></li>
+<li class="chapter" data-level="10" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>10</b> 参考文献</a><ul>
+<li class="chapter" data-level="10.1" data-path="reference.html"><a href="reference.html#opencpu-1"><i class="fa fa-check"></i><b>10.1</b> opencpu</a></li>
+<li class="chapter" data-level="10.2" data-path="reference.html"><a href="reference.html#plumber-1"><i class="fa fa-check"></i><b>10.2</b> plumber</a></li>
+<li class="chapter" data-level="10.3" data-path="reference.html"><a href="reference.html#jug-1"><i class="fa fa-check"></i><b>10.3</b> jug</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://dataxujing.github.io/" target="blank">个人主页</a></li>
 
@@ -141,7 +229,394 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="jug" class="section level1">
 <h1><span class="header-section-number">第 4 章</span> jug</h1>
+<div id="what-is-jug" class="section level2">
+<h2><span class="header-section-number">4.1</span> What is jug?</h2>
+<p>jug是一个微型的轻量级的框架，基于httpuv包，为的是部署你的R代码更简单。</p>
+<p>jug不会是一个高效的框架，它的作用是让你轻松的为你的R代码创建API, jug的简单灵活，理论上你可以用其构建一个更一般的Web应用。</p>
+</div>
+<div id="install-and-hello-world" class="section level2">
+<h2><span class="header-section-number">4.2</span> Install and Hello World</h2>
+<p>要安装最新版本，请使用devtools：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;Bart6114/jug&quot;</span>)
 
+<span class="co"># jug.parallel允许jug并行处理请求</span>
+devtools <span class="op">::</span><span class="st"> </span>install_github（“Bart6114<span class="op">/</span>jug.parallel”）</code></pre></div>
+<p>或者安装CRAN版本：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packags</span>(<span class="st">&quot;jug&quot;</span>)</code></pre></div>
+<p>加载库：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(jug)
+<span class="kw">library</span>(jug.parallel)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Example1</span>
+<span class="kw">jug</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Example2</span>
+<span class="kw">library</span>(jug)
+
+<span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;Hello World!&quot;</span>
+  }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">simple_error_handler_json</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Example3</span>
+<span class="kw">library</span>(jug)
+
+<span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;Hello World!&quot;</span>
+  }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">simple_error_handler_json</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it_parallel</span>(<span class="dt">processes=</span><span class="dv">8</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kill_servers</span>()</code></pre></div>
+<p>jug与magrittr（%&gt;%）的管道功能密切配合。</p>
+</div>
+<div id="middleware" class="section level2">
+<h2><span class="header-section-number">4.3</span> Middleware（中间件）</h2>
+<p>在中间件方面，jug有遵循中间件的规范Express。在jug中，中间件是一个可以访问<code>request（req）</code>，<code>response（res）</code>和<code>error（err）</code>对象的函数。</p>
+<p>可以定义多个中间件。中间件的添加顺序很重要。请求将从添加的第一个中间件（更具体地说是在其中指定的函数 - 请参见下一段）开始。它将继续通过添加的中间件传递,直到中间件不返回NULL。</p>
+<div id="section-4.3.1" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> 方法不敏感的中间件</h3>
+<p>该<code>use</code>函数是一个方法不敏感的中间件说明符。虽然它对方法不敏感，但它可以绑定到特定路径。如果path参数（接受带grepl设置的正则表达式字符串perl=TRUE)如果设置为NULL，它也会变得路径不敏感，并将处理每个请求。</p>
+<p>路径不敏感的栗子：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">use</span>(<span class="dt">path =</span> <span class="ot">NULL</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;test 1,2,3!&quot;</span>
+    }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()
+  </code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>curl <span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span><span class="op">/</span>xyz
+test <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span><span class="op">!</span></code></pre></div>
+<p>同样的栗子，但是路径敏感:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">use</span>(<span class="dt">path =</span> <span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;test 1,2,3!&quot;</span>
+    }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>curl <span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span><span class="op">/</span>xyz
+curl<span class="op">:</span><span class="st"> </span>(<span class="dv">52</span>) Empty reply from server
+
+<span class="op">$</span><span class="st"> </span>curl <span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span>
+test <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span><span class="op">!</span></code></pre></div>
+<p>请注意，在上面的示例中，缺少错误/缺少路由处理（服务器可能崩溃/不响应），稍后将详细介绍.</p>
+</div>
+<div id="section-4.3.2" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> 方法敏感的中间件</h3>
+<p>与请求方法不敏感的中间件相同的样式，有可用的请求方法敏感中间件。更具体地讲，您可以使用<code>get</code>，<code>post</code>，<code>put</code>和<code>delete</code>功能。</p>
+<p>此类中间件使用path参数绑定到路径。如果path设置为NULL，它将绑定到路径的每个请求，对应相应的请求方法。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="dt">path =</span> <span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;get test 1,2,3!&quot;</span>
+    }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>curl <span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span>
+get test <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span><span class="op">!</span></code></pre></div>
+<p>中间件意味着被链接，因此要将不同的功能绑定到不同的路径：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="dt">path =</span> <span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;get test 1,2,3 on path /&quot;</span>
+    }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="dt">path =</span> <span class="st">&quot;/my_path&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;get test 1,2,3 on path /my_path&quot;</span>
+    }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>curl <span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span>
+get test <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span> on path <span class="op">/</span>
+
+<span class="er">$</span><span class="st"> </span>curl <span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span><span class="op">/</span>my_path
+get test <span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span> on path <span class="op">/</span>my_path</code></pre></div>
+</div>
+<div id="websocket" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> Websocket协议</h3>
+<p>默认情况下，所有中间件便利功能都绑定到http协议。但是，您可以使用websocket中间件功能通过websocket访问jug服务器ws。下面是回传传入消息的示例。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">   </span><span class="kw">ws</span>(<span class="st">&quot;/echo_message&quot;</span>, <span class="cf">function</span>(binary, message, res, err){
+    message
+  }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<p>打开连接并向ws://127.0.0.1:8080/echo_message其发送例如消息test将返回该值test。</p>
+<p><strong>请注意，websocket支持在此阶段是实验性的，尽量不使用jug操作websocket</strong></p>
+</div>
+<div id="include" class="section level3">
+<h3><span class="header-section-number">4.3.4</span> include定义其他位置的中间件</h3>
+<p>为了使代码更加模块化，您可以将其他定义的中间件链包含到您的jug实例中。为此，您可以使用<code>collector()</code>和<code>include()</code>功能的组合。</p>
+<p>下面是一个collector本地定义（在相同的R脚本中）和include栗子:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> collected_mw&lt;-
+<span class="st">    </span><span class="kw">collector</span>() <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req,res,err){
+      <span class="kw">return</span>(<span class="st">&quot;test&quot;</span>)
+    })
+
+  res&lt;-<span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">include</span>(collected_mw) <span class="op">%&gt;%</span>
+<span class="st">    </span><span class="kw">serve_it</span>()</code></pre></div>
+<p>然而，也有可能include一个collector是在另一个.R文件中定义。</p>
+<p>让我们说下面是文件my_middlewares.R：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(jug)
+
+collected_mw&lt;-
+<span class="st">  </span><span class="kw">collector</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req,res,err){
+    <span class="kw">return</span>(<span class="st">&quot;test2&quot;</span>)
+  })</code></pre></div>
+<p>我们可以include如下：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">res&lt;-<span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">include</span>(collected_mw, <span class="st">&quot;my_middlewares.R&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+</div>
+</div>
+<div id="section-4.4" class="section level2">
+<h2><span class="header-section-number">4.4</span> 预定义的中间件</h2>
+<div id="-1" class="section level3">
+<h3><span class="header-section-number">4.4.1</span> 错误处理</h3>
+<p>一个简单的错误处理中间件（simple_error_handler/ simple_error_handler_json），它捕获未绑定的路径和func评估错误。如果您没有实现自定义错误处理程序，我建议您将其中任何一个添加到您的jug实例中。simple_error_handler返回一个HTML错误页面而simple_error_handler_json返回一个JSON消息。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">simple_error_handler</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>curl <span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span>
+<span class="op">&lt;!</span>DOCTYPE html<span class="op">&gt;</span>
+<span class="er">&lt;</span>html lang=<span class="st">&quot;en&quot;</span><span class="op">&gt;</span>
+<span class="st">  </span><span class="er">&lt;</span>head<span class="op">&gt;</span>
+<span class="st">    </span><span class="er">&lt;</span>meta charset=<span class="st">&quot;utf-8&quot;</span><span class="op">&gt;</span>
+<span class="st">    </span><span class="er">&lt;</span>title<span class="op">&gt;</span>Not found<span class="op">&lt;</span><span class="er">/</span>title<span class="op">&gt;</span>
+<span class="st">  </span><span class="er">&lt;/</span>head<span class="op">&gt;</span>
+<span class="st">  </span><span class="er">&lt;</span>body<span class="op">&gt;</span>
+<span class="st">    </span><span class="er">&lt;</span>p<span class="op">&gt;</span>No handler bound to path<span class="op">&lt;</span><span class="er">/</span>p<span class="op">&gt;</span>
+<span class="st">  </span><span class="er">&lt;/</span>body<span class="op">&gt;</span>
+<span class="er">&lt;/</span>html<span class="op">&gt;</span></code></pre></div>
+<p>如果要实现自己的自定义错误处理，只需查看这些简单错误处理中间件的代码即可。</p>
+<p>请注意，通常您希望在指定所有其他中间件后将错误处理程序中间件附加到jug实例。</p>
+</div>
+<div id="section-4.4.2" class="section level3">
+<h3><span class="header-section-number">4.4.2</span> 轻松使用自己的函数</h3>
+<p>创建jug的主要原因是可以轻松访问您自己的自定义R函数。功能decorate专门为此目的而构建。如果decorate您自己的函数，它会将请求的查询字符串中传递的所有参数转换为函数的参数。它还将所有头文件作为参数传递给函数。如果您的函数不接受<code>...</code>参数，则会删除函数未明确请求的所有查询/标头参数。如果您的功能请求req，res或err参数（或…）相应的对象将被传递。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">say_hello&lt;-<span class="cf">function</span>(name){<span class="kw">paste</span>(<span class="st">&quot;hello&quot;</span>,name,<span class="st">&quot;!&quot;</span>)}
+
+<span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="kw">decorate</span>(say_hello)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<p>如果在上面，您通过name查询字符串或GET请求中的标头传递参数，它将返回如下例所示。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>curl <span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span><span class="op">/</span>?name=Bart
+hello Bart <span class="op">!</span></code></pre></div>
+</div>
+<div id="section-4.4.3" class="section level3">
+<h3><span class="header-section-number">4.4.3</span> 静态文件服务器</h3>
+<p>serve_static_file中间件可以提供静态文件。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_static_files</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<p>默认根目录是返回的目录，<code>setwd()</code>可以通过向中间件提供root_path参数来指定serve_static_files.</p>
+<p>除了开发之外，我不建议使用jug来提供静态文件。</p>
+</div>
+<div id="cors" class="section level3">
+<h3><span class="header-section-number">4.4.4</span> CORS功能(*)</h3>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS功能</a>(跨源资源共享)由cors()中间件功能引入。</p>
+<p>请考虑以下示例。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">cors</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;Hello World!&quot;</span>
+  }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">$</span><span class="st"> </span>curl <span class="op">-</span>v <span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span><span class="op">/</span>
+<span class="er">*</span><span class="st">   </span>Trying <span class="fl">127.0</span>.<span class="fl">0.1</span>...
+<span class="op">*</span><span class="st"> </span>Connected to <span class="fl">127.0</span>.<span class="fl">0.1</span> (<span class="fl">127.0</span>.<span class="fl">0.1</span>) port <span class="dv">8080</span> (<span class="co">#0)</span>
+<span class="op">&gt;</span><span class="st"> </span>GET <span class="op">/</span><span class="st"> </span>HTTP<span class="op">/</span><span class="fl">1.1</span>
+<span class="op">&gt;</span><span class="st"> </span>Host<span class="op">:</span><span class="st"> </span><span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span>
+<span class="op">&gt;</span><span class="st"> </span>User<span class="op">-</span>Agent<span class="op">:</span><span class="st"> </span>curl<span class="op">/</span><span class="fl">7.43</span>.<span class="dv">0</span>
+<span class="op">&gt;</span><span class="st"> </span>Accept<span class="op">:</span><span class="st"> </span><span class="er">*/*</span>
+<span class="er">&gt;</span><span class="st"> </span>
+<span class="er">&lt;</span><span class="st"> </span>HTTP<span class="op">/</span><span class="fl">1.1</span> <span class="dv">200</span> OK
+<span class="op">&lt;</span><span class="st"> </span>Content<span class="op">-</span>Type<span class="op">:</span><span class="st"> </span>text<span class="op">/</span>html
+<span class="op">&lt;</span><span class="st"> </span>Access<span class="op">-</span>Control<span class="op">-</span>Allow<span class="op">-</span>Origin<span class="op">:</span><span class="st"> </span><span class="er">*</span>
+<span class="er">&lt;</span><span class="st"> </span>Access<span class="op">-</span>Control<span class="op">-</span>Allow<span class="op">-</span>Methods<span class="op">:</span><span class="st"> </span>POST,GET,PUT,OPTIONS,DELETE,PATCH
+<span class="op">&lt;</span><span class="st"> </span>Content<span class="op">-</span>Length<span class="op">:</span><span class="st"> </span><span class="dv">12</span>
+<span class="op">&lt;</span><span class="st"> </span>
+<span class="er">*</span><span class="st"> </span>Connection <span class="co">#0 to host 127.0.0.1 left intact</span></code></pre></div>
+<p>如您所见，这会添加一些默认的CORS标头。查看?cors配置选项，请注意您还可以通过指定path参数将CORS标头添加到特定路径。</p>
+</div>
+<div id="section-4.4.5" class="section level3">
+<h3><span class="header-section-number">4.4.5</span> 认证</h3>
+<p>目前，只有通过中间件功能内置支持基本身份验证<a href="https://www.httpwatch.com/httpgallery/authentication/" class="uri">https://www.httpwatch.com/httpgallery/authentication/</a> auth_basic,间件将检查有效用户名/密码组合的请求。如果传递了无效组合，它将返回401状态，WWW-Authenticate标题和文本正文，指出存在身份验证错误。</p>
+<p>首先，您需要定义一个接受username和password参数的函数。TRUE如果组合有效且FALSE组合无效，则应返回功能。一个虚拟的例子如下所示。注意，此功能还可以检查例如数据库以验证组合。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># dummy account checker</span>
+account_checker &lt;-<span class="st"> </span><span class="cf">function</span>(username, password){
+  <span class="co"># do something to verify the username and password and return TRUE if combination OK</span>
+  <span class="kw">all</span>(username <span class="op">==</span><span class="st"> &quot;test_user&quot;</span>, 
+      password <span class="op">==</span><span class="st"> &quot;test_password&quot;</span>)
+}</code></pre></div>
+<p>接下来，您需要auth_basic在中间件链中实例化中间件。该auth_basic函数接受用户名/密码验证功能作为第一个参数。下面给出两个例子。第一个显示如何对特定路径（/test）进行身份验证。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;/ req&quot;</span>
+  }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/test&quot;</span>, <span class="kw">auth_basic</span>(account_checker), <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;/test req&quot;</span>
+  }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<p>下面的第二个示例显示了如何为jug实例中的所有路径激活基本身份验证。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">use</span>(<span class="ot">NULL</span>, <span class="kw">auth_basic</span>(account_checker)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="st">&quot;/ req&quot;</span>
+  }) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+</div>
+</div>
+<div id="section-4.5" class="section level2">
+<h2><span class="header-section-number">4.5</span> 事件监听</h2>
+<p>从版本0.1.7.902开始，事件监听的概念已经可用。由于中间件不足以实现强大的Logger，因此引入了事件和事件监听的概念。目前，侦听器可以绑定到事件，下面给出一个示例：</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req,res,err){<span class="st">&quot;foo&quot;</span>}) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">on</span>(<span class="st">&quot;finish&quot;</span>, <span class="cf">function</span>(req, res, err){
+    <span class="kw">print</span>(<span class="st">&quot;the finish event was received; request processing finished!&quot;</span>)}
+    ) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<p>目前有三项活动：</p>
+<ul>
+<li>start：一旦收到新请求，就会触发此事件</li>
+<li>finish：一旦请求完全处理，就会触发此事件</li>
+<li>error：一旦在中间件内引发错误，就会触发此事件</li>
+</ul>
+<p>start和finish事件将传递的当前状态req，res以及err对象。error事件将传递第四个参数，即错误消息的字符表示。</p>
+</div>
+<div id="section-4.6" class="section level2">
+<h2><span class="header-section-number">4.6</span> 预定义的事件侦听器</h2>
+<div id="logger" class="section level3">
+<h3><span class="header-section-number">4.6.1</span> Logger</h3>
+<p><code>futile.logger</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/&quot;</span>, <span class="cf">function</span>(req,res,err){<span class="st">&quot;foo&quot;</span>}) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">get</span>(<span class="st">&quot;/err&quot;</span>, <span class="cf">function</span>(req,res,err){<span class="kw">stop</span>(<span class="st">&quot;bar&quot;</span>)}) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">logger</span>(<span class="dt">threshold =</span> futile.logger<span class="op">::</span>DEBUG, <span class="dt">log_file=</span><span class="st">&#39;logfile.log&#39;</span>, <span class="dt">console=</span><span class="ot">TRUE</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">simple_error_handler_json</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<p>在上面的示例中，Logger阈值设置futile.logger::DEBUG为我们将在执行期间接收详细信息,在这个例子中，Logger将写入logfile.log 和将输出到控制台.有关Logger阈值的更多信息，请查看该futile.logger包的文档。</p>
+</div>
+</div>
+<div id="section-4.7" class="section level2">
+<h2><span class="header-section-number">4.7</span> 请求，响应和错误对象</h2>
+<div id="requestreq" class="section level3">
+<h3><span class="header-section-number">4.7.1</span> Request（req）对象</h3>
+<p>该req对象包含请求规范。它有不同的属性：</p>
+<ul>
+<li><code>req$params</code> 由查询字符串，JSON正文，URL参数或多部分表单传递的参数的命名列表</li>
+<li><code>req$path</code> 请求路径</li>
+<li><code>req$method</code> 请求方法</li>
+<li><code>req$raw</code> 传递的原始请求对象 httpuv</li>
+<li><code>req$body</code> 完整的请求正文作为字符串</li>
+<li><code>req$protocol</code>无论是http或websocket</li>
+<li><code>req$headers</code> 请求中的标头的命名列表（作为小写并从HTTP_底层httpuv框架提供的前缀中剥离）</li>
+</ul>
+<p>它附带以下功能：</p>
+<ul>
+<li><code>req$get_header(key)</code>返回与请求中指定键关联的值（无需担心HTTP_前缀）</li>
+<li><code>req$set_header(key, value)</code> 允许在处理请求时设置/更改标头（对于将数据传递到下一个中间件可能很有用）</li>
+<li><code>req$attach(key, value)</code> 将变量附加到 <code>req$params</code></li>
+</ul>
+</div>
+<div id="responseres" class="section level3">
+<h3><span class="header-section-number">4.7.2</span> Response（res）对象</h3>
+<p>该res对象包含响应规范。它有不同的属性：</p>
+<ul>
+<li><code>res$headers</code> 一个命名的标题列表</li>
+<li><code>res$status</code> 响应的状态（默认为200）</li>
+<li><code>res$body</code>响应的主体（自动设置为不NULL返回的中间件的内容或通过诸如此类的方法<code>res$json()</code>）</li>
+</ul>
+<p>它还有一组功能：</p>
+<ul>
+<li><code>res$set_header(key, value)</code> 设置自定义标头</li>
+<li><code>res$content_type(type</code>) 设置自己的内容类型（MIME）</li>
+<li><code>res$set_status(status)</code> 设置响应的状态</li>
+<li><code>res$text(body)</code> 明确地设定反应的主体</li>
+<li><code>res$json(obj, auto_unbox=TRUE)</code> 将对象转换为JSON，将其设置为正文并设置正确的内容类型</li>
+<li><code>res$plot(plot_obj, base64=TRUE)</code> 方便函数将绘图对象作为响应体返回，返回的绘图可以是图像的base64表示（默认）或实际的二进制数据</li>
+</ul>
+</div>
+<div id="errorerr" class="section level3">
+<h3><span class="header-section-number">4.7.3</span> Error（err）对象</h3>
+<p>该err对象包含可通过的错误列表<code>err$errrors</code>。您可以通过调用将错误添加到此列表中<code>err$set(error)</code>。错误将转换为字符。有关更多详细信息，请参阅“错误处理”。</p>
+</div>
+</div>
+<div id="url" class="section level2">
+<h2><span class="header-section-number">4.8</span> URL调度</h2>
+<p>在路径参数get，post，…功能被处理为正则表达式模式。</p>
+<p>如果路径定义中有命名的捕获组，则它们将附加到该<code>req$params</code>对象。例如，模式<code>/test/(?&lt;id&gt;.*)/(?&lt;id2&gt;.*)</code>将导致变量id和id2（及其各自的值）绑定到req$params对象。</p>
+<p>如果路径模式未以字符串^正则表达式标记的开头启动或以字符串标记的结尾结束<code>$</code>，则将分别在路径模式规范的开头和结尾处明确地插入这些模式。例如，路径模式/将转换为<code>^/$</code></p>
+</div>
+<div id="jug" class="section level2">
+<h2><span class="header-section-number">4.9</span> 启动jug实例</h2>
+<p>只需serve_it()在管道链的末端调用（参见<a href="jug.html#install-and-hello-world">Install and Hello World ！</a>示例）</p>
+</div>
+<div id="api" class="section level2">
+<h2><span class="header-section-number">4.10</span> 线性回归模型的API举栗</h2>
+<p>训练mtcars数据集上的线性回归模型，并假设我们的目标是mpg根据输入gear和预测每加仑英里或变量hp。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(mtcars)</code></pre></div>
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mpg_model &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg<span class="op">~</span>gear<span class="op">+</span>hp, <span class="dt">data=</span>mtcars)
+
+<span class="kw">summary</span>(mpg_model)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ gear + hp, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.7977 -2.4288 -0.7685  2.2405  7.5943 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) 17.755144   3.241809   5.477 6.74e-06 ***
+## gear         3.176520   0.762584   4.165 0.000255 ***
+## hp          -0.063931   0.008206  -7.791 1.36e-08 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.108 on 29 degrees of freedom
+## Multiple R-squared:  0.7513, Adjusted R-squared:  0.7341 
+## F-statistic: 43.79 on 2 and 29 DF,  p-value: 1.731e-09</code></pre>
+<p>建立一个最小预测函数。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">predict_mpg &lt;-<span class="st"> </span><span class="cf">function</span>(gear, hp){
+  <span class="kw">predict</span>(mpg_model, 
+          <span class="dt">newdata =</span> <span class="kw">data.frame</span>(<span class="dt">gear=</span><span class="kw">as.numeric</span>(gear), 
+                               <span class="dt">hp=</span><span class="kw">as.numeric</span>(hp)))[[<span class="dv">1</span>]]
+}</code></pre></div>
+<p>我们可以通过提供gear和hp参数来测试函数。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict_mpg</span>(<span class="dt">gear =</span> <span class="dv">4</span>, <span class="dt">hp =</span> <span class="dv">80</span>)</code></pre></div>
+<pre><code>## [1] 25.34671</code></pre>
+<p>现在，要将此函数公开为Web API，我们需要构建一个jug实例。我们可以使用内置的decorate中间件来简化predict_mpg功能的集成。下面是一个最小的例子。</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">jug</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">post</span>(<span class="st">&quot;/predict-mpg&quot;</span>, <span class="kw">decorate</span>(predict_mpg)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">simple_error_handler_json</span>() <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">serve_it</span>()</code></pre></div>
+<p>我们现在可以向http://127.0.0.1:8080/predict-mpgURL 发送http POST请求，它将返回预测值！它开箱即用，带有JSON主体中的参数，multipart/form-data或者作为一个x-www-form-urlencoded。</p>
+<p>JSON正文</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">curl <span class="op">-</span>X POST \
+  http<span class="op">:</span><span class="er">//</span><span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span><span class="op">/</span>predict<span class="op">-</span>mpg \
+  <span class="op">-</span>H <span class="st">&#39;content-type: application/json&#39;</span> \
+  <span class="op">-</span>d <span class="st">&#39;{&quot;hp&quot;: 80, &quot;gear&quot;: 4}&#39;</span></code></pre></div>
+<p>多部分形式</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">curl <span class="op">-</span>X POST \
+  http<span class="op">:</span><span class="er">//</span><span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span><span class="op">/</span>predict<span class="op">-</span>mpg \
+  <span class="op">-</span>H <span class="st">&#39;content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW&#39;</span> \
+  <span class="op">-</span>F hp=<span class="dv">80</span> \
+  <span class="op">-</span>F gear=<span class="dv">4</span>
+  </code></pre></div>
+<p>urlencode表单</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">curl <span class="op">-</span>X POST \
+  http<span class="op">:</span><span class="er">//</span><span class="fl">127.0</span>.<span class="fl">0.1</span><span class="op">:</span><span class="dv">8080</span><span class="op">/</span>predict<span class="op">-</span>mpg \
+  <span class="op">-</span>H <span class="st">&#39;content-type: application/x-www-form-urlencoded&#39;</span> \
+  <span class="op">-</span>d <span class="st">&#39;gear=4&amp;hp=80&#39;</span></code></pre></div>
+</div>
+<div id="section-4.11" class="section level2">
+<h2><span class="header-section-number">4.11</span> 官方栗子</h2>
+<p><a href="https://github.com/Bart6114/jug-crud-example" class="uri">https://github.com/Bart6114/jug-crud-example</a></p>
+
+</div>
 </div>
             </section>
 
@@ -169,7 +644,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -179,6 +654,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },

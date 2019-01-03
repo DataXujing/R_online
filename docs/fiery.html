@@ -5,27 +5,27 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>R语言模型部署实战</title>
-  <meta name="description" content="R语言模型部署实战">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>第 5 章 fiery | R语言模型部署实战</title>
+  <meta name="description" content="第 5 章 fiery | R语言模型部署实战">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="R语言模型部署实战" />
+  <meta property="og:title" content="第 5 章 fiery | R语言模型部署实战" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="R语言模型部署实战" />
+  <meta property="og:description" content="第 5 章 fiery | R语言模型部署实战" />
   <meta name="github-repo" content="DataXujing/R-deployment" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R语言模型部署实战" />
+  <meta name="twitter:title" content="第 5 章 fiery | R语言模型部署实战" />
   
-  <meta name="twitter:description" content="R语言模型部署实战" />
+  <meta name="twitter:description" content="第 5 章 fiery | R语言模型部署实战" />
   
 
 <meta name="author" content="徐静">
 
 
-<meta name="date" content="2018-08-06">
+<meta name="date" content="2018-12-31">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -36,6 +36,7 @@
 <link rel="next" href="rserve.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -110,15 +111,102 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.1" data-path="httpuv.html"><a href="httpuv.html#section-1.1"><i class="fa fa-check"></i><b>1.1</b> 方法介绍</a></li>
 <li class="chapter" data-level="1.2" data-path="httpuv.html"><a href="httpuv.html#section-1.2"><i class="fa fa-check"></i><b>1.2</b> 例子演示</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="opencpu.html"><a href="opencpu.html"><i class="fa fa-check"></i><b>2</b> opencpu</a></li>
-<li class="chapter" data-level="3" data-path="plumber.html"><a href="plumber.html"><i class="fa fa-check"></i><b>3</b> plumber</a></li>
-<li class="chapter" data-level="4" data-path="jug.html"><a href="jug.html"><i class="fa fa-check"></i><b>4</b> jug</a></li>
+<li class="chapter" data-level="2" data-path="opencpu.html"><a href="opencpu.html"><i class="fa fa-check"></i><b>2</b> opencpu</a><ul>
+<li class="chapter" data-level="2.1" data-path="opencpu.html"><a href="opencpu.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 安装</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="opencpu.html"><a href="opencpu.html#ubuntu-18.0416.04-"><i class="fa fa-check"></i><b>2.1.1</b> Ubuntu 18.04/16.04 安装</a></li>
+<li class="chapter" data-level="2.1.2" data-path="opencpu.html"><a href="opencpu.html#section-2.1.2"><i class="fa fa-check"></i><b>2.1.2</b> 本地单用户服务器</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="opencpu.html"><a href="opencpu.html#api"><i class="fa fa-check"></i><b>2.2</b> API文档</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="opencpu.html"><a href="opencpu.html#opencpuhttp"><i class="fa fa-check"></i><b>2.2.1</b> OpenCPU中的HTTP</a></li>
+<li class="chapter" data-level="2.2.2" data-path="opencpu.html"><a href="opencpu.html#api-endpoints"><i class="fa fa-check"></i><b>2.2.2</b> API 端点(EndPoints)</a></li>
+<li class="chapter" data-level="2.2.3" data-path="opencpu.html"><a href="opencpu.html#section-2.2.3"><i class="fa fa-check"></i><b>2.2.3</b> 输入，输出：数据和格式</a></li>
+<li class="chapter" data-level="2.2.4" data-path="opencpu.html"><a href="opencpu.html#section-2.2.4"><i class="fa fa-check"></i><b>2.2.4</b> 其他功能</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="opencpu.html"><a href="opencpu.html#xgboost"><i class="fa fa-check"></i><b>2.3</b> XGBoost模型部署实例</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="opencpu.html"><a href="opencpu.html#section-2.3.1"><i class="fa fa-check"></i><b>2.3.1</b> 训练模型</a></li>
+<li class="chapter" data-level="2.3.2" data-path="opencpu.html"><a href="opencpu.html#r"><i class="fa fa-check"></i><b>2.3.2</b> 构建R包</a></li>
+<li class="chapter" data-level="2.3.3" data-path="opencpu.html"><a href="opencpu.html#r"><i class="fa fa-check"></i><b>2.3.3</b> 编译R包并安装</a></li>
+<li class="chapter" data-level="2.3.4" data-path="opencpu.html"><a href="opencpu.html#opencpu"><i class="fa fa-check"></i><b>2.3.4</b> opencpu的一些配置</a></li>
+<li class="chapter" data-level="2.3.5" data-path="opencpu.html"><a href="opencpu.html#opencpu"><i class="fa fa-check"></i><b>2.3.5</b> 本地opencpu服务测试</a></li>
+<li class="chapter" data-level="2.3.6" data-path="opencpu.html"><a href="opencpu.html#ubuntu-16.04-opencpu-server"><i class="fa fa-check"></i><b>2.3.6</b> Ubuntu 16.04 opencpu-server部署测试</a></li>
+<li class="chapter" data-level="2.3.7" data-path="opencpu.html"><a href="opencpu.html#github"><i class="fa fa-check"></i><b>2.3.7</b> Github部署测试</a></li>
+<li class="chapter" data-level="2.3.8" data-path="opencpu.html"><a href="opencpu.html#section-2.3.8"><i class="fa fa-check"></i><b>2.3.8</b> 官方例子</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="plumber.html"><a href="plumber.html"><i class="fa fa-check"></i><b>3</b> plumber</a><ul>
+<li class="chapter" data-level="3.1" data-path="plumber.html"><a href="plumber.html#section-3.1"><i class="fa fa-check"></i><b>3.1</b> 快速开始</a></li>
+<li class="chapter" data-level="3.2" data-path="plumber.html"><a href="plumber.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 路由和输入</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="plumber.html"><a href="plumber.html#section-3.2.1"><i class="fa fa-check"></i><b>3.2.1</b> 端点</a></li>
+<li class="chapter" data-level="3.2.2" data-path="plumber.html"><a href="plumber.html#section-3.2.2"><i class="fa fa-check"></i><b>3.2.2</b> 过滤器</a></li>
+<li class="chapter" data-level="3.2.3" data-path="plumber.html"><a href="plumber.html#section-3.2.3"><i class="fa fa-check"></i><b>3.2.3</b> 动态路由</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="plumber.html"><a href="plumber.html#rendering-output"><i class="fa fa-check"></i><b>3.3</b> Rendering Output</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="plumber.html"><a href="plumber.html#section-3.3.1"><i class="fa fa-check"></i><b>3.3.1</b> 序列化器</a></li>
+<li class="chapter" data-level="3.3.2" data-path="plumber.html"><a href="plumber.html#section-3.3.2"><i class="fa fa-check"></i><b>3.3.2</b> 绕过序列化</a></li>
+<li class="chapter" data-level="3.3.3" data-path="plumber.html"><a href="plumber.html#boxed-and-unboxed-json"><i class="fa fa-check"></i><b>3.3.3</b> boxed and unboxed JSON</a></li>
+<li class="chapter" data-level="3.3.4" data-path="plumber.html"><a href="plumber.html#section-3.3.4"><i class="fa fa-check"></i><b>3.3.4</b> 自定义图像序列化程序</a></li>
+<li class="chapter" data-level="3.3.5" data-path="plumber.html"><a href="plumber.html#section-3.3.5"><i class="fa fa-check"></i><b>3.3.5</b> 错误处理</a></li>
+<li class="chapter" data-level="3.3.6" data-path="plumber.html"><a href="plumber.html#cookies"><i class="fa fa-check"></i><b>3.3.6</b> 设置Cookies(*)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="plumber.html"><a href="plumber.html#section-3.4"><i class="fa fa-check"></i><b>3.4</b> 部署</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="plumber.html"><a href="plumber.html#docker"><i class="fa fa-check"></i><b>3.4.1</b> Docker（基础）</a></li>
+<li class="chapter" data-level="3.4.2" data-path="plumber.html"><a href="plumber.html#docker"><i class="fa fa-check"></i><b>3.4.2</b> Docker（高级）</a></li>
+<li class="chapter" data-level="3.4.3" data-path="plumber.html"><a href="plumber.html#pm2"><i class="fa fa-check"></i><b>3.4.3</b> pm2</a></li>
+<li class="chapter" data-level="3.4.4" data-path="opencpu.html"><a href="opencpu.html#xgboost"><i class="fa fa-check"></i><b>3.4.4</b> XGBoost模型预测部署实例</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="plumber.html"><a href="plumber.html#section-3.5"><i class="fa fa-check"></i><b>3.5</b> 其他</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="plumber.html"><a href="plumber.html#section-3.5.1"><i class="fa fa-check"></i><b>3.5.1</b> 环境</a></li>
+<li class="chapter" data-level="3.5.2" data-path="plumber.html"><a href="plumber.html#section-3.5.2"><i class="fa fa-check"></i><b>3.5.2</b> 文件系统</a></li>
+<li class="chapter" data-level="3.5.3" data-path="opencpu.html"><a href="opencpu.html#api"><i class="fa fa-check"></i><b>3.5.3</b> API的安全性</a></li>
+<li class="chapter" data-level="3.5.4" data-path="plumber.html"><a href="plumber.html#section-3.5.4"><i class="fa fa-check"></i><b>3.5.4</b> 创建和控制路由器</a></li>
+<li class="chapter" data-level="3.5.5" data-path="plumber.html"><a href="plumber.html#section-3.5.5"><i class="fa fa-check"></i><b>3.5.5</b> 定义端点</a></li>
+<li class="chapter" data-level="3.5.6" data-path="plumber.html"><a href="plumber.html#section-3.5.6"><i class="fa fa-check"></i><b>3.5.6</b> 定义过滤器</a></li>
+<li class="chapter" data-level="3.5.7" data-path="plumber.html"><a href="plumber.html#section-3.5.7"><i class="fa fa-check"></i><b>3.5.7</b> 在路由器上注册钩子(*)</a></li>
+<li class="chapter" data-level="3.5.8" data-path="plumber.html"><a href="plumber.html#mounting-static-file-routers"><i class="fa fa-check"></i><b>3.5.8</b> Mounting &amp; Static File Routers（*）</a></li>
+<li class="chapter" data-level="3.5.9" data-path="plumber.html"><a href="plumber.html#section-3.5.9"><i class="fa fa-check"></i><b>3.5.9</b> 自定义路由器</a></li>
+<li class="chapter" data-level="3.5.10" data-path="plumber.html"><a href="plumber.html#section-3.5.10"><i class="fa fa-check"></i><b>3.5.10</b> 调试</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="jug.html"><a href="jug.html"><i class="fa fa-check"></i><b>4</b> jug</a><ul>
+<li class="chapter" data-level="4.1" data-path="jug.html"><a href="jug.html#what-is-jug"><i class="fa fa-check"></i><b>4.1</b> What is jug?</a></li>
+<li class="chapter" data-level="4.2" data-path="jug.html"><a href="jug.html#install-and-hello-world"><i class="fa fa-check"></i><b>4.2</b> Install and Hello World</a></li>
+<li class="chapter" data-level="4.3" data-path="jug.html"><a href="jug.html#middleware"><i class="fa fa-check"></i><b>4.3</b> Middleware（中间件）</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="jug.html"><a href="jug.html#section-4.3.1"><i class="fa fa-check"></i><b>4.3.1</b> 方法不敏感的中间件</a></li>
+<li class="chapter" data-level="4.3.2" data-path="jug.html"><a href="jug.html#section-4.3.2"><i class="fa fa-check"></i><b>4.3.2</b> 方法敏感的中间件</a></li>
+<li class="chapter" data-level="4.3.3" data-path="jug.html"><a href="jug.html#websocket"><i class="fa fa-check"></i><b>4.3.3</b> Websocket协议</a></li>
+<li class="chapter" data-level="4.3.4" data-path="jug.html"><a href="jug.html#include"><i class="fa fa-check"></i><b>4.3.4</b> include定义其他位置的中间件</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="jug.html"><a href="jug.html#section-4.4"><i class="fa fa-check"></i><b>4.4</b> 预定义的中间件</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="jug.html"><a href="jug.html#-1"><i class="fa fa-check"></i><b>4.4.1</b> 错误处理</a></li>
+<li class="chapter" data-level="4.4.2" data-path="jug.html"><a href="jug.html#section-4.4.2"><i class="fa fa-check"></i><b>4.4.2</b> 轻松使用自己的函数</a></li>
+<li class="chapter" data-level="4.4.3" data-path="jug.html"><a href="jug.html#section-4.4.3"><i class="fa fa-check"></i><b>4.4.3</b> 静态文件服务器</a></li>
+<li class="chapter" data-level="4.4.4" data-path="jug.html"><a href="jug.html#cors"><i class="fa fa-check"></i><b>4.4.4</b> CORS功能(*)</a></li>
+<li class="chapter" data-level="4.4.5" data-path="jug.html"><a href="jug.html#section-4.4.5"><i class="fa fa-check"></i><b>4.4.5</b> 认证</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="jug.html"><a href="jug.html#section-4.5"><i class="fa fa-check"></i><b>4.5</b> 事件监听</a></li>
+<li class="chapter" data-level="4.6" data-path="jug.html"><a href="jug.html#section-4.6"><i class="fa fa-check"></i><b>4.6</b> 预定义的事件侦听器</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="jug.html"><a href="jug.html#logger"><i class="fa fa-check"></i><b>4.6.1</b> Logger</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="jug.html"><a href="jug.html#section-4.7"><i class="fa fa-check"></i><b>4.7</b> 请求，响应和错误对象</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="jug.html"><a href="jug.html#requestreq"><i class="fa fa-check"></i><b>4.7.1</b> Request（req）对象</a></li>
+<li class="chapter" data-level="4.7.2" data-path="jug.html"><a href="jug.html#responseres"><i class="fa fa-check"></i><b>4.7.2</b> Response（res）对象</a></li>
+<li class="chapter" data-level="4.7.3" data-path="jug.html"><a href="jug.html#errorerr"><i class="fa fa-check"></i><b>4.7.3</b> Error（err）对象</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="jug.html"><a href="jug.html#url"><i class="fa fa-check"></i><b>4.8</b> URL调度</a></li>
+<li class="chapter" data-level="4.9" data-path="jug.html"><a href="jug.html#jug"><i class="fa fa-check"></i><b>4.9</b> 启动jug实例</a></li>
+<li class="chapter" data-level="4.10" data-path="opencpu.html"><a href="opencpu.html#api"><i class="fa fa-check"></i><b>4.10</b> 线性回归模型的API举栗</a></li>
+<li class="chapter" data-level="4.11" data-path="jug.html"><a href="jug.html#section-4.11"><i class="fa fa-check"></i><b>4.11</b> 官方栗子</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="fiery.html"><a href="fiery.html"><i class="fa fa-check"></i><b>5</b> fiery</a></li>
 <li class="chapter" data-level="6" data-path="rserve.html"><a href="rserve.html"><i class="fa fa-check"></i><b>6</b> Rserve</a></li>
 <li class="chapter" data-level="7" data-path="restrserve.html"><a href="restrserve.html"><i class="fa fa-check"></i><b>7</b> RestRserve</a></li>
 <li class="chapter" data-level="8" data-path="mailr.html"><a href="mailr.html"><i class="fa fa-check"></i><b>8</b> mailR</a></li>
-<li class="chapter" data-level="9" data-path="rweixin.html"><a href="rweixin.html"><i class="fa fa-check"></i><b>9</b> Rweixin</a></li>
-<li class="chapter" data-level="10" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>10</b> 参考文献</a></li>
+<li class="chapter" data-level="9" data-path="rweixin.html"><a href="rweixin.html"><i class="fa fa-check"></i><b>9</b> Rweixin(*)</a></li>
+<li class="chapter" data-level="10" data-path="reference.html"><a href="reference.html"><i class="fa fa-check"></i><b>10</b> 参考文献</a><ul>
+<li class="chapter" data-level="10.1" data-path="reference.html"><a href="reference.html#opencpu-1"><i class="fa fa-check"></i><b>10.1</b> opencpu</a></li>
+<li class="chapter" data-level="10.2" data-path="reference.html"><a href="reference.html#plumber-1"><i class="fa fa-check"></i><b>10.2</b> plumber</a></li>
+<li class="chapter" data-level="10.3" data-path="reference.html"><a href="reference.html#jug-1"><i class="fa fa-check"></i><b>10.3</b> jug</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://dataxujing.github.io/" target="blank">个人主页</a></li>
 
@@ -169,7 +257,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -179,6 +267,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },

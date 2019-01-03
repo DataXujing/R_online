@@ -1,1 +1,7 @@
-# Rweixin
+# Rweixin(*)
+
+关于RWeixin，这里不做介绍，可以参考:
+
++ <https://github.com/Lchiffon/Rweixin>
+
++ <https://dataxujing.github.io/assets/bowen20/slide_langdawei.pdf>

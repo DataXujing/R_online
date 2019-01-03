@@ -1,1 +1,521 @@
 # jug
+
+## What is jug?
+
+jug是一个微型的轻量级的框架，基于httpuv包，为的是部署你的R代码更简单。
+
+jug不会是一个高效的框架，它的作用是让你轻松的为你的R代码创建API, jug的简单灵活，理论上你可以用其构建一个更一般的Web应用。
+
+
+## Install and Hello World 
+
+要安装最新版本，请使用devtools：
+```r
+devtools::install_github("Bart6114/jug")
+
+# jug.parallel允许jug并行处理请求
+devtools :: install_github（“Bart6114/jug.parallel”）
+```
+或者安装CRAN版本：
+```r
+install.packags("jug")
+```
+
+加载库：
+```r
+library(jug)
+library(jug.parallel)
+```
+
+```r
+# Example1
+jug()
+```
+
+```r
+# Example2
+library(jug)
+
+jug() %>%
+  get("/", function(req, res, err){
+    "Hello World!"
+  }) %>%
+  simple_error_handler_json() %>%
+  serve_it()
+```
+
+```r
+# Example3
+library(jug)
+
+jug() %>%
+  get("/", function(req, res, err){
+    "Hello World!"
+  }) %>%
+  simple_error_handler_json() %>%
+  serve_it_parallel(processes=8)
+```
+
+```r
+kill_servers()
+```
+
+jug与magrittr（%>%）的管道功能密切配合。
+
+
+## Middleware（中间件）
+
+
+在中间件方面，jug有遵循中间件的规范Express。在jug中，中间件是一个可以访问`request（req）`，`response（res）`和`error（err）`对象的函数。
+
+可以定义多个中间件。中间件的添加顺序很重要。请求将从添加的第一个中间件（更具体地说是在其中指定的函数 - 请参见下一段）开始。它将继续通过添加的中间件传递,直到中间件不返回NULL。
+
+
+### 方法不敏感的中间件
+
+该`use`函数是一个方法不敏感的中间件说明符。虽然它对方法不敏感，但它可以绑定到特定路径。如果path参数（接受带grepl设置的正则表达式字符串perl=TRUE)如果设置为NULL，它也会变得路径不敏感，并将处理每个请求。
+
+路径不敏感的栗子：
+```r
+jug() %>%
+  use(path = NULL, function(req, res, err){
+    "test 1,2,3!"
+    }) %>%
+  serve_it()
+  
+```
+```r
+$ curl 127.0.0.1:8080/xyz
+test 1,2,3!
+```
+
+同样的栗子，但是路径敏感:
+
+```r
+jug() %>%
+  use(path = "/", function(req, res, err){
+    "test 1,2,3!"
+    }) %>%
+  serve_it()
+```
+
+```r
+$ curl 127.0.0.1:8080/xyz
+curl: (52) Empty reply from server
+
+$ curl 127.0.0.1:8080
+test 1,2,3!
+```
+
+请注意，在上面的示例中，缺少错误/缺少路由处理（服务器可能崩溃/不响应），稍后将详细介绍.
+
+### 方法敏感的中间件
+
+与请求方法不敏感的中间件相同的样式，有可用的请求方法敏感中间件。更具体地讲，您可以使用`get`，`post`，`put`和`delete`功能。
+
+此类中间件使用path参数绑定到路径。如果path设置为NULL，它将绑定到路径的每个请求，对应相应的请求方法。
+
+```r
+jug() %>%
+  get(path = "/", function(req, res, err){
+    "get test 1,2,3!"
+    }) %>%
+  serve_it()
+```
+
+```r
+$ curl 127.0.0.1:8080
+get test 1,2,3!
+```
+
+中间件意味着被链接，因此要将不同的功能绑定到不同的路径：
+
+```r
+jug() %>%
+  get(path = "/", function(req, res, err){
+    "get test 1,2,3 on path /"
+    }) %>%
+  get(path = "/my_path", function(req, res, err){
+    "get test 1,2,3 on path /my_path"
+    }) %>%
+  serve_it()
+```
+
+```r
+$ curl 127.0.0.1:8080
+get test 1,2,3 on path /
+
+$ curl 127.0.0.1:8080/my_path
+get test 1,2,3 on path /my_path
+```
+
+### Websocket协议
+
+默认情况下，所有中间件便利功能都绑定到http协议。但是，您可以使用websocket中间件功能通过websocket访问jug服务器ws。下面是回传传入消息的示例。
+
+```r
+jug() %>%
+   ws("/echo_message", function(binary, message, res, err){
+    message
+  }) %>%
+  serve_it()
+```
+
+打开连接并向ws://127.0.0.1:8080/echo_message其发送例如消息test将返回该值test。
+
+<strong>请注意，websocket支持在此阶段是实验性的，尽量不使用jug操作websocket</strong>
+
+### include定义其他位置的中间件
+
+为了使代码更加模块化，您可以将其他定义的中间件链包含到您的jug实例中。为此，您可以使用`collector()`和`include()`功能的组合。
+
+下面是一个collector本地定义（在相同的R脚本中）和include栗子:
+
+```r
+ collected_mw<-
+    collector() %>%
+    get("/", function(req,res,err){
+      return("test")
+    })
+
+  res<-jug() %>%
+    include(collected_mw) %>%
+    serve_it()
+```
+
+然而，也有可能include一个collector是在另一个.R文件中定义。
+
+让我们说下面是文件my_middlewares.R：
+
+```r
+library(jug)
+
+collected_mw<-
+  collector() %>%
+  get("/", function(req,res,err){
+    return("test2")
+  })
+```
+
+我们可以include如下：
+
+```r
+res<-jug() %>%
+  include(collected_mw, "my_middlewares.R") %>%
+  serve_it()
+```
+
+## 预定义的中间件
+
+### 错误处理
+
+一个简单的错误处理中间件（simple_error_handler/ simple_error_handler_json），它捕获未绑定的路径和func评估错误。如果您没有实现自定义错误处理程序，我建议您将其中任何一个添加到您的jug实例中。simple_error_handler返回一个HTML错误页面而simple_error_handler_json返回一个JSON消息。
+
+```r
+jug() %>%
+  simple_error_handler() %>%
+  serve_it()
+```
+
+```r
+$ curl 127.0.0.1:8080
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Not found</title>
+  </head>
+  <body>
+    <p>No handler bound to path</p>
+  </body>
+</html>
+```
+
+如果要实现自己的自定义错误处理，只需查看这些简单错误处理中间件的代码即可。
+
+请注意，通常您希望在指定所有其他中间件后将错误处理程序中间件附加到jug实例。
+
+
+### 轻松使用自己的函数
+
+创建jug的主要原因是可以轻松访问您自己的自定义R函数。功能decorate专门为此目的而构建。如果decorate您自己的函数，它会将请求的查询字符串中传递的所有参数转换为函数的参数。它还将所有头文件作为参数传递给函数。如果您的函数不接受`...`参数，则会删除函数未明确请求的所有查询/标头参数。如果您的功能请求req，res或err参数（或...）相应的对象将被传递。
+
+```r
+say_hello<-function(name){paste("hello",name,"!")}
+
+jug() %>%
+  get("/", decorate(say_hello)) %>%
+  serve_it()
+```
+如果在上面，您通过name查询字符串或GET请求中的标头传递参数，它将返回如下例所示。
+
+```r
+$ curl 127.0.0.1:8080/?name=Bart
+hello Bart !
+```
+
+### 静态文件服务器
+
+serve_static_file中间件可以提供静态文件。
+
+```r
+jug() %>%
+  serve_static_files() %>%
+  serve_it()
+```
+
+默认根目录是返回的目录，`setwd()`可以通过向中间件提供root_path参数来指定serve_static_files.
+
+除了开发之外，我不建议使用jug来提供静态文件。
+
+### CORS功能(*)
+
+[CORS功能](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)(跨源资源共享)由cors()中间件功能引入。
+
+
+请考虑以下示例。
+
+```r
+jug() %>%
+  cors() %>%
+  get("/", function(req, res, err){
+    "Hello World!"
+  }) %>%
+  serve_it()
+```
+
+```r
+$ curl -v 127.0.0.1:8080/
+*   Trying 127.0.0.1...
+* Connected to 127.0.0.1 (127.0.0.1) port 8080 (#0)
+> GET / HTTP/1.1
+> Host: 127.0.0.1:8080
+> User-Agent: curl/7.43.0
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+< Content-Type: text/html
+< Access-Control-Allow-Origin: *
+< Access-Control-Allow-Methods: POST,GET,PUT,OPTIONS,DELETE,PATCH
+< Content-Length: 12
+< 
+* Connection #0 to host 127.0.0.1 left intact
+```
+
+如您所见，这会添加一些默认的CORS标头。查看?cors配置选项，请注意您还可以通过指定path参数将CORS标头添加到特定路径。
+
+### 认证
+
+目前，只有通过中间件功能内置支持基本身份验证<https://www.httpwatch.com/httpgallery/authentication/> auth_basic,间件将检查有效用户名/密码组合的请求。如果传递了无效组合，它将返回401状态，WWW-Authenticate标题和文本正文，指出存在身份验证错误。
+
+首先，您需要定义一个接受username和password参数的函数。TRUE如果组合有效且FALSE组合无效，则应返回功能。一个虚拟的例子如下所示。注意，此功能还可以检查例如数据库以验证组合。
+
+```r
+# dummy account checker
+account_checker <- function(username, password){
+  # do something to verify the username and password and return TRUE if combination OK
+  all(username == "test_user", 
+      password == "test_password")
+}
+```
+
+接下来，您需要auth_basic在中间件链中实例化中间件。该auth_basic函数接受用户名/密码验证功能作为第一个参数。下面给出两个例子。第一个显示如何对特定路径（/test）进行身份验证。
+
+```r
+jug() %>%
+  get("/", function(req, res, err){
+    "/ req"
+  }) %>%
+  get("/test", auth_basic(account_checker), function(req, res, err){
+    "/test req"
+  }) %>%
+  serve_it()
+```
+
+下面的第二个示例显示了如何为jug实例中的所有路径激活基本身份验证。
+
+```r
+jug() %>%
+  use(NULL, auth_basic(account_checker)) %>%
+  get("/", function(req, res, err){
+    "/ req"
+  }) %>%
+  serve_it()
+```
+
+
+
+## 事件监听
+
+从版本0.1.7.902开始，事件监听的概念已经可用。由于中间件不足以实现强大的Logger，因此引入了事件和事件监听的概念。目前，侦听器可以绑定到事件，下面给出一个示例：
+
+```r
+jug() %>%
+  get("/", function(req,res,err){"foo"}) %>%
+  on("finish", function(req, res, err){
+    print("the finish event was received; request processing finished!")}
+    ) %>%
+  serve_it()
+```
+
+目前有三项活动：
+
++ start：一旦收到新请求，就会触发此事件
++ finish：一旦请求完全处理，就会触发此事件
++ error：一旦在中间件内引发错误，就会触发此事件
+
+start和finish事件将传递的当前状态req，res以及err对象。error事件将传递第四个参数，即错误消息的字符表示。
+
+
+## 预定义的事件侦听器
+
+### Logger
+
+`futile.logger`
+
+```r
+jug() %>%
+  get("/", function(req,res,err){"foo"}) %>%
+  get("/err", function(req,res,err){stop("bar")}) %>%
+  logger(threshold = futile.logger::DEBUG, log_file='logfile.log', console=TRUE) %>%
+  simple_error_handler_json() %>%
+  serve_it()
+```
+
+在上面的示例中，Logger阈值设置futile.logger::DEBUG为我们将在执行期间接收详细信息,在这个例子中，Logger将写入logfile.log 和将输出到控制台.有关Logger阈值的更多信息，请查看该futile.logger包的文档。
+
+
+
+## 请求，响应和错误对象
+
+### Request（req）对象
+
+该req对象包含请求规范。它有不同的属性：
+
++ `req$params` 由查询字符串，JSON正文，URL参数或多部分表单传递的参数的命名列表
++ `req$path` 请求路径
++ `req$method` 请求方法
++ `req$raw` 传递的原始请求对象 httpuv
++ `req$body` 完整的请求正文作为字符串
++ `req$protocol`无论是http或websocket
++ `req$headers` 请求中的标头的命名列表（作为小写并从HTTP_底层httpuv框架提供的前缀中剥离）
+
+它附带以下功能：
+
++ `req$get_header(key)`返回与请求中指定键关联的值（无需担心HTTP_前缀）
++ `req$set_header(key, value)` 允许在处理请求时设置/更改标头（对于将数据传递到下一个中间件可能很有用）
++ `req$attach(key, value)` 将变量附加到 `req$params`
+
+### Response（res）对象
+
+该res对象包含响应规范。它有不同的属性：
+
++ `res$headers` 一个命名的标题列表
++ `res$status` 响应的状态（默认为200）
++ `res$body`响应的主体（自动设置为不NULL返回的中间件的内容或通过诸如此类的方法`res$json()`）
+
+它还有一组功能：
+
++ `res$set_header(key, value)` 设置自定义标头
++ `res$content_type(type`) 设置自己的内容类型（MIME）
++ `res$set_status(status)` 设置响应的状态
++ `res$text(body)` 明确地设定反应的主体
++ `res$json(obj, auto_unbox=TRUE)` 将对象转换为JSON，将其设置为正文并设置正确的内容类型
++ `res$plot(plot_obj, base64=TRUE)` 方便函数将绘图对象作为响应体返回，返回的绘图可以是图像的base64表示（默认）或实际的二进制数据
+
+### Error（err）对象
+
+该err对象包含可通过的错误列表`err$errrors`。您可以通过调用将错误添加到此列表中`err$set(error)`。错误将转换为字符。有关更多详细信息，请参阅"错误处理"。
+
+
+## URL调度
+
+在路径参数get，post，...功能被处理为正则表达式模式。
+
+如果路径定义中有命名的捕获组，则它们将附加到该`req$params`对象。例如，模式`/test/(?<id>.*)/(?<id2>.*)`将导致变量id和id2（及其各自的值）绑定到req$params对象。
+
+如果路径模式未以字符串^正则表达式标记的开头启动或以字符串标记的结尾结束`$`，则将分别在路径模式规范的开头和结尾处明确地插入这些模式。例如，路径模式/将转换为`^/$`
+
+## 启动jug实例
+
+只需serve_it()在管道链的末端调用（参见[Install and Hello World ！](#install-and-hello-world)示例）
+
+
+## 线性回归模型的API举栗
+
+训练mtcars数据集上的线性回归模型，并假设我们的目标是mpg根据输入gear和预测每加仑英里或变量hp。
+
+```{r}
+head(mtcars)
+```
+
+```{r}
+mpg_model <- lm(mpg~gear+hp, data=mtcars)
+
+summary(mpg_model)
+```
+
+建立一个最小预测函数。
+
+```{r}
+predict_mpg <- function(gear, hp){
+  predict(mpg_model, 
+          newdata = data.frame(gear=as.numeric(gear), 
+                               hp=as.numeric(hp)))[[1]]
+}
+```
+
+我们可以通过提供gear和hp参数来测试函数。
+
+```{r}
+predict_mpg(gear = 4, hp = 80)
+```
+
+现在，要将此函数公开为Web API，我们需要构建一个jug实例。我们可以使用内置的decorate中间件来简化predict_mpg功能的集成。下面是一个最小的例子。
+
+```r
+jug() %>%
+  post("/predict-mpg", decorate(predict_mpg)) %>%
+  simple_error_handler_json() %>%
+  serve_it()
+```
+
+我们现在可以向http://127.0.0.1:8080/predict-mpgURL 发送http POST请求，它将返回预测值！它开箱即用，带有JSON主体中的参数，multipart/form-data或者作为一个x-www-form-urlencoded。
+
+JSON正文
+
+```r
+curl -X POST \
+  http://127.0.0.1:8080/predict-mpg \
+  -H 'content-type: application/json' \
+  -d '{"hp": 80, "gear": 4}'
+```
+
+多部分形式
+
+```r
+curl -X POST \
+  http://127.0.0.1:8080/predict-mpg \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -F hp=80 \
+  -F gear=4
+  
+```
+
+urlencode表单
+
+```r
+curl -X POST \
+  http://127.0.0.1:8080/predict-mpg \
+  -H 'content-type: application/x-www-form-urlencoded' \
+  -d 'gear=4&hp=80'
+```
+
+## 官方栗子
+
+<https://github.com/Bart6114/jug-crud-example>
+
+
+
+
+

@@ -1,2 +1,20 @@
 # 参考文献 {#reference}
 
+
+
+## opencpu
+  - [opencpu API文档](https://www.opencpu.org/)
+  - [The opencpu Systerm](https://jeroen.github.io/opencpu-slides/#1)
+  - [利用 R 和 opencpu 搭建高可用的 HTTP   服务—刘思喆](http://www.bjt.name/2017/04/28/opencpu-application.html)
+  - [R 语言实战之模型部署](https://cosx.org/2018/12/model-deployment-in-action-with-r/)
+
+
+## plumber
+  - [plumber官方教程](https://www.rplumber.io/)
+  - [R工程化—Rest API 之plumber包](https://mp.weixin.qq.com/s/RtP4AXp33XkA9e99hjW-BQ)
+  
+  
+## jug
+
+  - [jug官方教程](http://bart6114.github.io/jug/articles/jug.html)
+
